@@ -1,0 +1,127 @@
+//
+//  MainPlaceCell.swift
+//  HookahPlaces
+//
+//  Created by Евгений on 26/08/2019.
+//  Copyright © 2019 Momotov. All rights reserved.
+//
+
+import UIKit
+
+final class MainPlaceCell: UITableViewCell {
+    static let identifier = String(describing: MainPlaceCell.self)
+    static let height: CGFloat = 160
+    
+    private let containerView = UIView()
+    private let placeImageView = UIImageView()
+    
+    private let containerMainInfoView = UIView()
+    private let namePlaceLabel = UILabel()
+    private let addressPlaceLabel = UILabel()
+    
+    private let ratingContainerView = UIView()
+    private let ratingImageView = UIImageView()
+    private let ratingLabel = UILabel()
+    
+    private let distanceContainerView = UIView()
+    private let distanceImageView = UIImageView()
+    private let distanceLabel = UILabel()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: MainPlaceCell.identifier)
+        configureViewCell()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func set() {
+        placeImageView.image = #imageLiteral(resourceName: "0")
+        namePlaceLabel.text = "Москальян Свиблово"
+        addressPlaceLabel.text = "ул. Радужная, 17"
+    }
+}
+
+extension MainPlaceCell {
+    private func configureViewCell() {
+        backgroundColor = .white
+        selectionStyle = .none
+        
+        addContainerView()
+    }
+    
+    private func addContainerView() {
+        containerView.layer.cornerRadius = 8
+        containerView.clipsToBounds = true
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(containerView)
+        
+        containerView.leftAnchor.constraint(equalTo: leftAnchor, constant: 8).isActive = true
+        containerView.topAnchor.constraint(equalTo: topAnchor, constant: 4).isActive = true
+        containerView.rightAnchor.constraint(equalTo: rightAnchor, constant: -8).isActive = true
+        containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4).isActive = true
+        
+        addPlaceImageView()
+        addMainInfoView()
+    }
+    
+    private func addPlaceImageView() {
+        placeImageView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(placeImageView)
+        
+        placeImageView.leftAnchor.constraint(equalTo: containerView.leftAnchor).isActive = true
+        placeImageView.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
+        placeImageView.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
+        placeImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+    }
+    
+    private func addMainInfoView() {
+        containerMainInfoView.backgroundColor = .black
+        containerMainInfoView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(containerMainInfoView)
+        
+        containerMainInfoView.leftAnchor.constraint(equalTo: containerView.leftAnchor).isActive = true
+        containerMainInfoView.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
+        containerMainInfoView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+        containerMainInfoView.heightAnchor.constraint(equalToConstant: MainPlaceCell.height / 3).isActive = true
+        
+        addNameLabel()
+        addAddressLabel()
+    }
+    
+    private func addNameLabel() {
+        namePlaceLabel.font = .main(ofSize: 16)
+        namePlaceLabel.textColor = .white
+        namePlaceLabel.translatesAutoresizingMaskIntoConstraints = false
+        containerMainInfoView.addSubview(namePlaceLabel)
+        
+        namePlaceLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
+        namePlaceLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
+        namePlaceLabel.topAnchor.constraint(equalTo: containerMainInfoView.topAnchor, constant: 8).isActive = true
+    }
+    
+    private func addAddressLabel() {
+        addressPlaceLabel.font = .main(ofSize: 14)
+        addressPlaceLabel.textColor = .white
+        addressPlaceLabel.translatesAutoresizingMaskIntoConstraints = false
+        containerMainInfoView.addSubview(addressPlaceLabel)
+        
+        addressPlaceLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
+        addressPlaceLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
+        addressPlaceLabel.topAnchor.constraint(equalTo: namePlaceLabel.bottomAnchor, constant: 2).isActive = true
+    }
+    
+    private func addDistanceView() {
+        distanceContainerView.backgroundColor = .black
+        distanceContainerView.layer.cornerRadius = 8
+        distanceContainerView.layer.borderColor = UIColor.white.cgColor
+        distanceContainerView.layer.borderWidth = 1
+        distanceContainerView.clipsToBounds = true
+        distanceContainerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(distanceContainerView)
+        
+        distanceContainerView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -16).isActive = true
+        distanceContainerView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8).isActive = true  
+    }
+}
