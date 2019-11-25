@@ -6,4 +6,20 @@
 //  Copyright © 2019 Momotov. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+final class SearchViewController: UIViewController {
+    private var presenter: SearchPresenterProtocol!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presenter = SearchPresenter(view: self)
+        configureView()
+    }
+}
+
+extension SearchViewController {
+    private func configureView() {
+        
+    }
+}
