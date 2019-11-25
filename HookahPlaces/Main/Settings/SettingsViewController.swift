@@ -20,6 +20,7 @@ final class SettingsViewController: UIViewController {
 
 extension SettingsViewController {
     private func configureView() {
+        title = "Settings"
         view.backgroundColor = .lightGray
     }
 }

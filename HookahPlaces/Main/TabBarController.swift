@@ -12,6 +12,14 @@ final class TabBarController: UITabBarController {
     private lazy var mainViewController: UIViewController = {
         return NavigationController(rootViewController: MainViewController())
     }()
+    
+    private lazy var searchViewController: UIViewController = {
+        return NavigationController(rootViewController: SearchViewController())
+    }()
+    
+    private lazy var settingsViewController: UIViewController = {
+        return NavigationController(rootViewController: SettingsViewController())
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +29,6 @@ final class TabBarController: UITabBarController {
 
 extension TabBarController {
     private func setViewControllers() {
-        viewControllers = [mainViewController]
+        viewControllers = [mainViewController, searchViewController, settingsViewController]
     }
 }
