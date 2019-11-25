@@ -19,13 +19,8 @@ final class MainPlaceCell: UITableViewCell {
     private let namePlaceLabel = UILabel()
     private let addressPlaceLabel = UILabel()
     
-    private let ratingContainerView = UIView()
-    private let ratingImageView = UIImageView()
-    private let ratingLabel = UILabel()
-    
-    private let distanceContainerView = UIView()
-    private let distanceImageView = UIImageView()
-    private let distanceLabel = UILabel()
+    private let ratingView = MainRatingView()
+    private let distanceView = MainDistanceView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: MainPlaceCell.identifier)
@@ -40,6 +35,8 @@ final class MainPlaceCell: UITableViewCell {
         placeImageView.image = #imageLiteral(resourceName: "0")
         namePlaceLabel.text = "Москальян Свиблово"
         addressPlaceLabel.text = "ул. Радужная, 17"
+        ratingView.set(rating: 44.1)
+        distanceView.set(distance: 10876.3)
     }
 }
 
@@ -64,6 +61,8 @@ extension MainPlaceCell {
         
         addPlaceImageView()
         addMainInfoView()
+        addRatingView()
+        addDistanceView()
     }
     
     private func addPlaceImageView() {
@@ -112,16 +111,32 @@ extension MainPlaceCell {
         addressPlaceLabel.topAnchor.constraint(equalTo: namePlaceLabel.bottomAnchor, constant: 2).isActive = true
     }
     
-    private func addDistanceView() {
-        distanceContainerView.backgroundColor = .black
-        distanceContainerView.layer.cornerRadius = 8
-        distanceContainerView.layer.borderColor = UIColor.white.cgColor
-        distanceContainerView.layer.borderWidth = 1
-        distanceContainerView.clipsToBounds = true
-        distanceContainerView.translatesAutoresizingMaskIntoConstraints = false
-        containerView.addSubview(distanceContainerView)
+    private func addRatingView() {
+        ratingView.layer.cornerRadius = 8
+        ratingView.layer.borderColor = UIColor.white.cgColor
+        ratingView.layer.borderWidth = 2
+        ratingView.clipsToBounds = true
+        ratingView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(ratingView)
         
-        distanceContainerView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -16).isActive = true
-        distanceContainerView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 8).isActive = true  
+        ratingView.snp.makeConstraints {
+            $0.right.top.equalToSuperview().inset(16)
+            $0.height.equalTo(26)
+        }
+    }
+    
+    private func addDistanceView() {
+        distanceView.layer.cornerRadius = 8
+        distanceView.layer.borderColor = UIColor.white.cgColor
+        distanceView.layer.borderWidth = 2
+        distanceView.clipsToBounds = true
+        distanceView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(distanceView)
+        
+        distanceView.snp.makeConstraints {
+            $0.top.equalToSuperview().inset(16)
+            $0.right.equalTo(ratingView.snp.left).offset(-16)
+            $0.height.equalTo(26)
+        }
     }
 }
