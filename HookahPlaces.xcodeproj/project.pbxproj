@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		43EB95ED8D12D85BA41597EE /* Pods_HookahPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2C37203F57401A7ACB5D62 /* Pods_HookahPlaces.framework */; };
+		7A4842A2238C25C60002648E /* MainRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4842A1238C25C60002648E /* MainRatingView.swift */; };
+		7A4842A5238C29690002648E /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4842A4238C29690002648E /* Place.swift */; };
+		7A4842A8238C2A890002648E /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4842A7238C2A890002648E /* RealmService.swift */; };
 		7A5A9A4B238B9C7D00795EEF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5A9A4A238B9C7D00795EEF /* SearchViewController.swift */; };
 		7A5A9A4D238B9C9C00795EEF /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5A9A4C238B9C9C00795EEF /* MainPresenter.swift */; };
 		7ABBF1E623135407003DC9B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBF1E523135407003DC9B5 /* AppDelegate.swift */; };
@@ -28,6 +31,9 @@
 /* Begin PBXFileReference section */
 		488D707BFB37BE3B288948A2 /* Pods-HookahPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HookahPlaces.debug.xcconfig"; path = "Target Support Files/Pods-HookahPlaces/Pods-HookahPlaces.debug.xcconfig"; sourceTree = "<group>"; };
 		591A602B1300C13596E8EAAA /* Pods-HookahPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HookahPlaces.release.xcconfig"; path = "Target Support Files/Pods-HookahPlaces/Pods-HookahPlaces.release.xcconfig"; sourceTree = "<group>"; };
+		7A4842A1238C25C60002648E /* MainRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRatingView.swift; sourceTree = "<group>"; };
+		7A4842A4238C29690002648E /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		7A4842A7238C2A890002648E /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		7A5A9A4A238B9C7D00795EEF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7A5A9A4C238B9C9C00795EEF /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		7ABBF1E223135407003DC9B5 /* HookahPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HookahPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +81,22 @@
 				591A602B1300C13596E8EAAA /* Pods-HookahPlaces.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		7A4842A3238C294E0002648E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7A4842A4238C29690002648E /* Place.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7A4842A6238C2A4B0002648E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7A4842A7238C2A890002648E /* RealmService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		7A5A9A4E238B9CA200795EEF /* Cells */ = {
@@ -135,6 +157,8 @@
 		7ABBF1E423135407003DC9B5 /* HookahPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				7A4842A6238C2A4B0002648E /* Services */,
+				7A4842A3238C294E0002648E /* Models */,
 				7ABBF1FC23135F57003DC9B5 /* Utils */,
 				7ABBF1FB23135F4C003DC9B5 /* Main */,
 				7ABBF1F123135408003DC9B5 /* Info.plist */,
@@ -170,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				7AC50B70238BAFA000117C8D /* MainDistanceView.swift */,
+				7A4842A1238C25C60002648E /* MainRatingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -288,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A4842A2238C25C60002648E /* MainRatingView.swift in Sources */,
 				7ABBF2022317EDE9003DC9B5 /* NavigationController.swift in Sources */,
 				7ABBF1FE2313605E003DC9B5 /* MainPlaceCell.swift in Sources */,
 				7AC50B6C238BA5DC00117C8D /* SettingsViewController.swift in Sources */,
@@ -296,11 +322,13 @@
 				7ABBF200231693FD003DC9B5 /* Extensions.swift in Sources */,
 				7A5A9A4D238B9C9C00795EEF /* MainPresenter.swift in Sources */,
 				7ABBF1E823135407003DC9B5 /* MainViewController.swift in Sources */,
+				7A4842A5238C29690002648E /* Place.swift in Sources */,
 				7ABBF1F823135560003DC9B5 /* TabBarController.swift in Sources */,
 				7ABBF1E623135407003DC9B5 /* AppDelegate.swift in Sources */,
 				7ABBF1FA23135652003DC9B5 /* Colors.swift in Sources */,
 				7AC50B71238BAFA000117C8D /* MainDistanceView.swift in Sources */,
 				7AC50B6E238BA63000117C8D /* SettingsPresenter.swift in Sources */,
+				7A4842A8238C2A890002648E /* RealmService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
