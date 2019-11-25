@@ -19,7 +19,7 @@ final class TabBarController: UITabBarController {
     }
 }
 
-extension TabBarViewController {
+extension TabBarController {
     private func setViewControllers() {
         viewControllers = [mainViewController]
     }

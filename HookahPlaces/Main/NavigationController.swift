@@ -8,14 +8,14 @@
 
 import UIKit
 
-final class MainNavigationController: UINavigationController {
+final class NavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationController()
     }
 }
 
-extension MainNavigationController {
+extension NavigationController {
     private func configureNavigationController() {
         
     }
