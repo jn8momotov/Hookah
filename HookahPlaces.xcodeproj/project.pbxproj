@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A5A9A4B238B9C7D00795EEF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5A9A4A238B9C7D00795EEF /* SearchViewController.swift */; };
+		7A5A9A4D238B9C9C00795EEF /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5A9A4C238B9C9C00795EEF /* MainPresenter.swift */; };
 		7ABBF1E623135407003DC9B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBF1E523135407003DC9B5 /* AppDelegate.swift */; };
 		7ABBF1E823135407003DC9B5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBF1E723135407003DC9B5 /* MainViewController.swift */; };
 		7ABBF1ED23135408003DC9B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ABBF1EC23135408003DC9B5 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A5A9A4A238B9C7D00795EEF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		7A5A9A4C238B9C9C00795EEF /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		7ABBF1E223135407003DC9B5 /* HookahPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HookahPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ABBF1E523135407003DC9B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7ABBF1E723135407003DC9B5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -43,11 +47,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A5A9A4E238B9CA200795EEF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7ABBF1FD2313605E003DC9B5 /* MainPlaceCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		7A5EF79D238B9AF1003ABC29 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7A5A9A4E238B9CA200795EEF /* Cells */,
 				7ABBF1E723135407003DC9B5 /* MainViewController.swift */,
-				7ABBF1FD2313605E003DC9B5 /* MainPlaceCell.swift */,
+				7A5A9A4C238B9C9C00795EEF /* MainPresenter.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -55,6 +68,7 @@
 		7A5EF79E238B9AFA003ABC29 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				7A5A9A4A238B9C7D00795EEF /* SearchViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -188,7 +202,9 @@
 			files = (
 				7ABBF2022317EDE9003DC9B5 /* NavigationController.swift in Sources */,
 				7ABBF1FE2313605E003DC9B5 /* MainPlaceCell.swift in Sources */,
+				7A5A9A4B238B9C7D00795EEF /* SearchViewController.swift in Sources */,
 				7ABBF200231693FD003DC9B5 /* Extensions.swift in Sources */,
+				7A5A9A4D238B9C9C00795EEF /* MainPresenter.swift in Sources */,
 				7ABBF1E823135407003DC9B5 /* MainViewController.swift in Sources */,
 				7ABBF1F823135560003DC9B5 /* TabBarController.swift in Sources */,
 				7ABBF1E623135407003DC9B5 /* AppDelegate.swift in Sources */,

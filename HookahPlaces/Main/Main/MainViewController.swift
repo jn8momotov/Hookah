@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  HookahPlaces
 //
 //  Created by Евгений on 26/08/2019.
@@ -9,11 +9,14 @@
 import UIKit
 
 final class MainViewController: UIViewController {
+    private var presenter: MainPresenterProtocol!
+    
     private let filterControl = UISegmentedControl()
     private let tableView = UITableView(frame: .zero, style: .plain)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = MainPresenter(view: self)
         configureView()
     }
 }
