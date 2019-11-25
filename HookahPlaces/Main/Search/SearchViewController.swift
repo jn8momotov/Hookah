@@ -20,6 +20,6 @@ final class SearchViewController: UIViewController {
 
 extension SearchViewController {
     private func configureView() {
-        
+        view.backgroundColor = .groupTableViewBackground
     }
 }

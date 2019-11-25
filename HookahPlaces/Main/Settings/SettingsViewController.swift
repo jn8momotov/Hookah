@@ -6,4 +6,20 @@
 //  Copyright © 2019 Momotov. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+final class SettingsViewController: UIViewController {
+    private var presenter: SettingsPresenterProtocol!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presenter = SettingsPresenter(view: self)
+        configureView()
+    }
+}
+
+extension SettingsViewController {
+    private func configureView() {
+        view.backgroundColor = .lightGray
+    }
+}

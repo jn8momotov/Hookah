@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+protocol SettingsPresenterProtocol {
+    
+}
+
+final class SettingsPresenter: SettingsPresenterProtocol {
+    weak var view: SettingsViewController?
+    
+    init(view: SettingsViewController) {
+        self.view = view
+    }
+}
