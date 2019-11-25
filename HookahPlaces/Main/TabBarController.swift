@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class TabBarViewController: UITabBarController {
+final class TabBarController: UITabBarController {
     private lazy var mainViewController: UIViewController = {
-        return MainNavigationController(rootViewController: MainViewController())
+        return NavigationController(rootViewController: MainViewController())
     }()
 
     override func viewDidLoad() {
