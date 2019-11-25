@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 final class MainViewController: UIViewController {
     private var presenter: MainPresenterProtocol!
@@ -56,12 +57,13 @@ extension MainViewController {
         filterControl.insertSegment(withTitle: "By distance", at: 0, animated: false)
         filterControl.insertSegment(withTitle: "By rating", at: 1, animated: false)
         filterControl.tintColor = .black
+        filterControl.selectedSegmentIndex = 0
         filterControl.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(filterControl)
         
-        filterControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16).isActive = true
-        filterControl.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
-        filterControl.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
+        filterControl.snp.makeConstraints {
+            $0.left.right.top.equalTo(view.safeAreaLayoutGuide).inset(16)
+        }
     }
     
     private func addTableView() {
@@ -72,10 +74,10 @@ extension MainViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         
-        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        tableView.topAnchor.constraint(equalTo: filterControl.bottomAnchor, constant: 16).isActive = true
+        tableView.snp.makeConstraints {
+            $0.left.bottom.right.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalTo(filterControl.snp.bottom).offset(16)
+        }
         
         registerCell()
     }

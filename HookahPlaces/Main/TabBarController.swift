@@ -31,5 +31,8 @@ extension TabBarController {
     private func configure() {
         tabBar.tintColor = .black
         viewControllers = [mainViewController, searchViewController, settingsViewController]
+        viewControllers?[0].tabBarItem = UITabBarItem(title: "Main", image: #imageLiteral(resourceName: "home"), tag: 0)
+        viewControllers?[1].tabBarItem = UITabBarItem(title: "Search", image: #imageLiteral(resourceName: "search"), tag: 1)
+        viewControllers?[2].tabBarItem = UITabBarItem(title: "Settings", image: #imageLiteral(resourceName: "services"), tag: 2)
     }
 }
