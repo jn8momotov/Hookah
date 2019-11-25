@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43EB95ED8D12D85BA41597EE /* Pods_HookahPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2C37203F57401A7ACB5D62 /* Pods_HookahPlaces.framework */; };
 		7A5A9A4B238B9C7D00795EEF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5A9A4A238B9C7D00795EEF /* SearchViewController.swift */; };
 		7A5A9A4D238B9C9C00795EEF /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5A9A4C238B9C9C00795EEF /* MainPresenter.swift */; };
 		7ABBF1E623135407003DC9B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBF1E523135407003DC9B5 /* AppDelegate.swift */; };
@@ -18,9 +19,15 @@
 		7ABBF1FE2313605E003DC9B5 /* MainPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBF1FD2313605E003DC9B5 /* MainPlaceCell.swift */; };
 		7ABBF200231693FD003DC9B5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBF1FF231693FD003DC9B5 /* Extensions.swift */; };
 		7ABBF2022317EDE9003DC9B5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBF2012317EDE9003DC9B5 /* NavigationController.swift */; };
+		7AC50B6A238BA55600117C8D /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC50B69238BA55600117C8D /* SearchPresenter.swift */; };
+		7AC50B6C238BA5DC00117C8D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC50B6B238BA5DC00117C8D /* SettingsViewController.swift */; };
+		7AC50B6E238BA63000117C8D /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC50B6D238BA63000117C8D /* SettingsPresenter.swift */; };
+		7AC50B71238BAFA000117C8D /* MainDistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC50B70238BAFA000117C8D /* MainDistanceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		488D707BFB37BE3B288948A2 /* Pods-HookahPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HookahPlaces.debug.xcconfig"; path = "Target Support Files/Pods-HookahPlaces/Pods-HookahPlaces.debug.xcconfig"; sourceTree = "<group>"; };
+		591A602B1300C13596E8EAAA /* Pods-HookahPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HookahPlaces.release.xcconfig"; path = "Target Support Files/Pods-HookahPlaces/Pods-HookahPlaces.release.xcconfig"; sourceTree = "<group>"; };
 		7A5A9A4A238B9C7D00795EEF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7A5A9A4C238B9C9C00795EEF /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		7ABBF1E223135407003DC9B5 /* HookahPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HookahPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,6 +41,11 @@
 		7ABBF1FD2313605E003DC9B5 /* MainPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlaceCell.swift; sourceTree = "<group>"; };
 		7ABBF1FF231693FD003DC9B5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7ABBF2012317EDE9003DC9B5 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		7AC50B69238BA55600117C8D /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		7AC50B6B238BA5DC00117C8D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7AC50B6D238BA63000117C8D /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		7AC50B70238BAFA000117C8D /* MainDistanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDistanceView.swift; sourceTree = "<group>"; };
+		9E2C37203F57401A7ACB5D62 /* Pods_HookahPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HookahPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,12 +53,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43EB95ED8D12D85BA41597EE /* Pods_HookahPlaces.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		340A4FF68D07ACA9751BCD6E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E2C37203F57401A7ACB5D62 /* Pods_HookahPlaces.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		74292F8B4188C9DFBC847EB0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				488D707BFB37BE3B288948A2 /* Pods-HookahPlaces.debug.xcconfig */,
+				591A602B1300C13596E8EAAA /* Pods-HookahPlaces.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7A5A9A4E238B9CA200795EEF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +88,7 @@
 		7A5EF79D238B9AF1003ABC29 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7AC50B6F238BAF8900117C8D /* Views */,
 				7A5A9A4E238B9CA200795EEF /* Cells */,
 				7ABBF1E723135407003DC9B5 /* MainViewController.swift */,
 				7A5A9A4C238B9C9C00795EEF /* MainPresenter.swift */,
@@ -69,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				7A5A9A4A238B9C7D00795EEF /* SearchViewController.swift */,
+				7AC50B69238BA55600117C8D /* SearchPresenter.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -76,6 +108,8 @@
 		7A5EF79F238B9B06003ABC29 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				7AC50B6B238BA5DC00117C8D /* SettingsViewController.swift */,
+				7AC50B6D238BA63000117C8D /* SettingsPresenter.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -85,6 +119,8 @@
 			children = (
 				7ABBF1E423135407003DC9B5 /* HookahPlaces */,
 				7ABBF1E323135407003DC9B5 /* Products */,
+				74292F8B4188C9DFBC847EB0 /* Pods */,
+				340A4FF68D07ACA9751BCD6E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +166,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		7AC50B6F238BAF8900117C8D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7AC50B70238BAFA000117C8D /* MainDistanceView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +181,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7ABBF1F423135408003DC9B5 /* Build configuration list for PBXNativeTarget "HookahPlaces" */;
 			buildPhases = (
+				B892C1FF7A30FDDB50DE707E /* [CP] Check Pods Manifest.lock */,
 				7ABBF1DE23135407003DC9B5 /* Sources */,
 				7ABBF1DF23135407003DC9B5 /* Frameworks */,
 				7ABBF1E023135407003DC9B5 /* Resources */,
+				78ED672B066EEDA88B775003 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,6 +241,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		78ED672B066EEDA88B775003 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HookahPlaces/Pods-HookahPlaces-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HookahPlaces/Pods-HookahPlaces-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HookahPlaces/Pods-HookahPlaces-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B892C1FF7A30FDDB50DE707E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HookahPlaces-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7ABBF1DE23135407003DC9B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -202,6 +290,8 @@
 			files = (
 				7ABBF2022317EDE9003DC9B5 /* NavigationController.swift in Sources */,
 				7ABBF1FE2313605E003DC9B5 /* MainPlaceCell.swift in Sources */,
+				7AC50B6C238BA5DC00117C8D /* SettingsViewController.swift in Sources */,
+				7AC50B6A238BA55600117C8D /* SearchPresenter.swift in Sources */,
 				7A5A9A4B238B9C7D00795EEF /* SearchViewController.swift in Sources */,
 				7ABBF200231693FD003DC9B5 /* Extensions.swift in Sources */,
 				7A5A9A4D238B9C9C00795EEF /* MainPresenter.swift in Sources */,
@@ -209,6 +299,8 @@
 				7ABBF1F823135560003DC9B5 /* TabBarController.swift in Sources */,
 				7ABBF1E623135407003DC9B5 /* AppDelegate.swift in Sources */,
 				7ABBF1FA23135652003DC9B5 /* Colors.swift in Sources */,
+				7AC50B71238BAFA000117C8D /* MainDistanceView.swift in Sources */,
+				7AC50B6E238BA63000117C8D /* SettingsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +436,7 @@
 		};
 		7ABBF1F523135408003DC9B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 488D707BFB37BE3B288948A2 /* Pods-HookahPlaces.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -363,6 +456,7 @@
 		};
 		7ABBF1F623135408003DC9B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 591A602B1300C13596E8EAAA /* Pods-HookahPlaces.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
