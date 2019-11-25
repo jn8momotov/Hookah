@@ -23,12 +23,13 @@ final class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setViewControllers()
+        configure()
     }
 }
 
 extension TabBarController {
-    private func setViewControllers() {
+    private func configure() {
+        tabBar.tintColor = .black
         viewControllers = [mainViewController, searchViewController, settingsViewController]
     }
 }

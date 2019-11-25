@@ -11,12 +11,12 @@ import UIKit
 final class NavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavigationController()
+        configure()
     }
 }
 
 extension NavigationController {
-    private func configureNavigationController() {
-        
+    private func configure() {
+        navigationBar.tintColor = .white
     }
 }
