@@ -22,21 +22,34 @@ final class MapViewController: UIViewController {
         configureLocationManager()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        setupRegionOnUser()
-    }
-    
     @objc
     private func didTapOnCloseBarButtonItem() {
         dismiss(animated: true, completion: nil)
     }
     
-    private func setupRegionOnUser() {
-        let location = mapView.userLocation.coordinate
+    func setRegion(_ coordinate: CLLocationCoordinate2D) {
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        let region = MKCoordinateRegion(center: location, span: span)
+        let region = MKCoordinateRegion(center: coordinate, span: span)
         mapView.setRegion(region, animated: true)
+    }
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard !presenter.getUserLocation, let location = locations.first else {
+            return
+        }
+        presenter.getUserLocation = true
+        setRegion(location.coordinate)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        guard !presenter.getUserLocation else {
+            return
+        }
+        presenter.getUserLocation = true
+        let coordinate = CLLocationCoordinate2D(latitude: 55.751244, longitude: 37.618423)
+        setRegion(coordinate)
     }
 }
 
@@ -49,14 +62,15 @@ extension MapViewController {
     
     private func configureLocationManager() {
         locationManager.requestWhenInUseAuthorization()
+        locationManager.delegate = self
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
-        
-        mapView.showsUserLocation = true
     }
     
     private func addMapView() {
+        mapView.userLocation.title = nil
+        mapView.showsUserLocation = true
         mapView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(mapView)
         

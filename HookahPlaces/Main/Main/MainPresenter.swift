@@ -9,13 +9,16 @@
 import Foundation
 
 protocol MainPresenterProtocol {
-    
+    var places: [Place] { get }
 }
 
 final class MainPresenter: MainPresenterProtocol {
     weak var view: MainViewController?
     
+    var places: [Place] = []
+    
     init(view: MainViewController) {
         self.view = view
+        places = RealmService.shared.get(Place.self)
     }
 }

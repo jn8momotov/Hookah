@@ -31,12 +31,12 @@ final class MainPlaceCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set() {
+    func set(_ place: Place) {
         placeImageView.image = #imageLiteral(resourceName: "0")
-        namePlaceLabel.text = "Москальян Свиблово"
-        addressPlaceLabel.text = "ул. Радужная, 17"
-        ratingView.set(rating: 44.1)
-        distanceView.set(distance: 10876.3)
+        namePlaceLabel.text = "\(place.name) \(place.metro)"
+        addressPlaceLabel.text = "\(place.address)"
+        ratingView.set(rating: place.rating)
+        distanceView.set(distance: place.distanceTo)
     }
 }
 

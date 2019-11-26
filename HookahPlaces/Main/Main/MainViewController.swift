@@ -42,11 +42,20 @@ final class MainViewController: UIViewController {
         place.longitude = longitude
         RealmService.shared.save(place)
     }
+    
+    private func cell(at indexPath: IndexPath, viewModel: Place) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: MainPlaceCell.identifier, for: indexPath) as? MainPlaceCell else {
+            return UITableViewCell()
+        }
+        cell.set(viewModel)
+        return cell
+    }
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return presenter.places.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -54,15 +63,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return mainCell(at: indexPath)
-    }
-    
-    private func mainCell(at indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainPlaceCell.identifier, for: indexPath) as? MainPlaceCell else {
-            return UITableViewCell()
-        }
-        cell.set()
-        return cell
+        return cell(at: indexPath, viewModel: presenter.places[indexPath.row])
     }
 }
 
