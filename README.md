@@ -6,7 +6,7 @@ by Evgeniy Momotov, Igor Bolyaev
 
 #### Mobile:
 
-- [ ] List places
+- [X] List places
 - [ ] Search places
 - [ ] Settings screen
 - [ ] Map places
