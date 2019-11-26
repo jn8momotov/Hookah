@@ -20,6 +20,12 @@ final class MainViewController: UIViewController {
         presenter = MainPresenter(view: self)
         configureView()
     }
+    
+    @objc
+    private func didTapOnMapBarButtonItem() {
+        let navigation = NavigationController(rootViewController: MapViewController())
+        presentFull(navigation, animated: true, completion: nil)
+    }
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
@@ -49,8 +55,20 @@ extension MainViewController {
         title = "Main"
         view.backgroundColor = .white
         
+        addMapBarButtonItem()
         addFilterControl()
         addTableView()
+    }
+    
+    private func addMapBarButtonItem() {
+        let mapBarButtonItem = UIBarButtonItem(
+            image: #imageLiteral(resourceName: "map_marker"),
+            style: .plain,
+            target: self,
+            action: #selector(didTapOnMapBarButtonItem)
+        )
+        mapBarButtonItem.tintColor = .black
+        navigationItem.rightBarButtonItem = mapBarButtonItem
     }
     
     private func addFilterControl() {
