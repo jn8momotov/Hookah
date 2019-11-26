@@ -15,6 +15,9 @@
 		7A5A9A4D238B9C9C00795EEF /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5A9A4C238B9C9C00795EEF /* MainPresenter.swift */; };
 		7A94B567238CEECE008B7AC2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A94B566238CEECE008B7AC2 /* MapViewController.swift */; };
 		7A94B569238CEF4A008B7AC2 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A94B568238CEF4A008B7AC2 /* MapPresenter.swift */; };
+		7A94B574238D7312008B7AC2 /* MapPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A94B573238D7312008B7AC2 /* MapPlaceView.swift */; };
+		7A94B576238DA7B2008B7AC2 /* PlacePointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A94B575238DA7B2008B7AC2 /* PlacePointAnnotation.swift */; };
+		7A94B578238DA95B008B7AC2 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A94B577238DA95B008B7AC2 /* LocationService.swift */; };
 		7ABBF1E623135407003DC9B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBF1E523135407003DC9B5 /* AppDelegate.swift */; };
 		7ABBF1E823135407003DC9B5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBF1E723135407003DC9B5 /* MainViewController.swift */; };
 		7ABBF1ED23135408003DC9B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ABBF1EC23135408003DC9B5 /* Assets.xcassets */; };
@@ -40,6 +43,9 @@
 		7A5A9A4C238B9C9C00795EEF /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		7A94B566238CEECE008B7AC2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7A94B568238CEF4A008B7AC2 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		7A94B573238D7312008B7AC2 /* MapPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPlaceView.swift; sourceTree = "<group>"; };
+		7A94B575238DA7B2008B7AC2 /* PlacePointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePointAnnotation.swift; sourceTree = "<group>"; };
+		7A94B577238DA95B008B7AC2 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		7ABBF1E223135407003DC9B5 /* HookahPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HookahPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ABBF1E523135407003DC9B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7ABBF1E723135407003DC9B5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				7A4842A4238C29690002648E /* Place.swift */,
+				7A94B575238DA7B2008B7AC2 /* PlacePointAnnotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -99,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				7A4842A7238C2A890002648E /* RealmService.swift */,
+				7A94B577238DA95B008B7AC2 /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -143,10 +151,26 @@
 		7A94B565238CEEB9008B7AC2 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				7A94B572238D72F9008B7AC2 /* Views */,
 				7A94B566238CEECE008B7AC2 /* MapViewController.swift */,
 				7A94B568238CEF4A008B7AC2 /* MapPresenter.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		7A94B56F238D7138008B7AC2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		7A94B572238D72F9008B7AC2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7A94B573238D7312008B7AC2 /* MapPlaceView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7ABBF1D923135407003DC9B5 = {
@@ -170,6 +194,7 @@
 		7ABBF1E423135407003DC9B5 /* HookahPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				7A94B56F238D7138008B7AC2 /* Core */,
 				7A4842A6238C2A4B0002648E /* Services */,
 				7A4842A3238C294E0002648E /* Models */,
 				7ABBF1FC23135F57003DC9B5 /* Utils */,
@@ -330,9 +355,12 @@
 				7A4842A2238C25C60002648E /* MainRatingView.swift in Sources */,
 				7ABBF2022317EDE9003DC9B5 /* NavigationController.swift in Sources */,
 				7ABBF1FE2313605E003DC9B5 /* MainPlaceCell.swift in Sources */,
+				7A94B576238DA7B2008B7AC2 /* PlacePointAnnotation.swift in Sources */,
 				7AC50B6C238BA5DC00117C8D /* SettingsViewController.swift in Sources */,
 				7AC50B6A238BA55600117C8D /* SearchPresenter.swift in Sources */,
 				7A5A9A4B238B9C7D00795EEF /* SearchViewController.swift in Sources */,
+				7A94B578238DA95B008B7AC2 /* LocationService.swift in Sources */,
+				7A94B574238D7312008B7AC2 /* MapPlaceView.swift in Sources */,
 				7ABBF200231693FD003DC9B5 /* Extensions.swift in Sources */,
 				7A5A9A4D238B9C9C00795EEF /* MainPresenter.swift in Sources */,
 				7ABBF1E823135407003DC9B5 /* MainViewController.swift in Sources */,

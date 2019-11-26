@@ -10,14 +10,12 @@ import Foundation
 
 protocol MapPresenterProtocol {
     var places: [Place] { get }
-    var getUserLocation: Bool { get set }
 }
 
 final class MapPresenter: MapPresenterProtocol {
     weak var view: MapViewController?
     
     var places: [Place] = []
-    var getUserLocation: Bool = false
     
     init(view: MapViewController) {
         self.view = view

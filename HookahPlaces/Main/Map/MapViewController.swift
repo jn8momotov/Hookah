@@ -14,6 +14,7 @@ final class MapViewController: UIViewController {
     private let locationManager = CLLocationManager()
     
     private let mapView = MKMapView()
+    private let placeView = MapPlaceView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,34 +23,33 @@ final class MapViewController: UIViewController {
         configureLocationManager()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setRegion(mapView.userLocation.coordinate)
+    }
+    
     @objc
     private func didTapOnCloseBarButtonItem() {
         dismiss(animated: true, completion: nil)
     }
     
-    func setRegion(_ coordinate: CLLocationCoordinate2D) {
+    private func setRegion(_ coordinate: CLLocationCoordinate2D) {
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegion(center: coordinate, span: span)
         mapView.setRegion(region, animated: true)
     }
 }
 
-extension MapViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard !presenter.getUserLocation, let location = locations.first else {
-            return
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if let point = view.annotation as? PlacePointAnnotation {
+            placeView.set(presenter.places[point.identifier])
+            placeView.isHidden = false
         }
-        presenter.getUserLocation = true
-        setRegion(location.coordinate)
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        guard !presenter.getUserLocation else {
-            return
-        }
-        presenter.getUserLocation = true
-        let coordinate = CLLocationCoordinate2D(latitude: 55.751244, longitude: 37.618423)
-        setRegion(coordinate)
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        placeView.isHidden = true
     }
 }
 
@@ -58,17 +58,35 @@ extension MapViewController {
         title = "Map"
         addCloseBarButtonItem()
         addMapView()
+        addPlaceView()
     }
     
     private func configureLocationManager() {
         locationManager.requestWhenInUseAuthorization()
-        locationManager.delegate = self
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
     }
     
+    private func addPlaceView() {
+        placeView.isHidden = true
+        placeView.layer.cornerRadius = 8
+        placeView.layer.shadowRadius = 6.0
+        placeView.layer.shadowOpacity = 0.6
+        placeView.layer.shadowOffset = .zero
+        placeView.layer.shadowColor = UIColor.black.cgColor
+        placeView.clipsToBounds = false
+        placeView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(placeView)
+        
+        placeView.snp.makeConstraints {
+            $0.left.bottom.right.equalTo(view.safeAreaLayoutGuide).inset(16)
+            $0.height.equalTo(132)
+        }
+    }
+    
     private func addMapView() {
+        mapView.delegate = self
         mapView.userLocation.title = nil
         mapView.showsUserLocation = true
         mapView.translatesAutoresizingMaskIntoConstraints = false
@@ -82,12 +100,14 @@ extension MapViewController {
     }
     
     private func addPlacesAnnotations() {
-        presenter.places.forEach({ addAnnotation($0) })
+        for (index, place) in presenter.places.enumerated() {
+            addAnnotation(place, id: index)
+        }
     }
     
-    private func addAnnotation(_ place: Place) {
+    private func addAnnotation(_ place: Place, id: Int) {
         let location = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
-        let annotation = MKPointAnnotation()
+        let annotation = PlacePointAnnotation(identifier: id)
         annotation.coordinate = location
         annotation.title = place.name
         annotation.subtitle = place.metro

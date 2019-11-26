@@ -19,6 +19,7 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         presenter = MainPresenter(view: self)
         configureView()
+        savePlaces()
     }
     
     @objc
@@ -28,18 +29,19 @@ final class MainViewController: UIViewController {
     }
     
     private func savePlaces() {
-        addPlace(name: "Москальян", metro: "Беляево", latitude: 55.644902, longitude: 37.519422)
-        addPlace(name: "Москальян", metro: "Китай-город", latitude: 55.756437, longitude: 37.635188)
-        addPlace(name: "Москальян", metro: "Марьино", latitude: 55.650063, longitude: 37.745924)
-        addPlace(name: "Москальян", metro: "Свиблово", latitude: 55.859903, longitude: 37.65911)
+        addPlace(name: "Москальян", metro: "Беляево", address: "ул. Миклухо-Маклая, 18к2", latitude: 55.644902, longitude: 37.519422)
+        addPlace(name: "Москальян", metro: "Китай-город", address: "Б. Спасоглинищевский пер. 3с5", latitude: 55.756437, longitude: 37.635188)
+        addPlace(name: "Москальян", metro: "Марьино", address: "ул. Люблинская, 165к1", latitude: 55.650063, longitude: 37.745924)
+        addPlace(name: "Москальян", metro: "Свиблово", address: "ул. Енисейская, 5к2", latitude: 55.859903, longitude: 37.65911)
     }
     
-    private func addPlace(name: String, metro: String, latitude: Double, longitude: Double) {
+    private func addPlace(name: String, metro: String, address: String, latitude: Double, longitude: Double) {
         let place = Place()
         place.name = name
         place.metro = metro
         place.latitude = latitude
         place.longitude = longitude
+        place.address = address
         RealmService.shared.save(place)
     }
     
