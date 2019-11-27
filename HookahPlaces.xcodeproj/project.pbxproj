@@ -18,6 +18,7 @@
 		7A94B574238D7312008B7AC2 /* MapPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A94B573238D7312008B7AC2 /* MapPlaceView.swift */; };
 		7A94B576238DA7B2008B7AC2 /* PlacePointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A94B575238DA7B2008B7AC2 /* PlacePointAnnotation.swift */; };
 		7A94B578238DA95B008B7AC2 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A94B577238DA95B008B7AC2 /* LocationService.swift */; };
+		7A94B57A238EADBE008B7AC2 /* TypeSortPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A94B579238EADBE008B7AC2 /* TypeSortPlaces.swift */; };
 		7ABBF1E623135407003DC9B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBF1E523135407003DC9B5 /* AppDelegate.swift */; };
 		7ABBF1E823135407003DC9B5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBF1E723135407003DC9B5 /* MainViewController.swift */; };
 		7ABBF1ED23135408003DC9B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ABBF1EC23135408003DC9B5 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		7A94B573238D7312008B7AC2 /* MapPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPlaceView.swift; sourceTree = "<group>"; };
 		7A94B575238DA7B2008B7AC2 /* PlacePointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePointAnnotation.swift; sourceTree = "<group>"; };
 		7A94B577238DA95B008B7AC2 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		7A94B579238EADBE008B7AC2 /* TypeSortPlaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSortPlaces.swift; sourceTree = "<group>"; };
 		7ABBF1E223135407003DC9B5 /* HookahPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HookahPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ABBF1E523135407003DC9B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7ABBF1E723135407003DC9B5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				7A5A9A4E238B9CA200795EEF /* Cells */,
 				7ABBF1E723135407003DC9B5 /* MainViewController.swift */,
 				7A5A9A4C238B9C9C00795EEF /* MainPresenter.swift */,
+				7A94B579238EADBE008B7AC2 /* TypeSortPlaces.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				7ABBF1E623135407003DC9B5 /* AppDelegate.swift in Sources */,
 				7ABBF1FA23135652003DC9B5 /* Colors.swift in Sources */,
 				7AC50B71238BAFA000117C8D /* MainDistanceView.swift in Sources */,
+				7A94B57A238EADBE008B7AC2 /* TypeSortPlaces.swift in Sources */,
 				7AC50B6E238BA63000117C8D /* SettingsPresenter.swift in Sources */,
 				7A4842A8238C2A890002648E /* RealmService.swift in Sources */,
 				7A94B567238CEECE008B7AC2 /* MapViewController.swift in Sources */,

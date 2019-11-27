@@ -7,12 +7,54 @@
 //
 
 import Foundation
+import CoreLocation
 
 protocol LocationServiceProtocol {
-    
+    var didUpdateLocation: (() -> Void)? { get set }
+    func startUpdateLocation()
+    func distance(to place: Place) -> Float
 }
 
-final class LocationService: LocationServiceProtocol {
-    static let shared: LocationServiceProtocol = LocationService()
-    private init() {}
+final class LocationService: NSObject, LocationServiceProtocol {
+    private let locationManager = CLLocationManager()
+    
+    private var currentLocation: CLLocation? {
+        didSet {
+            didUpdateLocation?()
+        }
+    }
+    
+    var didUpdateLocation: (() -> Void)?
+    
+    func startUpdateLocation() {
+        locationManager.requestWhenInUseAuthorization()
+        guard CLLocationManager.authorizationStatus() != .restricted else {
+            return
+        }
+        locationManager.delegate = self
+        locationManager.activityType = .other
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+    }
+    
+    func distance(to place: Place) -> Float {
+        guard let currentLocation = currentLocation else {
+            return 0.0
+        }
+        let placeLocation = CLLocation(latitude: place.latitude, longitude: place.longitude)
+        let distance = currentLocation.distance(from: placeLocation)
+        let distanceKm = Float(distance / 1000)
+        return Float(round(10 * distanceKm) / 10)
+    }
 }
+
+extension LocationService: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else {
+            return
+        }
+        currentLocation = location
+        locationManager.stopUpdatingLocation()
+    }
+}
+
