@@ -19,12 +19,55 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         presenter = MainPresenter(view: self)
         configureView()
+        savePlaces()
+    }
+    
+    func reloadTableView() {
+        tableView.reloadData()
+    }
+    
+    @objc
+    private func didTapOnMapBarButtonItem() {
+        let navigation = NavigationController(rootViewController: MapViewController())
+        presentFull(navigation, animated: true, completion: nil)
+    }
+    
+    @objc
+    private func didFilterControlValueChanged() {
+        presenter.typeSorted = (filterControl.selectedSegmentIndex == 0) ? .distance : .rating
+    }
+    
+    private func savePlaces() {
+        addPlace(name: "Москальян", metro: "Беляево", address: "ул. Миклухо-Маклая, 18к2", latitude: 55.644902, longitude: 37.519422, rating: 8.4)
+        addPlace(name: "Москальян", metro: "Китай-город", address: "Б. Спасоглинищевский пер. 3с5", latitude: 55.756437, longitude: 37.635188, rating: 2.4)
+        addPlace(name: "Москальян", metro: "Марьино", address: "ул. Люблинская, 165к1", latitude: 55.650063, longitude: 37.745924, rating: 3.4)
+        addPlace(name: "Москальян", metro: "Свиблово", address: "ул. Енисейская, 5к2", latitude: 55.859903, longitude: 37.65911, rating: 5.4)
+    }
+    
+    private func addPlace(name: String, metro: String, address: String, latitude: Double, longitude: Double, rating: Float) {
+        let place = Place()
+        place.name = name
+        place.metro = metro
+        place.latitude = latitude
+        place.longitude = longitude
+        place.address = address
+        place.rating = rating
+        RealmService.shared.save(place)
+    }
+    
+    private func cell(at indexPath: IndexPath, viewModel: Place) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: MainPlaceCell.identifier, for: indexPath) as? MainPlaceCell else {
+            return UITableViewCell()
+        }
+        cell.set(viewModel)
+        return cell
     }
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return presenter.places.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -32,15 +75,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return mainCell(at: indexPath)
-    }
-    
-    private func mainCell(at indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainPlaceCell.identifier, for: indexPath) as? MainPlaceCell else {
-            return UITableViewCell()
-        }
-        cell.set()
-        return cell
+        return cell(at: indexPath, viewModel: presenter.places[indexPath.row])
     }
 }
 
@@ -49,13 +84,25 @@ extension MainViewController {
         title = "Main"
         view.backgroundColor = .white
         
+        addMapBarButtonItem()
         addFilterControl()
         addTableView()
     }
     
+    private func addMapBarButtonItem() {
+        let mapBarButtonItem = UIBarButtonItem(
+            image: #imageLiteral(resourceName: "map_marker"),
+            style: .plain,
+            target: self,
+            action: #selector(didTapOnMapBarButtonItem)
+        )
+        mapBarButtonItem.tintColor = .black
+        navigationItem.rightBarButtonItem = mapBarButtonItem
+    }
+    
     private func addFilterControl() {
-        filterControl.insertSegment(withTitle: "By distance", at: 0, animated: false)
-        filterControl.insertSegment(withTitle: "By rating", at: 1, animated: false)
+        filterControl.insertSegment(withTitle: TypeSortPlaces.distance.rawValue, at: 0, animated: false)
+        filterControl.insertSegment(withTitle: TypeSortPlaces.rating.rawValue, at: 1, animated: false)
         filterControl.tintColor = .black
         filterControl.selectedSegmentIndex = 0
         filterControl.translatesAutoresizingMaskIntoConstraints = false
@@ -64,6 +111,8 @@ extension MainViewController {
         filterControl.snp.makeConstraints {
             $0.left.right.top.equalTo(view.safeAreaLayoutGuide).inset(16)
         }
+        
+        filterControl.addTarget(self, action: #selector(didFilterControlValueChanged), for: .valueChanged)
     }
     
     private func addTableView() {
