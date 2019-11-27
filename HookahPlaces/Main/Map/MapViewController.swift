@@ -23,12 +23,7 @@ final class MapViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if presenter.accessToUserLocation {
-            setRegion(mapView.userLocation.coordinate)
-        } else {
-            let coordinate = CLLocationCoordinate2D(latitude: 55.751244, longitude: 37.618423)
-            setRegion(coordinate)
-        }
+        setStartRegion()
     }
     
     @objc
@@ -40,6 +35,13 @@ final class MapViewController: UIViewController {
         let radius: CLLocationDistance = 2_000
         let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: radius, longitudinalMeters: radius)
         mapView.setRegion(region, animated: true)
+    }
+    
+    private func setStartRegion() {
+        let coordinate = presenter.accessToUserLocation
+            ? mapView.userLocation.coordinate
+            : CLLocationCoordinate2D(latitude: 55.751244, longitude: 37.618423)
+        setRegion(coordinate)
     }
 }
 
