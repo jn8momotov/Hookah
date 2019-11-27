@@ -11,7 +11,6 @@ import MapKit
 
 final class MapViewController: UIViewController {
     private var presenter: MapPresenterProtocol!
-    private let locationManager = CLLocationManager()
     
     private let mapView = MKMapView()
     private let placeView = MapPlaceView()
@@ -20,12 +19,16 @@ final class MapViewController: UIViewController {
         super.viewDidLoad()
         presenter = MapPresenter(view: self)
         configureView()
-        configureLocationManager()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setRegion(mapView.userLocation.coordinate)
+        if presenter.accessToUserLocation {
+            setRegion(mapView.userLocation.coordinate)
+        } else {
+            let coordinate = CLLocationCoordinate2D(latitude: 55.751244, longitude: 37.618423)
+            setRegion(coordinate)
+        }
     }
     
     @objc
@@ -34,8 +37,8 @@ final class MapViewController: UIViewController {
     }
     
     private func setRegion(_ coordinate: CLLocationCoordinate2D) {
-        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        let region = MKCoordinateRegion(center: coordinate, span: span)
+        let radius: CLLocationDistance = 2_000
+        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: radius, longitudinalMeters: radius)
         mapView.setRegion(region, animated: true)
     }
 }
@@ -44,6 +47,7 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let point = view.annotation as? PlacePointAnnotation {
             placeView.set(presenter.places[point.identifier])
+            setRegion(point.coordinate)
             placeView.isHidden = false
         }
     }
@@ -59,13 +63,6 @@ extension MapViewController {
         addCloseBarButtonItem()
         addMapView()
         addPlaceView()
-    }
-    
-    private func configureLocationManager() {
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.distanceFilter = kCLDistanceFilterNone
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
     }
     
     private func addPlaceView() {

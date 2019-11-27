@@ -10,6 +10,7 @@ import Foundation
 import CoreLocation
 
 protocol LocationServiceProtocol {
+    var accessToUserLocation: Bool { get }
     var didUpdateLocation: (() -> Void)? { get set }
     func startUpdateLocation()
     func distance(to place: Place) -> Float
@@ -22,6 +23,10 @@ final class LocationService: NSObject, LocationServiceProtocol {
         didSet {
             didUpdateLocation?()
         }
+    }
+    
+    var accessToUserLocation: Bool {
+        return CLLocationManager.authorizationStatus() != .restricted
     }
     
     var didUpdateLocation: (() -> Void)?
