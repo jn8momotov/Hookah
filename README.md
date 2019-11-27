@@ -9,7 +9,7 @@ by Evgeniy Momotov, Igor Bolyaev
 - [X] List places
 - [ ] Search places
 - [ ] Settings screen
-- [ ] Map places
+- [X] Map places
 - [ ] Detail info places
 
 #### Backend:
