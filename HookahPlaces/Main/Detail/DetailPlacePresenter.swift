@@ -14,8 +14,10 @@ protocol DetailPlacePresenterProtocol {
 
 final class DetailPlacePresenter: DetailPlacePresenterProtocol {
     weak var view: DetailPlaceViewController?
+    var place: Place
     
-    init(view: DetailPlaceViewController) {
+    init(view: DetailPlaceViewController, place: Place) {
         self.view = view
+        self.place = place
     }
 }
