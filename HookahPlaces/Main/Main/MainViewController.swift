@@ -17,7 +17,7 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        savePlaces()
+        //savePlaces()
         presenter = MainPresenter(view: self)
         configureView()
     }

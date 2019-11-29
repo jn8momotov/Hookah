@@ -65,6 +65,7 @@ extension DetailPlaceViewController {
     private func registerCells() {
         tableView.register(DetailPlaceHeaderCell.self, forCellReuseIdentifier: DetailPlaceHeaderCell.identifier)
         tableView.register(DetailPlaceRatingCell.self, forCellReuseIdentifier: DetailPlaceRatingCell.identifier)
+        tableView.register(DetailPlaceMapCell.self, forCellReuseIdentifier: DetailPlaceMapCell.identifier)
         tableView.register(DetailPlaceAdditionalDataCell.self,
                            forCellReuseIdentifier: DetailPlaceAdditionalDataCell.identifier)
     }

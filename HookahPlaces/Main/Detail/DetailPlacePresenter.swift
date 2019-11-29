@@ -21,6 +21,7 @@ final class DetailPlacePresenter: DetailPlacePresenterProtocol {
         self.view = view
         self.place = place
         configureViewModel()
+        self.view?.title = place.name
     }
 }
 
@@ -36,5 +37,6 @@ extension DetailPlacePresenter {
         viewModels.append(DetailPlaceAdditionalViewModel(.consoleGames, value: place.gameConsole))
         viewModels.append(DetailPlaceAdditionalViewModel(.wifi, value: place.wifi))
         viewModels.append(DetailPlaceAdditionalViewModel(.restarting, value: place.restarting))
+        viewModels.append(DetailPlaceMapViewModel(latitude: place.latitude, longitude: place.longitude, name: place.name))
     }
 }
