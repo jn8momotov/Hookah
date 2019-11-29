@@ -12,7 +12,7 @@ final class DetailPlaceHeaderViewModel: DetailPlaceCellViewModelProtocol {
     let identifier = DetailPlaceHeaderCell.identifier
     
     var numberUsers: Int
-    var place: Place
+    let place: Place
     
     init(numberUsers: Int, place: Place) {
         self.numberUsers = numberUsers
