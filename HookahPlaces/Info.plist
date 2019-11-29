@@ -41,11 +41,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>MTSSans-Regular.ttf</string>
-		<string>MTSSans-Medium.ttf</string>
-		<string>MTSSans-Bold.ttf</string>
-	</array>
 </dict>
 </plist>

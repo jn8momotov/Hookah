@@ -17,6 +17,6 @@ enum WeightFont: String {
 extension UIFont {
     static func main(ofSize: CGFloat, weight: WeightFont? = nil) -> UIFont {
         let weight = (weight ?? .regular).rawValue
-        return UIFont(name: "MTSSans-\(weight)", size: ofSize) ?? .systemFont(ofSize: ofSize)
+        return UIFont(name: "AppleSDGothicNeo-\(weight)", size: ofSize) ?? .systemFont(ofSize: ofSize)
     }
 }
