@@ -26,7 +26,7 @@ final class Place: Object {
     @objc dynamic var restarting = false
     @objc dynamic var tableGames = false
     @objc dynamic var theirAlko = false
-    @objc dynamic var theirFoot = false
+    @objc dynamic var theirFood = false
     @objc dynamic var theirDrink = false
     @objc dynamic var wifi = false
     
