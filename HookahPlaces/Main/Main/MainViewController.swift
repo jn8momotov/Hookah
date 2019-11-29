@@ -17,7 +17,7 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //savePlaces()
+        savePlaces()
         presenter = MainPresenter(view: self)
         configureView()
     }
@@ -38,20 +38,26 @@ final class MainViewController: UIViewController {
     }
     
     private func savePlaces() {
-        addPlace(name: "Москальян", metro: "Беляево", address: "ул. Миклухо-Маклая, 18к2", latitude: 55.644902, longitude: 37.519422, rating: 8.4)
+        addPlace(name: "Москальян", metro: "Беляево", address: "ул. Миклухо-Маклая, 18к2", latitude: 55.644902, longitude: 37.519422, rating: 2.1)
         addPlace(name: "Москальян", metro: "Китай-город", address: "Б. Спасоглинищевский пер. 3с5", latitude: 55.756437, longitude: 37.635188, rating: 2.4)
         addPlace(name: "Москальян", metro: "Марьино", address: "ул. Люблинская, 165к1", latitude: 55.650063, longitude: 37.745924, rating: 3.4)
-        addPlace(name: "Москальян", metro: "Свиблово", address: "ул. Енисейская, 5к2", latitude: 55.859903, longitude: 37.65911, rating: 5.4)
+        addPlace(name: "Москальян", metro: "Свиблово", address: "ул. Енисейская, 5к2", latitude: 55.859903, longitude: 37.65911, rating: 5.0)
     }
     
     private func addPlace(name: String, metro: String, address: String, latitude: Double, longitude: Double, rating: Float) {
+        let ratingPlace = RatingPlace()
+        ratingPlace.rating = rating
+        ratingPlace.ratingHookah = 3.2
+        ratingPlace.ratingStaff = 1.1
+        ratingPlace.ratingPlace = 4.5
+        RealmService.shared.save(ratingPlace)
         let place = Place()
         place.name = name
         place.metro = metro
         place.latitude = latitude
         place.longitude = longitude
         place.address = address
-        place.rating = rating
+        place.rating = ratingPlace
         RealmService.shared.save(place)
     }
     

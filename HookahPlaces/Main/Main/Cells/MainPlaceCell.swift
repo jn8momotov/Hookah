@@ -35,7 +35,7 @@ final class MainPlaceCell: UITableViewCell {
         placeImageView.image = #imageLiteral(resourceName: "0")
         namePlaceLabel.text = "\(place.name) \(place.metro)"
         addressPlaceLabel.text = "\(place.address)"
-        ratingView.set(rating: place.rating)
+        ratingView.set(rating: place.rating?.rating ?? 0.0)
         distanceView.set(distance: place.distanceTo)
     }
 }

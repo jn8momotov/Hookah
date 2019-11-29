@@ -27,5 +27,6 @@ final class DetailPlacePresenter: DetailPlacePresenterProtocol {
 extension DetailPlacePresenter {
     private func configureViewModel() {
         viewModels.append(DetailPlaceHeaderViewModel(numberUsers: 1, place: place))
+        viewModels.append(DetailPlaceRatingViewModel(ratingModel: place.rating ?? RatingPlace(), numberRatings: 5))
     }
 }

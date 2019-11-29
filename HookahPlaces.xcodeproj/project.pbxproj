@@ -38,6 +38,12 @@
 		8689D8482390E80900FC3E84 /* DetailPlaceHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D8472390E80900FC3E84 /* DetailPlaceHeaderViewModel.swift */; };
 		8689D84A2390E82E00FC3E84 /* DetailPlaceCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D8492390E82E00FC3E84 /* DetailPlaceCellViewModelProtocol.swift */; };
 		8689D84C2390E98800FC3E84 /* DetailPlaceCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D84B2390E98800FC3E84 /* DetailPlaceCellProtocol.swift */; };
+		8689D84E2390EE7500FC3E84 /* DetailPlaceRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D84D2390EE7500FC3E84 /* DetailPlaceRatingCell.swift */; };
+		8689D8512390F26B00FC3E84 /* ProgressRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D8502390F26B00FC3E84 /* ProgressRatingView.swift */; };
+		8689D8532390FA2100FC3E84 /* RatingPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D8522390FA2100FC3E84 /* RatingPlace.swift */; };
+		8689D8582390FC9300FC3E84 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D8572390FC9300FC3E84 /* PrimaryButton.swift */; };
+		8689D85A2390FD1200FC3E84 /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D8592390FD1200FC3E84 /* OutlinedButton.swift */; };
+		8689D85C2391019000FC3E84 /* DetailPlaceRatingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D85B2391019000FC3E84 /* DetailPlaceRatingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +81,12 @@
 		8689D8472390E80900FC3E84 /* DetailPlaceHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceHeaderViewModel.swift; sourceTree = "<group>"; };
 		8689D8492390E82E00FC3E84 /* DetailPlaceCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceCellViewModelProtocol.swift; sourceTree = "<group>"; };
 		8689D84B2390E98800FC3E84 /* DetailPlaceCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceCellProtocol.swift; sourceTree = "<group>"; };
+		8689D84D2390EE7500FC3E84 /* DetailPlaceRatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceRatingCell.swift; sourceTree = "<group>"; };
+		8689D8502390F26B00FC3E84 /* ProgressRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRatingView.swift; sourceTree = "<group>"; };
+		8689D8522390FA2100FC3E84 /* RatingPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingPlace.swift; sourceTree = "<group>"; };
+		8689D8572390FC9300FC3E84 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		8689D8592390FD1200FC3E84 /* OutlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
+		8689D85B2391019000FC3E84 /* DetailPlaceRatingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceRatingViewModel.swift; sourceTree = "<group>"; };
 		9E2C37203F57401A7ACB5D62 /* Pods_HookahPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HookahPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,7 +122,7 @@
 		7A4842A3238C294E0002648E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7A4842A4238C29690002648E /* Place.swift */,
+				8689D8542390FAA600FC3E84 /* Realm */,
 				7A94B575238DA7B2008B7AC2 /* PlacePointAnnotation.swift */,
 			);
 			path = Models;
@@ -166,6 +178,7 @@
 		7A8CD874238F946E00B7109F /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				8689D84F2390F23F00FC3E84 /* Views */,
 				8689D8462390E7EE00FC3E84 /* ViewModels */,
 				7A8CD879238F965000B7109F /* Cells */,
 				7A8CD875238F948600B7109F /* DetailPlaceViewController.swift */,
@@ -179,6 +192,7 @@
 			children = (
 				7A8CD87A238F967200B7109F /* DetailPlaceHeaderCell.swift */,
 				8689D84B2390E98800FC3E84 /* DetailPlaceCellProtocol.swift */,
+				8689D84D2390EE7500FC3E84 /* DetailPlaceRatingCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -191,13 +205,6 @@
 				7A94B568238CEF4A008B7AC2 /* MapPresenter.swift */,
 			);
 			path = Map;
-			sourceTree = "<group>";
-		};
-		7A94B56F238D7138008B7AC2 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Core;
 			sourceTree = "<group>";
 		};
 		7A94B572238D72F9008B7AC2 /* Views */ = {
@@ -229,7 +236,7 @@
 		7ABBF1E423135407003DC9B5 /* HookahPlaces */ = {
 			isa = PBXGroup;
 			children = (
-				7A94B56F238D7138008B7AC2 /* Core */,
+				8689D8552390FC7A00FC3E84 /* Views */,
 				7A4842A6238C2A4B0002648E /* Services */,
 				7A4842A3238C294E0002648E /* Models */,
 				7ABBF1FC23135F57003DC9B5 /* Utils */,
@@ -279,8 +286,43 @@
 			children = (
 				8689D8472390E80900FC3E84 /* DetailPlaceHeaderViewModel.swift */,
 				8689D8492390E82E00FC3E84 /* DetailPlaceCellViewModelProtocol.swift */,
+				8689D85B2391019000FC3E84 /* DetailPlaceRatingViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8689D84F2390F23F00FC3E84 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8689D8502390F26B00FC3E84 /* ProgressRatingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8689D8542390FAA600FC3E84 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				7A4842A4238C29690002648E /* Place.swift */,
+				8689D8522390FA2100FC3E84 /* RatingPlace.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		8689D8552390FC7A00FC3E84 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8689D8562390FC8400FC3E84 /* Buttons */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8689D8562390FC8400FC3E84 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				8689D8572390FC9300FC3E84 /* PrimaryButton.swift */,
+				8689D8592390FD1200FC3E84 /* OutlinedButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,9 +441,11 @@
 			files = (
 				7A4842A2238C25C60002648E /* MainRatingView.swift in Sources */,
 				7ABBF2022317EDE9003DC9B5 /* NavigationController.swift in Sources */,
+				8689D84E2390EE7500FC3E84 /* DetailPlaceRatingCell.swift in Sources */,
 				8689D84C2390E98800FC3E84 /* DetailPlaceCellProtocol.swift in Sources */,
 				7ABBF1FE2313605E003DC9B5 /* MainPlaceCell.swift in Sources */,
 				7A94B576238DA7B2008B7AC2 /* PlacePointAnnotation.swift in Sources */,
+				8689D85C2391019000FC3E84 /* DetailPlaceRatingViewModel.swift in Sources */,
 				7AC50B6C238BA5DC00117C8D /* SettingsViewController.swift in Sources */,
 				7AC50B6A238BA55600117C8D /* SearchPresenter.swift in Sources */,
 				7A5A9A4B238B9C7D00795EEF /* SearchViewController.swift in Sources */,
@@ -410,6 +454,8 @@
 				7ABBF200231693FD003DC9B5 /* Extensions.swift in Sources */,
 				8689D8482390E80900FC3E84 /* DetailPlaceHeaderViewModel.swift in Sources */,
 				7A5A9A4D238B9C9C00795EEF /* MainPresenter.swift in Sources */,
+				8689D8582390FC9300FC3E84 /* PrimaryButton.swift in Sources */,
+				8689D8532390FA2100FC3E84 /* RatingPlace.swift in Sources */,
 				7ABBF1E823135407003DC9B5 /* MainViewController.swift in Sources */,
 				7A4842A5238C29690002648E /* Place.swift in Sources */,
 				7A8CD878238F94C300B7109F /* DetailPlacePresenter.swift in Sources */,
@@ -420,8 +466,10 @@
 				8689D84A2390E82E00FC3E84 /* DetailPlaceCellViewModelProtocol.swift in Sources */,
 				7ABBF1FA23135652003DC9B5 /* Colors.swift in Sources */,
 				7AC50B71238BAFA000117C8D /* MainDistanceView.swift in Sources */,
+				8689D85A2390FD1200FC3E84 /* OutlinedButton.swift in Sources */,
 				7A8CD876238F948600B7109F /* DetailPlaceViewController.swift in Sources */,
 				7A94B57A238EADBE008B7AC2 /* TypeSortPlaces.swift in Sources */,
+				8689D8512390F26B00FC3E84 /* ProgressRatingView.swift in Sources */,
 				7AC50B6E238BA63000117C8D /* SettingsPresenter.swift in Sources */,
 				7A4842A8238C2A890002648E /* RealmService.swift in Sources */,
 				7A94B567238CEECE008B7AC2 /* MapViewController.swift in Sources */,

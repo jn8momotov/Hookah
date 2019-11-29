@@ -49,7 +49,7 @@ extension MainPresenter {
         if typeSorted == .distance {
             places.sort(by: { $0.distanceTo < $1.distanceTo })
         } else {
-            places.sort(by: { $0.rating > $1.rating })
+            places.sort(by: { ($0.rating?.rating ?? 0.0) > ($1.rating?.rating ?? 0.0) })
         }
         DispatchQueue.main.async { [weak self] in
             self?.view?.reloadTableView()

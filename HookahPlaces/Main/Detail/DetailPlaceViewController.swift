@@ -39,16 +39,6 @@ extension DetailPlaceViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.0
     }
-    
-    private func cell(at indexPath: IndexPath) -> UITableViewCell {
-        let viewModel = presenter.viewModels[indexPath.row]
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: viewModel.identifier,
-                                                       for: indexPath) as? DetailPlaceCellProtocol else {
-            return UITableViewCell()
-        }
-        cell.set(viewModel)
-        return cell
-    }
 }
 
 extension DetailPlaceViewController {
@@ -74,5 +64,16 @@ extension DetailPlaceViewController {
     
     private func registerCells() {
         tableView.register(DetailPlaceHeaderCell.self, forCellReuseIdentifier: DetailPlaceHeaderCell.identifier)
+        tableView.register(DetailPlaceRatingCell.self, forCellReuseIdentifier: DetailPlaceRatingCell.identifier)
+    }
+    
+    private func cell(at indexPath: IndexPath) -> UITableViewCell {
+        let viewModel = presenter.viewModels[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: viewModel.identifier,
+                                                       for: indexPath) as? DetailPlaceCellProtocol else {
+            return UITableViewCell()
+        }
+        cell.set(viewModel)
+        return cell
     }
 }
