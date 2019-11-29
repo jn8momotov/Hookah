@@ -17,6 +17,9 @@ final class NavigationController: UINavigationController {
 
 extension NavigationController {
     private func configure() {
-        navigationBar.tintColor = .white
+        navigationBar.tintColor = .black
+        navigationBar.barTintColor = .white
+        navigationBar.isTranslucent = false
+        navigationBar.shadowImage = UIImage()
     }
 }
