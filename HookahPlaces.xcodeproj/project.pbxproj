@@ -35,6 +35,9 @@
 		7AC50B6C238BA5DC00117C8D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC50B6B238BA5DC00117C8D /* SettingsViewController.swift */; };
 		7AC50B6E238BA63000117C8D /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC50B6D238BA63000117C8D /* SettingsPresenter.swift */; };
 		7AC50B71238BAFA000117C8D /* MainDistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC50B70238BAFA000117C8D /* MainDistanceView.swift */; };
+		8689D8482390E80900FC3E84 /* DetailPlaceHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D8472390E80900FC3E84 /* DetailPlaceHeaderViewModel.swift */; };
+		8689D84A2390E82E00FC3E84 /* DetailPlaceCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D8492390E82E00FC3E84 /* DetailPlaceCellViewModelProtocol.swift */; };
+		8689D84C2390E98800FC3E84 /* DetailPlaceCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D84B2390E98800FC3E84 /* DetailPlaceCellProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +72,9 @@
 		7AC50B6B238BA5DC00117C8D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7AC50B6D238BA63000117C8D /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		7AC50B70238BAFA000117C8D /* MainDistanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDistanceView.swift; sourceTree = "<group>"; };
+		8689D8472390E80900FC3E84 /* DetailPlaceHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceHeaderViewModel.swift; sourceTree = "<group>"; };
+		8689D8492390E82E00FC3E84 /* DetailPlaceCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceCellViewModelProtocol.swift; sourceTree = "<group>"; };
+		8689D84B2390E98800FC3E84 /* DetailPlaceCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceCellProtocol.swift; sourceTree = "<group>"; };
 		9E2C37203F57401A7ACB5D62 /* Pods_HookahPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HookahPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -160,6 +166,7 @@
 		7A8CD874238F946E00B7109F /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				8689D8462390E7EE00FC3E84 /* ViewModels */,
 				7A8CD879238F965000B7109F /* Cells */,
 				7A8CD875238F948600B7109F /* DetailPlaceViewController.swift */,
 				7A8CD877238F94C300B7109F /* DetailPlacePresenter.swift */,
@@ -171,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				7A8CD87A238F967200B7109F /* DetailPlaceHeaderCell.swift */,
+				8689D84B2390E98800FC3E84 /* DetailPlaceCellProtocol.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -264,6 +272,15 @@
 				7A4842A1238C25C60002648E /* MainRatingView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8689D8462390E7EE00FC3E84 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8689D8472390E80900FC3E84 /* DetailPlaceHeaderViewModel.swift */,
+				8689D8492390E82E00FC3E84 /* DetailPlaceCellViewModelProtocol.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +399,7 @@
 			files = (
 				7A4842A2238C25C60002648E /* MainRatingView.swift in Sources */,
 				7ABBF2022317EDE9003DC9B5 /* NavigationController.swift in Sources */,
+				8689D84C2390E98800FC3E84 /* DetailPlaceCellProtocol.swift in Sources */,
 				7ABBF1FE2313605E003DC9B5 /* MainPlaceCell.swift in Sources */,
 				7A94B576238DA7B2008B7AC2 /* PlacePointAnnotation.swift in Sources */,
 				7AC50B6C238BA5DC00117C8D /* SettingsViewController.swift in Sources */,
@@ -390,6 +408,7 @@
 				7A94B578238DA95B008B7AC2 /* LocationService.swift in Sources */,
 				7A94B574238D7312008B7AC2 /* MapPlaceView.swift in Sources */,
 				7ABBF200231693FD003DC9B5 /* Extensions.swift in Sources */,
+				8689D8482390E80900FC3E84 /* DetailPlaceHeaderViewModel.swift in Sources */,
 				7A5A9A4D238B9C9C00795EEF /* MainPresenter.swift in Sources */,
 				7ABBF1E823135407003DC9B5 /* MainViewController.swift in Sources */,
 				7A4842A5238C29690002648E /* Place.swift in Sources */,
@@ -398,6 +417,7 @@
 				7A8CD87B238F967200B7109F /* DetailPlaceHeaderCell.swift in Sources */,
 				7A94B569238CEF4A008B7AC2 /* MapPresenter.swift in Sources */,
 				7ABBF1E623135407003DC9B5 /* AppDelegate.swift in Sources */,
+				8689D84A2390E82E00FC3E84 /* DetailPlaceCellViewModelProtocol.swift in Sources */,
 				7ABBF1FA23135652003DC9B5 /* Colors.swift in Sources */,
 				7AC50B71238BAFA000117C8D /* MainDistanceView.swift in Sources */,
 				7A8CD876238F948600B7109F /* DetailPlaceViewController.swift in Sources */,

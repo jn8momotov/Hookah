@@ -17,9 +17,9 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //savePlaces()
         presenter = MainPresenter(view: self)
         configureView()
-        savePlaces()
     }
     
     func reloadTableView() {
@@ -76,6 +76,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return cell(at: indexPath, viewModel: presenter.places[indexPath.row])
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = DetailPlaceViewController()
+        let presenter = DetailPlacePresenter(view: controller, place: self.presenter.places[indexPath.row])
+        controller.presenter = presenter
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
