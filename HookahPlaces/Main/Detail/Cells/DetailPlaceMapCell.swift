@@ -46,6 +46,11 @@ final class DetailPlaceMapCell: UITableViewCell, DetailPlaceCellProtocol {
         mapView.addAnnotation(pointPlace!)
         mapView.setRegion(region, animated: false)
     }
+    
+    @objc
+    private func didTapOnMap() {
+        viewModel?.didTapMap?()
+    }
 }
 
 extension DetailPlaceMapCell {
@@ -65,5 +70,8 @@ extension DetailPlaceMapCell {
             $0.edges.equalToSuperview().inset(16)
             $0.height.equalTo(120)
         }
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapOnMap))
+        mapView.addGestureRecognizer(gesture)
     }
 }

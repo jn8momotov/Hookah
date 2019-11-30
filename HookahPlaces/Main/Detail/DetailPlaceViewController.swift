@@ -19,7 +19,8 @@ final class DetailPlaceViewController: UIViewController {
     }
     
     func openMap() {
-        presentFull(MapViewController(), animated: true, completion: nil)
+        let navigation = NavigationController(rootViewController: MapViewController())
+        presentFull(navigation, animated: true, completion: nil)
     }
 }
 

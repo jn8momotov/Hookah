@@ -20,8 +20,8 @@ final class DetailPlacePresenter: DetailPlacePresenterProtocol {
     init(view: DetailPlaceViewController, place: Place) {
         self.view = view
         self.place = place
-        configureViewModel()
         self.view?.title = place.name
+        configureViewModel()
     }
     
     private var didTapCall: DidTapHandler? {
@@ -33,12 +33,14 @@ final class DetailPlacePresenter: DetailPlacePresenterProtocol {
         }
     }
     
+    // TODO: Create method
     private var didTapNumberUsers: DidTapHandler? {
         return {
             
         }
     }
     
+    // TODO: Create method
     private var didTapAddNewRating: DidTapHandler? {
         return {
             

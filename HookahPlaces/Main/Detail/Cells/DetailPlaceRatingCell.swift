@@ -47,6 +47,11 @@ final class DetailPlaceRatingCell: UITableViewCell, DetailPlaceCellProtocol {
         ratingStaffView.set(viewModel.staff)
         numberRatingsLabel.text = "Всего оценок: \(viewModel.numberRatings)"
     }
+    
+    @objc
+    private func didTapOnAddNewRating() {
+        viewModel?.didTapNewRating?()
+    }
 }
 
 extension DetailPlaceRatingCell {
@@ -131,5 +136,7 @@ extension DetailPlaceRatingCell {
             $0.top.equalTo(numberRatingsLabel.snp.bottom).offset(8)
             $0.height.equalTo(32)
         }
+        
+        addRatingButton.addTarget(self, action: #selector(didTapOnAddNewRating), for: .touchUpInside)
     }
 }
