@@ -9,5 +9,5 @@
 import UIKit
 
 extension UIColor {
-    
+    static let dark = UIColor(hex: "303031")
 }
