@@ -13,8 +13,8 @@ final class DetailPlaceHeaderCell: UITableViewCell, DetailPlaceCellProtocol {
     
     private let placeImageView = UIImageView()
     private let topButtonsStackView = UIStackView()
-    private let numberUsersButton = UIButton()
-    private let distanceView = MainDistanceView()
+    private let numberUsersView = DetailPlaceInfoView(image: #imageLiteral(resourceName: "people"))
+    private let distanceView = DetailPlaceInfoView(image: #imageLiteral(resourceName: "geo_fence"))
     private let callToPlaceButton = UIButton()
     private let checkinPlaceButton = UIButton()
     private let addressLabel = UILabel()
@@ -45,10 +45,10 @@ final class DetailPlaceHeaderCell: UITableViewCell, DetailPlaceCellProtocol {
         }
         // TODO: Set image from view model
         placeImageView.image = #imageLiteral(resourceName: "0")
-        distanceView.set(distance: viewModel.place.distanceTo)
+        distanceView.set("\(viewModel.place.distanceTo) km")
         // TODO: Set title from user
         checkinPlaceButton.setTitle("Вы в заведении", for: .normal)
-        numberUsersButton.setTitle("\(viewModel.numberUsers)", for: .normal)
+        numberUsersView.set("\(viewModel.numberUsers)")
         addressLabel.text = "м. \(viewModel.place.metro), \(viewModel.place.address)"
         phoneLabel.text = "Телефон: \(viewModel.place.phone)"
     }
@@ -84,6 +84,8 @@ extension DetailPlaceHeaderCell {
     
     private func addCallToPlaceButton() {
         let size: CGFloat = 60
+        callToPlaceButton.setImage(#imageLiteral(resourceName: "phone"), for: .normal)
+        callToPlaceButton.imageView?.tintColor = .white
         callToPlaceButton.backgroundColor = .black
         callToPlaceButton.layer.cornerRadius = size / 2
         callToPlaceButton.clipsToBounds = true
@@ -119,18 +121,16 @@ extension DetailPlaceHeaderCell {
     }
     
     private func addNumberUsersButton() {
-        numberUsersButton.layer.cornerRadius = 8
-        numberUsersButton.clipsToBounds = true
-        numberUsersButton.backgroundColor = .red
-        numberUsersButton.translatesAutoresizingMaskIntoConstraints = false
-        topButtonsStackView.addArrangedSubview(numberUsersButton)
+        numberUsersView.layer.cornerRadius = 8
+        numberUsersView.clipsToBounds = true
+        numberUsersView.backgroundColor = .red
+        topButtonsStackView.addArrangedSubview(numberUsersView)
     }
     
     private func addDistanceView() {
         distanceView.layer.cornerRadius = 8
         distanceView.clipsToBounds = true
         distanceView.backgroundColor = .black
-        distanceView.translatesAutoresizingMaskIntoConstraints = false
         topButtonsStackView.addArrangedSubview(distanceView)
     }
     
@@ -152,7 +152,7 @@ extension DetailPlaceHeaderCell {
     }
     
     private func addAddressLabel() {
-        addressLabel.font = .main(ofSize: 14)
+        addressLabel.font = .main(ofSize: 16)
         addressLabel.textColor = .black
         addressLabel.numberOfLines = 0
         addressLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -165,7 +165,7 @@ extension DetailPlaceHeaderCell {
     }
     
     private func addPhoneLabel() {
-        phoneLabel.font = .main(ofSize: 14)
+        phoneLabel.font = .main(ofSize: 16)
         phoneLabel.textColor = .black
         phoneLabel.numberOfLines = 0
         phoneLabel.translatesAutoresizingMaskIntoConstraints = false

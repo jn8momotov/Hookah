@@ -82,7 +82,7 @@ extension DetailPlaceRatingCell {
         ratingHookahView.snp.makeConstraints {
             $0.top.equalTo(ratingLabel.snp.bottom).offset(4)
             $0.left.right.equalToSuperview()
-            $0.height.equalTo(32)
+            $0.height.equalTo(26)
         }
     }
     
@@ -93,7 +93,7 @@ extension DetailPlaceRatingCell {
         ratingStaffView.snp.makeConstraints {
             $0.top.equalTo(ratingHookahView.snp.bottom).offset(4)
             $0.left.right.equalToSuperview()
-            $0.height.equalTo(32)
+            $0.height.equalTo(26)
         }
     }
     
@@ -104,7 +104,7 @@ extension DetailPlaceRatingCell {
         ratingPlaceView.snp.makeConstraints {
             $0.top.equalTo(ratingStaffView.snp.bottom).offset(4)
             $0.left.right.equalToSuperview()
-            $0.height.equalTo(32)
+            $0.height.equalTo(26)
         }
     }
     

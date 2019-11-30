@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		43EB95ED8D12D85BA41597EE /* Pods_HookahPlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E2C37203F57401A7ACB5D62 /* Pods_HookahPlaces.framework */; };
 		7A02D66523926C5F00AF82D1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D66423926C5F00AF82D1 /* UIColor.swift */; };
+		7A02D6692392C1B100AF82D1 /* DetailPlaceInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D6682392C1B100AF82D1 /* DetailPlaceInfoView.swift */; };
 		7A4842A2238C25C60002648E /* MainRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4842A1238C25C60002648E /* MainRatingView.swift */; };
 		7A4842A5238C29690002648E /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4842A4238C29690002648E /* Place.swift */; };
 		7A4842A8238C2A890002648E /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4842A7238C2A890002648E /* RealmService.swift */; };
@@ -57,6 +58,7 @@
 		488D707BFB37BE3B288948A2 /* Pods-HookahPlaces.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HookahPlaces.debug.xcconfig"; path = "Target Support Files/Pods-HookahPlaces/Pods-HookahPlaces.debug.xcconfig"; sourceTree = "<group>"; };
 		591A602B1300C13596E8EAAA /* Pods-HookahPlaces.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HookahPlaces.release.xcconfig"; path = "Target Support Files/Pods-HookahPlaces/Pods-HookahPlaces.release.xcconfig"; sourceTree = "<group>"; };
 		7A02D66423926C5F00AF82D1 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		7A02D6682392C1B100AF82D1 /* DetailPlaceInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceInfoView.swift; sourceTree = "<group>"; };
 		7A4842A1238C25C60002648E /* MainRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRatingView.swift; sourceTree = "<group>"; };
 		7A4842A4238C29690002648E /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		7A4842A7238C2A890002648E /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				8689D8502390F26B00FC3E84 /* ProgressRatingView.swift */,
+				7A02D6682392C1B100AF82D1 /* DetailPlaceInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				7A4842A5238C29690002648E /* Place.swift in Sources */,
 				7A8CD878238F94C300B7109F /* DetailPlacePresenter.swift in Sources */,
 				7ABBF1F823135560003DC9B5 /* TabBarController.swift in Sources */,
+				7A02D6692392C1B100AF82D1 /* DetailPlaceInfoView.swift in Sources */,
 				7A8CD87B238F967200B7109F /* DetailPlaceHeaderCell.swift in Sources */,
 				7A94B569238CEF4A008B7AC2 /* MapPresenter.swift in Sources */,
 				7ABBF1E623135407003DC9B5 /* AppDelegate.swift in Sources */,
