@@ -56,10 +56,12 @@ final class DetailPlacePresenter: DetailPlacePresenterProtocol {
 
 extension DetailPlacePresenter {
     private func configureViewModel() {
+        // TODO: Set reality number users
         viewModels.append(DetailPlaceHeaderViewModel(numberUsers: 1,
                                                      place: place,
                                                      didTapCall: didTapCall,
                                                      didTapNumberUsers: didTapNumberUsers))
+        // TODO: Set reality number ratings
         viewModels.append(DetailPlaceRatingViewModel(ratingModel: place.rating ?? RatingPlace(),
                                                      numberRatings: 5,
                                                      didTapNewRating: didTapAddNewRating))
