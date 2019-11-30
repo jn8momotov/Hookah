@@ -11,10 +11,10 @@ import RealmSwift
 
 final class RatingPlace: Object {
     @objc dynamic var id = UUID().uuidString
-    @objc dynamic var rating: Float = 0.0
-    @objc dynamic var ratingHookah: Float = 0.0
-    @objc dynamic var ratingPlace: Float = 0.0
-    @objc dynamic var ratingStaff: Float = 0.0
+    @objc dynamic var total: Float = 0.0
+    @objc dynamic var hookah: Float = 0.0
+    @objc dynamic var place: Float = 0.0
+    @objc dynamic var staff: Float = 0.0
     
     override static func primaryKey() -> String? {
         return "id"

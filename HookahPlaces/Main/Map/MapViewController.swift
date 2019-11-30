@@ -105,11 +105,14 @@ extension MapViewController {
     }
     
     private func addAnnotation(_ place: Place, id: Int) {
-        let location = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
+        guard let placeLocation = place.location else {
+            return
+        }
+        let location = CLLocationCoordinate2D(latitude: placeLocation.latitude, longitude: placeLocation.longitude)
         let annotation = PlacePointAnnotation(identifier: id)
         annotation.coordinate = location
         annotation.title = place.name
-        annotation.subtitle = place.metro
+        annotation.subtitle = placeLocation.metro
         mapView.addAnnotation(annotation)
     }
     

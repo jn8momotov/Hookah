@@ -69,8 +69,8 @@ extension DetailPlacePresenter {
         viewModels.append(DetailPlaceAdditionalViewModel(.consoleGames, value: place.gameConsole))
         viewModels.append(DetailPlaceAdditionalViewModel(.wifi, value: place.wifi))
         viewModels.append(DetailPlaceAdditionalViewModel(.restarting, value: place.restarting))
-        viewModels.append(DetailPlaceMapViewModel(latitude: place.latitude,
-                                                  longitude: place.longitude,
+        viewModels.append(DetailPlaceMapViewModel(latitude: place.location?.latitude ?? 0.0,
+                                                  longitude: place.location?.longitude ?? 0.0,
                                                   name: place.name,
                                                   didTapMap: didTapMap))
     }

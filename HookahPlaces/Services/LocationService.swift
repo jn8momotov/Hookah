@@ -43,10 +43,10 @@ final class LocationService: NSObject, LocationServiceProtocol {
     }
     
     func distance(to place: Place) -> Float {
-        guard let currentLocation = currentLocation else {
+        guard let currentLocation = currentLocation, let location = place.location else {
             return 0.0
         }
-        let placeLocation = CLLocation(latitude: place.latitude, longitude: place.longitude)
+        let placeLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
         let distance = currentLocation.distance(from: placeLocation)
         let distanceKm = Float(distance / 1000)
         return Float(round(10 * distanceKm) / 10)

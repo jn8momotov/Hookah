@@ -15,12 +15,6 @@ final class Place: Object {
     @objc dynamic var name = ""
     @objc dynamic var phone = ""
     
-    @objc dynamic var metro = ""
-    @objc dynamic var address = ""
-    @objc dynamic var distanceTo: Float = 0.0
-    @objc dynamic var latitude: Double = 0.0
-    @objc dynamic var longitude: Double = 0.0
-    
     @objc dynamic var bankCard = false
     @objc dynamic var gameConsole = false
     @objc dynamic var restarting = false
@@ -30,6 +24,7 @@ final class Place: Object {
     @objc dynamic var theirDrink = false
     @objc dynamic var wifi = false
     
+    @objc dynamic var location: LocationPlace?
     @objc dynamic var rating: RatingPlace?
     
     override static func primaryKey() -> String? {

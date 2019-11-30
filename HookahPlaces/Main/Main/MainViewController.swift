@@ -17,7 +17,7 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //savePlaces()
+        savePlaces()
         presenter = MainPresenter(view: self)
         configureView()
     }
@@ -37,6 +37,7 @@ final class MainViewController: UIViewController {
         presenter.typeSorted = (filterControl.selectedSegmentIndex == 0) ? .distance : .rating
     }
     
+    // TODO: Delete methods (Mock places)
     private func savePlaces() {
         addPlace(name: "Москальян", metro: "Беляево", address: "ул. Миклухо-Маклая, 18к2", latitude: 55.644902, longitude: 37.519422, rating: 2.1)
         addPlace(name: "Москальян", metro: "Китай-город", address: "Б. Спасоглинищевский пер. 3с5", latitude: 55.756437, longitude: 37.635188, rating: 2.4)
@@ -44,20 +45,24 @@ final class MainViewController: UIViewController {
         addPlace(name: "Москальян", metro: "Свиблово", address: "ул. Енисейская, 5к2", latitude: 55.859903, longitude: 37.65911, rating: 5.0)
     }
     
+    // TODO: Delete methods (Mock places)
     private func addPlace(name: String, metro: String, address: String, latitude: Double, longitude: Double, rating: Float) {
         let ratingPlace = RatingPlace()
-        ratingPlace.rating = rating
-        ratingPlace.ratingHookah = 3.2
-        ratingPlace.ratingStaff = 1.1
-        ratingPlace.ratingPlace = 4.5
+        ratingPlace.total = rating
+        ratingPlace.hookah = 3.2
+        ratingPlace.staff = 1.1
+        ratingPlace.place = 4.5
         RealmService.shared.save(ratingPlace)
+        let locationPlace = LocationPlace()
+        locationPlace.metro = metro
+        locationPlace.latitude = latitude
+        locationPlace.longitude = longitude
+        locationPlace.address = address
+        RealmService.shared.save(locationPlace)
         let place = Place()
         place.name = name
-        place.metro = metro
-        place.latitude = latitude
-        place.longitude = longitude
-        place.address = address
         place.rating = ratingPlace
+        place.location = locationPlace
         RealmService.shared.save(place)
     }
     
