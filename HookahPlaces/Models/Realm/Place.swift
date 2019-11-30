@@ -30,7 +30,7 @@ final class Place: Object {
     @objc dynamic var theirDrink = false
     @objc dynamic var wifi = false
     
-    dynamic var rating: RatingPlace?
+    @objc dynamic var rating: RatingPlace?
     
     override static func primaryKey() -> String? {
         return "id"
