@@ -55,7 +55,17 @@ final class DetailPlaceHeaderCell: UITableViewCell, DetailPlaceCellProtocol {
     
     @objc
     private func didTapOnCallToPlaceButton() {
-        
+        viewModel?.didTapCall?()
+    }
+    
+    @objc
+    private func didTapOnNumberUsersView() {
+        viewModel?.didTapNumberUsers?()
+    }
+    
+    @objc
+    private func didTapOnCheckinButton() {
+        // TODO: Create view model method handler
     }
 }
 
@@ -125,6 +135,9 @@ extension DetailPlaceHeaderCell {
         numberUsersView.clipsToBounds = true
         numberUsersView.backgroundColor = .red
         topButtonsStackView.addArrangedSubview(numberUsersView)
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapOnNumberUsersView))
+        numberUsersView.addGestureRecognizer(gesture)
     }
     
     private func addDistanceView() {
@@ -149,6 +162,8 @@ extension DetailPlaceHeaderCell {
             $0.right.equalTo(callToPlaceButton.snp.left).offset(-16)
             $0.height.equalTo(32)
         }
+        
+        checkinPlaceButton.addTarget(self, action: #selector(didTapOnCheckinButton), for: .touchUpInside)
     }
     
     private func addAddressLabel() {
