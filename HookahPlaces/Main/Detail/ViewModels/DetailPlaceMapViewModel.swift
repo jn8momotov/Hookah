@@ -14,10 +14,12 @@ final class DetailPlaceMapViewModel: DetailPlaceCellViewModelProtocol {
     let latitude: Double
     let longitude: Double
     let name: String
+    let didTapMap: DidTapHandler?
     
-    init(latitude: Double, longitude: Double, name: String) {
+    init(latitude: Double, longitude: Double, name: String, didTapMap: DidTapHandler?) {
         self.latitude = latitude
         self.longitude = longitude
         self.name = name
+        self.didTapMap = didTapMap
     }
 }

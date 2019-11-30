@@ -6,7 +6,7 @@
 //  Copyright © 2019 Momotov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol DetailPlacePresenterProtocol {
     var viewModels: [DetailPlaceCellViewModelProtocol] { get }
@@ -23,12 +23,44 @@ final class DetailPlacePresenter: DetailPlacePresenterProtocol {
         configureViewModel()
         self.view?.title = place.name
     }
+    
+    private var didTapCall: DidTapHandler? {
+        return { [weak self] in
+            guard let phone = self?.place.phone, let url = URL(string: "tel://\(phone)") else {
+                return
+            }
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    private var didTapNumberUsers: DidTapHandler? {
+        return {
+            
+        }
+    }
+    
+    private var didTapAddNewRating: DidTapHandler? {
+        return {
+            
+        }
+    }
+    
+    private var didTapMap: DidTapHandler? {
+        return { [weak self] in
+            self?.view?.openMap()
+        }
+    }
 }
 
 extension DetailPlacePresenter {
     private func configureViewModel() {
-        viewModels.append(DetailPlaceHeaderViewModel(numberUsers: 1, place: place))
-        viewModels.append(DetailPlaceRatingViewModel(ratingModel: place.rating ?? RatingPlace(), numberRatings: 5))
+        viewModels.append(DetailPlaceHeaderViewModel(numberUsers: 1,
+                                                     place: place,
+                                                     didTapCall: didTapCall,
+                                                     didTapNumberUsers: didTapNumberUsers))
+        viewModels.append(DetailPlaceRatingViewModel(ratingModel: place.rating ?? RatingPlace(),
+                                                     numberRatings: 5,
+                                                     didTapNewRating: didTapAddNewRating))
         viewModels.append(DetailPlaceAdditionalViewModel(.bankCard, value: place.bankCard))
         viewModels.append(DetailPlaceAdditionalViewModel(.tableGames, value: place.tableGames))
         viewModels.append(DetailPlaceAdditionalViewModel(.food, value: place.theirFood))
@@ -37,6 +69,9 @@ extension DetailPlacePresenter {
         viewModels.append(DetailPlaceAdditionalViewModel(.consoleGames, value: place.gameConsole))
         viewModels.append(DetailPlaceAdditionalViewModel(.wifi, value: place.wifi))
         viewModels.append(DetailPlaceAdditionalViewModel(.restarting, value: place.restarting))
-        viewModels.append(DetailPlaceMapViewModel(latitude: place.latitude, longitude: place.longitude, name: place.name))
+        viewModels.append(DetailPlaceMapViewModel(latitude: place.latitude,
+                                                  longitude: place.longitude,
+                                                  name: place.name,
+                                                  didTapMap: didTapMap))
     }
 }

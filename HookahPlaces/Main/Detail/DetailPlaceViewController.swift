@@ -17,6 +17,10 @@ final class DetailPlaceViewController: UIViewController {
         super.viewDidLoad()
         configureView()
     }
+    
+    func openMap() {
+        presentFull(MapViewController(), animated: true, completion: nil)
+    }
 }
 
 extension DetailPlaceViewController: UITableViewDelegate, UITableViewDataSource {

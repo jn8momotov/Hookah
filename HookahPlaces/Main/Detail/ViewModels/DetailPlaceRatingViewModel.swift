@@ -18,12 +18,14 @@ final class DetailPlaceRatingViewModel: DetailPlaceCellViewModelProtocol {
     var staff: RatingViewModel
     var place: RatingViewModel
     var numberRatings: Int
+    let didTapNewRating: DidTapHandler?
     
-    init(ratingModel: RatingPlace, numberRatings: Int) {
+    init(ratingModel: RatingPlace, numberRatings: Int, didTapNewRating: DidTapHandler?) {
         self.rating = ratingModel.rating
         self.hookah = ("Кальян", ratingModel.ratingHookah)
         self.staff = ("Персонал", ratingModel.ratingStaff)
         self.place = ("Заведение", ratingModel.ratingPlace)
         self.numberRatings = numberRatings
+        self.didTapNewRating = didTapNewRating
     }
 }
