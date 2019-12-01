@@ -68,6 +68,7 @@ extension ProfileViewController {
         tableView.register(ProfileImageCell.self, forCellReuseIdentifier: ProfileImageCell.identifier)
         tableView.register(ProfileInfoUserCell.self, forCellReuseIdentifier: ProfileInfoUserCell.identifier)
         tableView.register(ProfileSettingCell.self, forCellReuseIdentifier: ProfileSettingCell.identifier)
+        tableView.register(ProfileAuthorizationCell.self, forCellReuseIdentifier: ProfileAuthorizationCell.identifier)
     }
     
     private func cell(at indexPath: IndexPath) -> UITableViewCell {
