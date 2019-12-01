@@ -11,6 +11,8 @@
 		7A02D66523926C5F00AF82D1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D66423926C5F00AF82D1 /* UIColor.swift */; };
 		7A02D6692392C1B100AF82D1 /* DetailPlaceInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D6682392C1B100AF82D1 /* DetailPlaceInfoView.swift */; };
 		7A02D66B2393303200AF82D1 /* LocationPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D66A2393303200AF82D1 /* LocationPlace.swift */; };
+		7A02D66D2393C30000AF82D1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D66C2393C30000AF82D1 /* ProfileViewController.swift */; };
+		7A02D66F2393C36000AF82D1 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D66E2393C36000AF82D1 /* ProfilePresenter.swift */; };
 		7A4842A2238C25C60002648E /* MainRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4842A1238C25C60002648E /* MainRatingView.swift */; };
 		7A4842A5238C29690002648E /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4842A4238C29690002648E /* Place.swift */; };
 		7A4842A8238C2A890002648E /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4842A7238C2A890002648E /* RealmService.swift */; };
@@ -61,6 +63,8 @@
 		7A02D66423926C5F00AF82D1 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		7A02D6682392C1B100AF82D1 /* DetailPlaceInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceInfoView.swift; sourceTree = "<group>"; };
 		7A02D66A2393303200AF82D1 /* LocationPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPlace.swift; sourceTree = "<group>"; };
+		7A02D66C2393C30000AF82D1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		7A02D66E2393C36000AF82D1 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		7A4842A1238C25C60002648E /* MainRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRatingView.swift; sourceTree = "<group>"; };
 		7A4842A4238C29690002648E /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		7A4842A7238C2A890002648E /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
@@ -145,6 +149,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		7A02D6702393C3B400AF82D1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7AC50B6B238BA5DC00117C8D /* SettingsViewController.swift */,
+				7AC50B6D238BA63000117C8D /* SettingsPresenter.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		7A4842A3238C294E0002648E /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,13 +206,14 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		7A5EF79F238B9B06003ABC29 /* Settings */ = {
+		7A5EF79F238B9B06003ABC29 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				7AC50B6B238BA5DC00117C8D /* SettingsViewController.swift */,
-				7AC50B6D238BA63000117C8D /* SettingsPresenter.swift */,
+				7A02D6702393C3B400AF82D1 /* Settings */,
+				7A02D66C2393C30000AF82D1 /* ProfileViewController.swift */,
+				7A02D66E2393C36000AF82D1 /* ProfilePresenter.swift */,
 			);
-			path = Settings;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		7A8CD874238F946E00B7109F /* Detail */ = {
@@ -280,7 +294,7 @@
 			children = (
 				7A8CD874238F946E00B7109F /* Detail */,
 				7A94B565238CEEB9008B7AC2 /* Map */,
-				7A5EF79F238B9B06003ABC29 /* Settings */,
+				7A5EF79F238B9B06003ABC29 /* Profile */,
 				7A5EF79E238B9AFA003ABC29 /* Search */,
 				7A5EF79D238B9AF1003ABC29 /* Main */,
 				7ABBF1F723135560003DC9B5 /* TabBarController.swift */,
@@ -480,6 +494,7 @@
 				8689D84C2390E98800FC3E84 /* DetailPlaceCellProtocol.swift in Sources */,
 				7A6B48522391959600F352C7 /* Font.swift in Sources */,
 				7ABBF1FE2313605E003DC9B5 /* MainPlaceCell.swift in Sources */,
+				7A02D66D2393C30000AF82D1 /* ProfileViewController.swift in Sources */,
 				7A94B576238DA7B2008B7AC2 /* PlacePointAnnotation.swift in Sources */,
 				8689D85C2391019000FC3E84 /* DetailPlaceRatingViewModel.swift in Sources */,
 				7AC50B6C238BA5DC00117C8D /* SettingsViewController.swift in Sources */,
@@ -496,6 +511,7 @@
 				8689D8582390FC9300FC3E84 /* PrimaryButton.swift in Sources */,
 				7A6B484123918E2700F352C7 /* DetailPlaceAdditionalDataCell.swift in Sources */,
 				8689D8532390FA2100FC3E84 /* RatingPlace.swift in Sources */,
+				7A02D66F2393C36000AF82D1 /* ProfilePresenter.swift in Sources */,
 				7ABBF1E823135407003DC9B5 /* MainViewController.swift in Sources */,
 				7A4842A5238C29690002648E /* Place.swift in Sources */,
 				7A8CD878238F94C300B7109F /* DetailPlacePresenter.swift in Sources */,
