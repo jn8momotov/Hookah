@@ -49,7 +49,7 @@ extension ProfileImageCell {
     }
     
     private func addContainerView() {
-        containerView.backgroundColor = .dark
+        containerView.backgroundColor = .black
         containerView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(containerView)
         
@@ -62,7 +62,7 @@ extension ProfileImageCell {
     private func addProfileImageView() {
         let size: CGFloat = 100
         profileImageView.image = #imageLiteral(resourceName: "user_male")
-        profileImageView.tintColor = .dark
+        profileImageView.tintColor = .black
         profileImageView.backgroundColor = .white
         profileImageView.layer.cornerRadius = size / 2
         profileImageView.clipsToBounds = true

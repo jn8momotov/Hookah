@@ -67,6 +67,7 @@ extension ProfileViewController {
     private func registerCells() {
         tableView.register(ProfileImageCell.self, forCellReuseIdentifier: ProfileImageCell.identifier)
         tableView.register(ProfileInfoUserCell.self, forCellReuseIdentifier: ProfileInfoUserCell.identifier)
+        tableView.register(ProfileSettingCell.self, forCellReuseIdentifier: ProfileSettingCell.identifier)
     }
     
     private func cell(at indexPath: IndexPath) -> UITableViewCell {

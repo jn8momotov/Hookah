@@ -50,7 +50,7 @@ extension ProfileInfoUserCell {
     
     private func addNameLabel() {
         nameLabel.font = .main(ofSize: 17, weight: .medium)
-        nameLabel.textColor = .dark
+        nameLabel.textColor = .black
         nameLabel.textAlignment = .center
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(nameLabel)
@@ -62,15 +62,16 @@ extension ProfileInfoUserCell {
     }
     
     private func addEmailLabel() {
-        emailLabel.font = .main(ofSize: 16, weight: .medium)
+        emailLabel.font = .main(ofSize: 14)
         emailLabel.textColor = .lightGray
         emailLabel.textAlignment = .center
         emailLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(emailLabel)
         
         emailLabel.snp.makeConstraints {
-            $0.top.equalTo(nameLabel.snp.bottom).offset(8)
+            $0.top.equalTo(nameLabel.snp.bottom).offset(4)
             $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(16)
         }
     }
 }

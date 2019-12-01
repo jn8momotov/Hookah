@@ -27,5 +27,9 @@ extension ProfilePresenter {
     private func configureViewModel() {
         viewModels.append(ProfileImageViewModel(dataImage: user?.photo))
         viewModels.append(ProfileInfoUserViewModel(name: "Евгений Момотов", email: "jn8momotov@gmail.com"))
+        
+        viewModels.append(ProfileSettingViewModel(title: "Добавить заведение", topLine: true, bottomLine: true, didTapCell: nil))
+        viewModels.append(ProfileSettingViewModel(title: "Написать разработчику", bottomLine: true, didTapCell: nil))
+        viewModels.append(ProfileSettingViewModel(title: "О приложении", bottomLine: true, didTapCell: nil))
     }
 }

@@ -15,6 +15,8 @@
 		7A02D66F2393C36000AF82D1 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D66E2393C36000AF82D1 /* ProfilePresenter.swift */; };
 		7A3321442393D6300012985F /* ProfileInfoUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3321432393D6300012985F /* ProfileInfoUserCell.swift */; };
 		7A3321462393D81C0012985F /* ProfileInfoUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3321452393D81C0012985F /* ProfileInfoUserViewModel.swift */; };
+		7A33214A2393DB220012985F /* ProfileSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3321492393DB220012985F /* ProfileSettingCell.swift */; };
+		7A33214C2393DCF10012985F /* ProfileSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33214B2393DCF10012985F /* ProfileSettingViewModel.swift */; };
 		7A4842A2238C25C60002648E /* MainRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4842A1238C25C60002648E /* MainRatingView.swift */; };
 		7A4842A5238C29690002648E /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4842A4238C29690002648E /* Place.swift */; };
 		7A4842A8238C2A890002648E /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4842A7238C2A890002648E /* RealmService.swift */; };
@@ -74,6 +76,8 @@
 		7A02D66E2393C36000AF82D1 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		7A3321432393D6300012985F /* ProfileInfoUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoUserCell.swift; sourceTree = "<group>"; };
 		7A3321452393D81C0012985F /* ProfileInfoUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoUserViewModel.swift; sourceTree = "<group>"; };
+		7A3321492393DB220012985F /* ProfileSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingCell.swift; sourceTree = "<group>"; };
+		7A33214B2393DCF10012985F /* ProfileSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewModel.swift; sourceTree = "<group>"; };
 		7A4842A1238C25C60002648E /* MainRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRatingView.swift; sourceTree = "<group>"; };
 		7A4842A4238C29690002648E /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		7A4842A7238C2A890002648E /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
@@ -238,6 +242,7 @@
 				7A6939F02393C88F006FD8D9 /* ProfileImageCell.swift */,
 				7A6939F22393C8CD006FD8D9 /* ProfileCellProtocol.swift */,
 				7A3321432393D6300012985F /* ProfileInfoUserCell.swift */,
+				7A3321492393DB220012985F /* ProfileSettingCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 				7A6939F52393C925006FD8D9 /* ProfileViewModelProtocol.swift */,
 				7A6939F72393CEE0006FD8D9 /* ProfileImageViewModel.swift */,
 				7A3321452393D81C0012985F /* ProfileInfoUserViewModel.swift */,
+				7A33214B2393DCF10012985F /* ProfileSettingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -527,6 +533,7 @@
 			files = (
 				7A4842A2238C25C60002648E /* MainRatingView.swift in Sources */,
 				7ABBF2022317EDE9003DC9B5 /* NavigationController.swift in Sources */,
+				7A33214A2393DB220012985F /* ProfileSettingCell.swift in Sources */,
 				8689D84E2390EE7500FC3E84 /* DetailPlaceRatingCell.swift in Sources */,
 				8689D84C2390E98800FC3E84 /* DetailPlaceCellProtocol.swift in Sources */,
 				7A6B48522391959600F352C7 /* Font.swift in Sources */,
@@ -537,6 +544,7 @@
 				7AC50B6C238BA5DC00117C8D /* SettingsViewController.swift in Sources */,
 				7A6939F12393C88F006FD8D9 /* ProfileImageCell.swift in Sources */,
 				7A6B484323918F9E00F352C7 /* DetailPlaceAdditionalViewModel.swift in Sources */,
+				7A33214C2393DCF10012985F /* ProfileSettingViewModel.swift in Sources */,
 				7A6B48452391915700F352C7 /* PlaceAdditional.swift in Sources */,
 				7AC50B6A238BA55600117C8D /* SearchPresenter.swift in Sources */,
 				7A6939F82393CEE0006FD8D9 /* ProfileImageViewModel.swift in Sources */,
