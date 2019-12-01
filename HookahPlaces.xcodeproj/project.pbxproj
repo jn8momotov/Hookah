@@ -13,11 +13,18 @@
 		7A02D66B2393303200AF82D1 /* LocationPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D66A2393303200AF82D1 /* LocationPlace.swift */; };
 		7A02D66D2393C30000AF82D1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D66C2393C30000AF82D1 /* ProfileViewController.swift */; };
 		7A02D66F2393C36000AF82D1 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D66E2393C36000AF82D1 /* ProfilePresenter.swift */; };
+		7A3321442393D6300012985F /* ProfileInfoUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3321432393D6300012985F /* ProfileInfoUserCell.swift */; };
+		7A3321462393D81C0012985F /* ProfileInfoUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3321452393D81C0012985F /* ProfileInfoUserViewModel.swift */; };
 		7A4842A2238C25C60002648E /* MainRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4842A1238C25C60002648E /* MainRatingView.swift */; };
 		7A4842A5238C29690002648E /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4842A4238C29690002648E /* Place.swift */; };
 		7A4842A8238C2A890002648E /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4842A7238C2A890002648E /* RealmService.swift */; };
 		7A5A9A4B238B9C7D00795EEF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5A9A4A238B9C7D00795EEF /* SearchViewController.swift */; };
 		7A5A9A4D238B9C9C00795EEF /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5A9A4C238B9C9C00795EEF /* MainPresenter.swift */; };
+		7A5EAC812393D32D00AAEF61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5EAC802393D32D00AAEF61 /* User.swift */; };
+		7A6939F12393C88F006FD8D9 /* ProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6939F02393C88F006FD8D9 /* ProfileImageCell.swift */; };
+		7A6939F32393C8CD006FD8D9 /* ProfileCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6939F22393C8CD006FD8D9 /* ProfileCellProtocol.swift */; };
+		7A6939F62393C925006FD8D9 /* ProfileViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6939F52393C925006FD8D9 /* ProfileViewModelProtocol.swift */; };
+		7A6939F82393CEE0006FD8D9 /* ProfileImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6939F72393CEE0006FD8D9 /* ProfileImageViewModel.swift */; };
 		7A6B484123918E2700F352C7 /* DetailPlaceAdditionalDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B484023918E2700F352C7 /* DetailPlaceAdditionalDataCell.swift */; };
 		7A6B484323918F9E00F352C7 /* DetailPlaceAdditionalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B484223918F9E00F352C7 /* DetailPlaceAdditionalViewModel.swift */; };
 		7A6B48452391915700F352C7 /* PlaceAdditional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B48442391915700F352C7 /* PlaceAdditional.swift */; };
@@ -65,11 +72,18 @@
 		7A02D66A2393303200AF82D1 /* LocationPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPlace.swift; sourceTree = "<group>"; };
 		7A02D66C2393C30000AF82D1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7A02D66E2393C36000AF82D1 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		7A3321432393D6300012985F /* ProfileInfoUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoUserCell.swift; sourceTree = "<group>"; };
+		7A3321452393D81C0012985F /* ProfileInfoUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoUserViewModel.swift; sourceTree = "<group>"; };
 		7A4842A1238C25C60002648E /* MainRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRatingView.swift; sourceTree = "<group>"; };
 		7A4842A4238C29690002648E /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		7A4842A7238C2A890002648E /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		7A5A9A4A238B9C7D00795EEF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7A5A9A4C238B9C9C00795EEF /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		7A5EAC802393D32D00AAEF61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7A6939F02393C88F006FD8D9 /* ProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCell.swift; sourceTree = "<group>"; };
+		7A6939F22393C8CD006FD8D9 /* ProfileCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellProtocol.swift; sourceTree = "<group>"; };
+		7A6939F52393C925006FD8D9 /* ProfileViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelProtocol.swift; sourceTree = "<group>"; };
+		7A6939F72393CEE0006FD8D9 /* ProfileImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageViewModel.swift; sourceTree = "<group>"; };
 		7A6B484023918E2700F352C7 /* DetailPlaceAdditionalDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceAdditionalDataCell.swift; sourceTree = "<group>"; };
 		7A6B484223918F9E00F352C7 /* DetailPlaceAdditionalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceAdditionalViewModel.swift; sourceTree = "<group>"; };
 		7A6B48442391915700F352C7 /* PlaceAdditional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAdditional.swift; sourceTree = "<group>"; };
@@ -209,11 +223,33 @@
 		7A5EF79F238B9B06003ABC29 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				7A6939F42393C900006FD8D9 /* ViewModels */,
+				7A6939EF2393C861006FD8D9 /* Cells */,
 				7A02D6702393C3B400AF82D1 /* Settings */,
 				7A02D66C2393C30000AF82D1 /* ProfileViewController.swift */,
 				7A02D66E2393C36000AF82D1 /* ProfilePresenter.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		7A6939EF2393C861006FD8D9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7A6939F02393C88F006FD8D9 /* ProfileImageCell.swift */,
+				7A6939F22393C8CD006FD8D9 /* ProfileCellProtocol.swift */,
+				7A3321432393D6300012985F /* ProfileInfoUserCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7A6939F42393C900006FD8D9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7A6939F52393C925006FD8D9 /* ProfileViewModelProtocol.swift */,
+				7A6939F72393CEE0006FD8D9 /* ProfileImageViewModel.swift */,
+				7A3321452393D81C0012985F /* ProfileInfoUserViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		7A8CD874238F946E00B7109F /* Detail */ = {
@@ -353,6 +389,7 @@
 				7A4842A4238C29690002648E /* Place.swift */,
 				8689D8522390FA2100FC3E84 /* RatingPlace.swift */,
 				7A02D66A2393303200AF82D1 /* LocationPlace.swift */,
+				7A5EAC802393D32D00AAEF61 /* User.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -498,9 +535,11 @@
 				7A94B576238DA7B2008B7AC2 /* PlacePointAnnotation.swift in Sources */,
 				8689D85C2391019000FC3E84 /* DetailPlaceRatingViewModel.swift in Sources */,
 				7AC50B6C238BA5DC00117C8D /* SettingsViewController.swift in Sources */,
+				7A6939F12393C88F006FD8D9 /* ProfileImageCell.swift in Sources */,
 				7A6B484323918F9E00F352C7 /* DetailPlaceAdditionalViewModel.swift in Sources */,
 				7A6B48452391915700F352C7 /* PlaceAdditional.swift in Sources */,
 				7AC50B6A238BA55600117C8D /* SearchPresenter.swift in Sources */,
+				7A6939F82393CEE0006FD8D9 /* ProfileImageViewModel.swift in Sources */,
 				7A5A9A4B238B9C7D00795EEF /* SearchViewController.swift in Sources */,
 				7A94B578238DA95B008B7AC2 /* LocationService.swift in Sources */,
 				7A94B574238D7312008B7AC2 /* MapPlaceView.swift in Sources */,
@@ -508,11 +547,14 @@
 				8689D8482390E80900FC3E84 /* DetailPlaceHeaderViewModel.swift in Sources */,
 				7A5A9A4D238B9C9C00795EEF /* MainPresenter.swift in Sources */,
 				7A6B485623919A4100F352C7 /* DetailPlaceMapViewModel.swift in Sources */,
+				7A6939F32393C8CD006FD8D9 /* ProfileCellProtocol.swift in Sources */,
 				8689D8582390FC9300FC3E84 /* PrimaryButton.swift in Sources */,
 				7A6B484123918E2700F352C7 /* DetailPlaceAdditionalDataCell.swift in Sources */,
+				7A3321462393D81C0012985F /* ProfileInfoUserViewModel.swift in Sources */,
 				8689D8532390FA2100FC3E84 /* RatingPlace.swift in Sources */,
 				7A02D66F2393C36000AF82D1 /* ProfilePresenter.swift in Sources */,
 				7ABBF1E823135407003DC9B5 /* MainViewController.swift in Sources */,
+				7A3321442393D6300012985F /* ProfileInfoUserCell.swift in Sources */,
 				7A4842A5238C29690002648E /* Place.swift in Sources */,
 				7A8CD878238F94C300B7109F /* DetailPlacePresenter.swift in Sources */,
 				7ABBF1F823135560003DC9B5 /* TabBarController.swift in Sources */,
@@ -526,6 +568,8 @@
 				7ABBF1FA23135652003DC9B5 /* Colors.swift in Sources */,
 				7AC50B71238BAFA000117C8D /* MainDistanceView.swift in Sources */,
 				8689D85A2390FD1200FC3E84 /* OutlinedButton.swift in Sources */,
+				7A5EAC812393D32D00AAEF61 /* User.swift in Sources */,
+				7A6939F62393C925006FD8D9 /* ProfileViewModelProtocol.swift in Sources */,
 				7A6B485423919A2C00F352C7 /* DetailPlaceMapCell.swift in Sources */,
 				7A8CD876238F948600B7109F /* DetailPlaceViewController.swift in Sources */,
 				7A94B57A238EADBE008B7AC2 /* TypeSortPlaces.swift in Sources */,
