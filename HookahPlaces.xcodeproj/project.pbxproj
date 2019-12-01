@@ -19,6 +19,8 @@
 		7A33214C2393DCF10012985F /* ProfileSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33214B2393DCF10012985F /* ProfileSettingViewModel.swift */; };
 		7A33214E2393E3B80012985F /* ProfileAuthorizationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33214D2393E3B80012985F /* ProfileAuthorizationCell.swift */; };
 		7A3321502393E8060012985F /* ProfileAuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A33214F2393E8060012985F /* ProfileAuthorizationViewModel.swift */; };
+		7A3321532393EDB90012985F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3321522393EDB90012985F /* SearchView.swift */; };
+		7A3321562394012E0012985F /* SearchPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3321552394012E0012985F /* SearchPlaceCell.swift */; };
 		7A4842A2238C25C60002648E /* MainRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4842A1238C25C60002648E /* MainRatingView.swift */; };
 		7A4842A5238C29690002648E /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4842A4238C29690002648E /* Place.swift */; };
 		7A4842A8238C2A890002648E /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4842A7238C2A890002648E /* RealmService.swift */; };
@@ -82,6 +84,8 @@
 		7A33214B2393DCF10012985F /* ProfileSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingViewModel.swift; sourceTree = "<group>"; };
 		7A33214D2393E3B80012985F /* ProfileAuthorizationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAuthorizationCell.swift; sourceTree = "<group>"; };
 		7A33214F2393E8060012985F /* ProfileAuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAuthorizationViewModel.swift; sourceTree = "<group>"; };
+		7A3321522393EDB90012985F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		7A3321552394012E0012985F /* SearchPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceCell.swift; sourceTree = "<group>"; };
 		7A4842A1238C25C60002648E /* MainRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRatingView.swift; sourceTree = "<group>"; };
 		7A4842A4238C29690002648E /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		7A4842A7238C2A890002648E /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
@@ -180,6 +184,22 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		7A3321512393EDAB0012985F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7A3321522393EDB90012985F /* SearchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7A3321542394003C0012985F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7A3321552394012E0012985F /* SearchPlaceCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		7A4842A3238C294E0002648E /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +242,8 @@
 		7A5EF79E238B9AFA003ABC29 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				7A3321542394003C0012985F /* Cell */,
+				7A3321512393EDAB0012985F /* Views */,
 				7A5A9A4A238B9C7D00795EEF /* SearchViewController.swift */,
 				7AC50B69238BA55600117C8D /* SearchPresenter.swift */,
 			);
@@ -538,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A4842A2238C25C60002648E /* MainRatingView.swift in Sources */,
+				7A3321532393EDB90012985F /* SearchView.swift in Sources */,
 				7ABBF2022317EDE9003DC9B5 /* NavigationController.swift in Sources */,
 				7A33214A2393DB220012985F /* ProfileSettingCell.swift in Sources */,
 				8689D84E2390EE7500FC3E84 /* DetailPlaceRatingCell.swift in Sources */,
@@ -581,6 +604,7 @@
 				7A02D66523926C5F00AF82D1 /* UIColor.swift in Sources */,
 				8689D84A2390E82E00FC3E84 /* DetailPlaceCellViewModelProtocol.swift in Sources */,
 				7ABBF1FA23135652003DC9B5 /* Colors.swift in Sources */,
+				7A3321562394012E0012985F /* SearchPlaceCell.swift in Sources */,
 				7AC50B71238BAFA000117C8D /* MainDistanceView.swift in Sources */,
 				8689D85A2390FD1200FC3E84 /* OutlinedButton.swift in Sources */,
 				7A5EAC812393D32D00AAEF61 /* User.swift in Sources */,

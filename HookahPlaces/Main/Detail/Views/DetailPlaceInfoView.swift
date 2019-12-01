@@ -9,9 +9,9 @@
 import UIKit
 
 final class DetailPlaceInfoView: UIView {
+    let valueLabel = UILabel()
     private let stackView = UIStackView()
     private let imageView = UIImageView()
-    private let valueLabel = UILabel()
     
     init(image: UIImage) {
         super.init(frame: .zero)
