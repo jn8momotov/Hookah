@@ -33,6 +33,10 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         return cell(at: indexPath)
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.viewModels[indexPath.row].didTapCell?()
+    }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return nil
     }
