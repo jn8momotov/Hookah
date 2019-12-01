@@ -21,6 +21,11 @@ final class SearchViewController: UIViewController {
         configureView()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        view.endEditing(true)
+    }
+    
     func reloadTableView() {
         tableView.reloadData()
     }
