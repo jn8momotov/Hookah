@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SigninPresenterProtocol {
-    
+    func signIn(email: String, password: String)
 }
 
 final class SigninPresenter: SigninPresenterProtocol {
@@ -17,5 +17,9 @@ final class SigninPresenter: SigninPresenterProtocol {
     
     init(view: SigninViewController) {
         self.view = view
+    }
+    
+    func signIn(email: String, password: String) {
+        
     }
 }

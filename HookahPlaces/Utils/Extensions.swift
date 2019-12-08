@@ -13,4 +13,20 @@ extension UIViewController {
         viewControllerToPresent.modalPresentationStyle = .fullScreen
         present(viewControllerToPresent, animated: animated, completion: completion)
     }
+    
+    func addCancelBarButtonItem() {
+        let closeBarButtonItem = UIBarButtonItem(
+            image: #imageLiteral(resourceName: "close"),
+            style: .plain,
+            target: self,
+            action: #selector(didTapOnCloseBarButtonItem)
+        )
+        closeBarButtonItem.tintColor = .black
+        navigationItem.leftBarButtonItem = closeBarButtonItem
+    }
+    
+    @objc
+    private func didTapOnCloseBarButtonItem() {
+        dismiss(animated: true, completion: nil)
+    }
 }

@@ -22,12 +22,16 @@ final class ProfilePresenter: ProfilePresenterProtocol {
         configureViewModel()
     }
     
-    private var didTapSignIn: DidTapHandler = {
-        
+    private var didTapSignIn: DidTapHandler {
+        return { [weak self] in
+            self?.view?.openSignIn()
+        }
     }
     
-    private var didTapSignUp: DidTapHandler = {
-        
+    private var didTapSignUp: DidTapHandler {
+        return { [weak self] in
+            self?.view?.openSignUp()
+        }
     }
 }
 
@@ -36,8 +40,8 @@ extension ProfilePresenter {
     // TODO: Set user info from realm
     private func configureViewModel() {
         viewModels.append(ProfileImageViewModel(dataImage: user?.photo))
-        viewModels.append(ProfileInfoUserViewModel(name: "Евгений Момотов", email: "jn8momotov@gmail.com"))
-        //viewModels.append(ProfileAuthorizationViewModel(didTapSignIn: didTapSignIn, didTapSignUp: didTapSignUp))
+//        viewModels.append(ProfileInfoUserViewModel(name: "Евгений Момотов", email: "jn8momotov@gmail.com"))
+        viewModels.append(ProfileAuthorizationViewModel(didTapSignIn: didTapSignIn, didTapSignUp: didTapSignUp))
         
         viewModels.append(ProfileSettingViewModel(title: "Добавить заведение", topLine: true, bottomLine: true, didTapCell: nil))
         viewModels.append(ProfileSettingViewModel(title: "Написать разработчику", bottomLine: true, didTapCell: nil))
