@@ -1,0 +1,81 @@
+//
+//  ProfileAuthorizationCell.swift
+//  HookahPlaces
+//
+//  Created by Евгений on 01/12/2019.
+//  Copyright © 2019 Momotov. All rights reserved.
+//
+
+import UIKit
+
+final class ProfileAuthorizationCell: UITableViewCell, ProfileCellProtocol {
+    static let identifier = String(describing: ProfileAuthorizationCell.self)
+    
+    private let signinButton = PrimaryButton()
+    private let signupButton = UIButton()
+    
+    private var viewModel: ProfileAuthorizationViewModel?
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: ProfileAuthorizationCell.identifier)
+        configureViewCell()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func set(_ viewModel: ProfileViewModelProtocol) {
+        self.viewModel = viewModel as? ProfileAuthorizationViewModel
+    }
+    
+    @objc
+    private func didTapOnSignInButton() {
+        viewModel?.didTapSignIn?()
+    }
+    
+    @objc
+    private func didTapOnSignUpButton() {
+        viewModel?.didTapSignUp?()
+    }
+}
+
+extension ProfileAuthorizationCell {
+    private func configureViewCell() {
+        backgroundColor = .white
+        selectionStyle = .none
+        
+        addSigninButton()
+        addSignupButton()
+    }
+    
+    private func addSigninButton() {
+        signinButton.setTitle("Войти", for: .normal)
+        signinButton.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(signinButton)
+        
+        signinButton.snp.makeConstraints {
+            $0.left.right.top.equalToSuperview().inset(16)
+            $0.height.equalTo(44)
+        }
+        
+        signinButton.addTarget(self, action: #selector(didTapOnSignInButton), for: .touchUpInside)
+    }
+    
+    private func addSignupButton() {
+        signupButton.setTitle("Зарегистрироваться", for: .normal)
+        signupButton.setTitleColor(.black, for: .normal)
+        signupButton.titleLabel?.font = .main(ofSize: 15)
+        signupButton.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(signupButton)
+        
+        signupButton.snp.makeConstraints {
+            $0.top.equalTo(signinButton.snp.bottom).offset(2)
+            $0.left.right.equalToSuperview().inset(16)
+            $0.height.equalTo(44)
+            $0.bottom.equalToSuperview().inset(16)
+        }
+        
+        signupButton.addTarget(self, action: #selector(didTapOnSignUpButton), for: .touchUpInside)
+    }
+}

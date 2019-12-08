@@ -17,8 +17,8 @@ final class TabBarController: UITabBarController {
         return NavigationController(rootViewController: SearchViewController())
     }()
     
-    private lazy var settingsViewController: UIViewController = {
-        return NavigationController(rootViewController: SettingsViewController())
+    private lazy var profileViewController: UIViewController = {
+        return NavigationController(rootViewController: ProfileViewController())
     }()
 
     override func viewDidLoad() {
@@ -30,9 +30,15 @@ final class TabBarController: UITabBarController {
 extension TabBarController {
     private func configure() {
         tabBar.tintColor = .black
-        viewControllers = [mainViewController, searchViewController, settingsViewController]
+        tabBar.barTintColor = .white
+        tabBar.isTranslucent = false
+        viewControllers = [mainViewController, searchViewController, profileViewController]
+        setTabBarItems()
+    }
+    
+    private func setTabBarItems() {
         viewControllers?[0].tabBarItem = UITabBarItem(title: "Main", image: #imageLiteral(resourceName: "home"), tag: 0)
         viewControllers?[1].tabBarItem = UITabBarItem(title: "Search", image: #imageLiteral(resourceName: "search"), tag: 1)
-        viewControllers?[2].tabBarItem = UITabBarItem(title: "Settings", image: #imageLiteral(resourceName: "services"), tag: 2)
+        viewControllers?[2].tabBarItem = UITabBarItem(title: "Profile", image: #imageLiteral(resourceName: "user_male"), tag: 2)
     }
 }

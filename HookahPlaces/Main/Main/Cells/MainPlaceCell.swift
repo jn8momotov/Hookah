@@ -31,12 +31,13 @@ final class MainPlaceCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set() {
+    func set(_ place: Place) {
+        // TODO: Set place image
         placeImageView.image = #imageLiteral(resourceName: "0")
-        namePlaceLabel.text = "Москальян Свиблово"
-        addressPlaceLabel.text = "ул. Радужная, 17"
-        ratingView.set(rating: 44.1)
-        distanceView.set(distance: 10876.3)
+        namePlaceLabel.text = "\(place.name) \(place.location?.metro ?? "")"
+        addressPlaceLabel.text = "\(place.location?.address ?? "")"
+        ratingView.set(rating: place.rating?.total ?? 0.0)
+        distanceView.set(distance: place.location?.distanceTo ?? 0.0)
     }
 }
 
@@ -54,10 +55,10 @@ extension MainPlaceCell {
         containerView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(containerView)
         
-        containerView.leftAnchor.constraint(equalTo: leftAnchor, constant: 8).isActive = true
-        containerView.topAnchor.constraint(equalTo: topAnchor, constant: 4).isActive = true
-        containerView.rightAnchor.constraint(equalTo: rightAnchor, constant: -8).isActive = true
-        containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4).isActive = true
+        containerView.snp.makeConstraints {
+            $0.left.right.equalToSuperview().inset(8)
+            $0.top.bottom.equalToSuperview().inset(4)
+        }
         
         addPlaceImageView()
         addMainInfoView()
@@ -69,10 +70,9 @@ extension MainPlaceCell {
         placeImageView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(placeImageView)
         
-        placeImageView.leftAnchor.constraint(equalTo: containerView.leftAnchor).isActive = true
-        placeImageView.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
-        placeImageView.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
-        placeImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+        placeImageView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
     
     private func addMainInfoView() {
@@ -80,24 +80,25 @@ extension MainPlaceCell {
         containerMainInfoView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(containerMainInfoView)
         
-        containerMainInfoView.leftAnchor.constraint(equalTo: containerView.leftAnchor).isActive = true
-        containerMainInfoView.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
-        containerMainInfoView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
-        containerMainInfoView.heightAnchor.constraint(equalToConstant: MainPlaceCell.height / 3).isActive = true
+        containerMainInfoView.snp.makeConstraints {
+            $0.left.right.bottom.equalToSuperview()
+            $0.height.equalTo(MainPlaceCell.height / 3)
+        }
         
         addNameLabel()
         addAddressLabel()
     }
     
     private func addNameLabel() {
-        namePlaceLabel.font = .main(ofSize: 16)
+        namePlaceLabel.font = .main(ofSize: 16, weight: .medium)
         namePlaceLabel.textColor = .white
         namePlaceLabel.translatesAutoresizingMaskIntoConstraints = false
         containerMainInfoView.addSubview(namePlaceLabel)
         
-        namePlaceLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
-        namePlaceLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
-        namePlaceLabel.topAnchor.constraint(equalTo: containerMainInfoView.topAnchor, constant: 8).isActive = true
+        namePlaceLabel.snp.makeConstraints {
+            $0.left.right.equalToSuperview().inset(16)
+            $0.top.equalToSuperview().inset(8)
+        }
     }
     
     private func addAddressLabel() {
@@ -106,9 +107,10 @@ extension MainPlaceCell {
         addressPlaceLabel.translatesAutoresizingMaskIntoConstraints = false
         containerMainInfoView.addSubview(addressPlaceLabel)
         
-        addressPlaceLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
-        addressPlaceLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -16).isActive = true
-        addressPlaceLabel.topAnchor.constraint(equalTo: namePlaceLabel.bottomAnchor, constant: 2).isActive = true
+        addressPlaceLabel.snp.makeConstraints {
+            $0.left.right.equalToSuperview().inset(16)
+            $0.top.equalTo(namePlaceLabel.snp.bottom).offset(2)
+        }
     }
     
     private func addRatingView() {
