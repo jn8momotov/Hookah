@@ -63,6 +63,8 @@
 		7AC50B6C238BA5DC00117C8D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC50B6B238BA5DC00117C8D /* SettingsViewController.swift */; };
 		7AC50B6E238BA63000117C8D /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC50B6D238BA63000117C8D /* SettingsPresenter.swift */; };
 		7AC50B71238BAFA000117C8D /* MainDistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC50B70238BAFA000117C8D /* MainDistanceView.swift */; };
+		7AE6887A239D603400BE7D63 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE68879239D603400BE7D63 /* SigninViewController.swift */; };
+		7AE6887C239D604100BE7D63 /* SigninPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6887B239D604100BE7D63 /* SigninPresenter.swift */; };
 		8689D8482390E80900FC3E84 /* DetailPlaceHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D8472390E80900FC3E84 /* DetailPlaceHeaderViewModel.swift */; };
 		8689D84A2390E82E00FC3E84 /* DetailPlaceCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D8492390E82E00FC3E84 /* DetailPlaceCellViewModelProtocol.swift */; };
 		8689D84C2390E98800FC3E84 /* DetailPlaceCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D84B2390E98800FC3E84 /* DetailPlaceCellProtocol.swift */; };
@@ -134,6 +136,8 @@
 		7AC50B6B238BA5DC00117C8D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7AC50B6D238BA63000117C8D /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		7AC50B70238BAFA000117C8D /* MainDistanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDistanceView.swift; sourceTree = "<group>"; };
+		7AE68879239D603400BE7D63 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
+		7AE6887B239D604100BE7D63 /* SigninPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninPresenter.swift; sourceTree = "<group>"; };
 		8689D8472390E80900FC3E84 /* DetailPlaceHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceHeaderViewModel.swift; sourceTree = "<group>"; };
 		8689D8492390E82E00FC3E84 /* DetailPlaceCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceCellViewModelProtocol.swift; sourceTree = "<group>"; };
 		8689D84B2390E98800FC3E84 /* DetailPlaceCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceCellProtocol.swift; sourceTree = "<group>"; };
@@ -390,6 +394,7 @@
 		7ABBF1FB23135F4C003DC9B5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7AE68876239D600800BE7D63 /* Authorization */,
 				7A8CD874238F946E00B7109F /* Detail */,
 				7A94B565238CEEB9008B7AC2 /* Map */,
 				7A5EF79F238B9B06003ABC29 /* Profile */,
@@ -422,6 +427,31 @@
 				7A4842A1238C25C60002648E /* MainRatingView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7AE68876239D600800BE7D63 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				7AE68878239D601A00BE7D63 /* Signup */,
+				7AE68877239D601300BE7D63 /* Signin */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		7AE68877239D601300BE7D63 /* Signin */ = {
+			isa = PBXGroup;
+			children = (
+				7AE68879239D603400BE7D63 /* SigninViewController.swift */,
+				7AE6887B239D604100BE7D63 /* SigninPresenter.swift */,
+			);
+			path = Signin;
+			sourceTree = "<group>";
+		};
+		7AE68878239D601A00BE7D63 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Signup;
 			sourceTree = "<group>";
 		};
 		8689D8462390E7EE00FC3E84 /* ViewModels */ = {
@@ -603,6 +633,7 @@
 				7A6939F12393C88F006FD8D9 /* ProfileImageCell.swift in Sources */,
 				7AA4FAA9239425380076DA08 /* NewRatingPresenter.swift in Sources */,
 				7A6B484323918F9E00F352C7 /* DetailPlaceAdditionalViewModel.swift in Sources */,
+				7AE6887C239D604100BE7D63 /* SigninPresenter.swift in Sources */,
 				7A33214C2393DCF10012985F /* ProfileSettingViewModel.swift in Sources */,
 				7A6B48452391915700F352C7 /* PlaceAdditional.swift in Sources */,
 				7AC50B6A238BA55600117C8D /* SearchPresenter.swift in Sources */,
@@ -622,6 +653,7 @@
 				8689D8532390FA2100FC3E84 /* RatingPlace.swift in Sources */,
 				7A02D66F2393C36000AF82D1 /* ProfilePresenter.swift in Sources */,
 				7ABBF1E823135407003DC9B5 /* MainViewController.swift in Sources */,
+				7AE6887A239D603400BE7D63 /* SigninViewController.swift in Sources */,
 				7A3321442393D6300012985F /* ProfileInfoUserCell.swift in Sources */,
 				7A4842A5238C29690002648E /* Place.swift in Sources */,
 				7AA4FAAE2394264E0076DA08 /* StarButton.swift in Sources */,
