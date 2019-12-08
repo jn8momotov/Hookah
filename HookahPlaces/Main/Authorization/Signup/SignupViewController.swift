@@ -139,7 +139,7 @@ extension SignupViewController {
         view.addSubview(signupButton)
         
         signupButton.snp.makeConstraints {
-            $0.left.bottom.right.equalToSuperview().inset(16)
+            $0.left.bottom.right.equalTo(view.safeAreaLayoutGuide).inset(16)
             $0.height.equalTo(44)
         }
     }
