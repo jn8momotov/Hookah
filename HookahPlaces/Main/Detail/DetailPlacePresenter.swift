@@ -40,10 +40,9 @@ final class DetailPlacePresenter: DetailPlacePresenterProtocol {
         }
     }
     
-    // TODO: Create method
     private var didTapAddNewRating: DidTapHandler? {
-        return {
-            
+        return { [weak self] in
+            self?.view?.openNewRating()
         }
     }
     
