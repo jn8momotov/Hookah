@@ -18,20 +18,6 @@ final class ProfileViewController: UIViewController {
         presenter = ProfilePresenter(view: self)
         configureView()
     }
-    
-    func openSignIn() {
-        let navigation = NavigationController(rootViewController: SigninViewController())
-        presentFull(navigation, animated: true, completion: nil)
-    }
-    
-    func openSignUp() {
-        let navigation = NavigationController(rootViewController: SignupViewController())
-        presentFull(navigation, animated: true, completion: nil)
-    }
-    
-    func openAbout() {
-        navigationController?.pushViewController(AboutViewController(), animated: true)
-    }
 }
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {

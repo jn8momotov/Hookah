@@ -9,9 +9,14 @@
 import UIKit
 
 extension UIViewController {
-    func presentFull(_ viewControllerToPresent: UIViewController, animated: Bool, completion: (() -> Void)?) {
-        viewControllerToPresent.modalPresentationStyle = .fullScreen
-        present(viewControllerToPresent, animated: animated, completion: completion)
+    func presentFull(_ viewController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: animated, completion: completion)
+    }
+    
+    func presentRoot(_ viewController: UIViewController, animated: Bool = true, completion: (() -> Void)? = nil) {
+        let navigation = NavigationController(rootViewController: viewController)
+        presentFull(navigation)
     }
     
     func addCancelBarButtonItem() {

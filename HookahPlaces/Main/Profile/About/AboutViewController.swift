@@ -22,6 +22,7 @@ final class AboutViewController: UIViewController {
         configureView()
     }
     
+    // TODO: Add user agreement
     func pushToUserAgreement() {
         
     }
