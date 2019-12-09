@@ -17,16 +17,6 @@ final class DetailPlaceViewController: UIViewController {
         super.viewDidLoad()
         configureView()
     }
-    
-    func openMap() {
-        let navigation = NavigationController(rootViewController: MapViewController())
-        presentFull(navigation, animated: true, completion: nil)
-    }
-    
-    func openNewRating() {
-        let navigation = NavigationController(rootViewController: NewRatingViewController())
-        presentFull(navigation, animated: true, completion: nil)
-    }
 }
 
 extension DetailPlaceViewController: UITableViewDelegate, UITableViewDataSource {
