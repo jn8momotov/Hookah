@@ -33,6 +33,12 @@ final class ProfilePresenter: ProfilePresenterProtocol {
             self?.view?.openSignUp()
         }
     }
+    
+    private var didTapAbout: DidTapHandler {
+        return { [weak self] in
+            self?.view?.openAbout()
+        }
+    }
 }
 
 extension ProfilePresenter {
@@ -45,6 +51,6 @@ extension ProfilePresenter {
         
         viewModels.append(ProfileSettingViewModel(title: "Добавить заведение", topLine: true, bottomLine: true, didTapCell: nil))
         viewModels.append(ProfileSettingViewModel(title: "Написать разработчику", bottomLine: true, didTapCell: nil))
-        viewModels.append(ProfileSettingViewModel(title: "О приложении", bottomLine: true, didTapCell: nil))
+        viewModels.append(ProfileSettingViewModel(title: "О приложении", bottomLine: true, didTapCell: didTapAbout))
     }
 }

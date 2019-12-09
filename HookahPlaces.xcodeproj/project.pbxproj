@@ -68,6 +68,10 @@
 		7AE6887F239D61A600BE7D63 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6887E239D61A600BE7D63 /* AuthTextField.swift */; };
 		7AE68881239D7FE100BE7D63 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE68880239D7FE100BE7D63 /* SignupViewController.swift */; };
 		7AE68883239D801100BE7D63 /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE68882239D801100BE7D63 /* SignupPresenter.swift */; };
+		860C3185239E117700629364 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860C3184239E117700629364 /* AboutViewController.swift */; };
+		860C3187239E123E00629364 /* AboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860C3186239E123E00629364 /* AboutPresenter.swift */; };
+		860C318A239E134900629364 /* RightArrowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860C3189239E134900629364 /* RightArrowCell.swift */; };
+		860C318D239E14AB00629364 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860C318C239E14AB00629364 /* AboutCell.swift */; };
 		8689D8482390E80900FC3E84 /* DetailPlaceHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D8472390E80900FC3E84 /* DetailPlaceHeaderViewModel.swift */; };
 		8689D84A2390E82E00FC3E84 /* DetailPlaceCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D8492390E82E00FC3E84 /* DetailPlaceCellViewModelProtocol.swift */; };
 		8689D84C2390E98800FC3E84 /* DetailPlaceCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D84B2390E98800FC3E84 /* DetailPlaceCellProtocol.swift */; };
@@ -144,6 +148,10 @@
 		7AE6887E239D61A600BE7D63 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		7AE68880239D7FE100BE7D63 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		7AE68882239D801100BE7D63 /* SignupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
+		860C3184239E117700629364 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		860C3186239E123E00629364 /* AboutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresenter.swift; sourceTree = "<group>"; };
+		860C3189239E134900629364 /* RightArrowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightArrowCell.swift; sourceTree = "<group>"; };
+		860C318C239E14AB00629364 /* AboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
 		8689D8472390E80900FC3E84 /* DetailPlaceHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceHeaderViewModel.swift; sourceTree = "<group>"; };
 		8689D8492390E82E00FC3E84 /* DetailPlaceCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceCellViewModelProtocol.swift; sourceTree = "<group>"; };
 		8689D84B2390E98800FC3E84 /* DetailPlaceCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceCellProtocol.swift; sourceTree = "<group>"; };
@@ -271,6 +279,7 @@
 		7A5EF79F238B9B06003ABC29 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				860C3183239E115F00629364 /* About */,
 				7A6939F42393C900006FD8D9 /* ViewModels */,
 				7A6939EF2393C861006FD8D9 /* Cells */,
 				7A02D6702393C3B400AF82D1 /* Settings */,
@@ -470,6 +479,32 @@
 			path = TextFields;
 			sourceTree = "<group>";
 		};
+		860C3183239E115F00629364 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				860C318B239E149F00629364 /* Cell */,
+				860C3184239E117700629364 /* AboutViewController.swift */,
+				860C3186239E123E00629364 /* AboutPresenter.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		860C3188239E133600629364 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				860C3189239E134900629364 /* RightArrowCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		860C318B239E149F00629364 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				860C318C239E14AB00629364 /* AboutCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		8689D8462390E7EE00FC3E84 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -505,6 +540,7 @@
 		8689D8552390FC7A00FC3E84 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				860C3188239E133600629364 /* Cells */,
 				7AE6887D239D619500BE7D63 /* TextFields */,
 				8689D8562390FC8400FC3E84 /* Buttons */,
 			);
@@ -638,6 +674,7 @@
 				7A3321532393EDB90012985F /* SearchView.swift in Sources */,
 				7ABBF2022317EDE9003DC9B5 /* NavigationController.swift in Sources */,
 				7A33214A2393DB220012985F /* ProfileSettingCell.swift in Sources */,
+				860C318D239E14AB00629364 /* AboutCell.swift in Sources */,
 				8689D84E2390EE7500FC3E84 /* DetailPlaceRatingCell.swift in Sources */,
 				7A3321502393E8060012985F /* ProfileAuthorizationViewModel.swift in Sources */,
 				8689D84C2390E98800FC3E84 /* DetailPlaceCellProtocol.swift in Sources */,
@@ -654,12 +691,14 @@
 				7A33214C2393DCF10012985F /* ProfileSettingViewModel.swift in Sources */,
 				7A6B48452391915700F352C7 /* PlaceAdditional.swift in Sources */,
 				7AC50B6A238BA55600117C8D /* SearchPresenter.swift in Sources */,
+				860C318A239E134900629364 /* RightArrowCell.swift in Sources */,
 				7A6939F82393CEE0006FD8D9 /* ProfileImageViewModel.swift in Sources */,
 				7AE6887F239D61A600BE7D63 /* AuthTextField.swift in Sources */,
 				7A5A9A4B238B9C7D00795EEF /* SearchViewController.swift in Sources */,
 				7AA4FAAC239425ED0076DA08 /* NewRatingView.swift in Sources */,
 				7AE68881239D7FE100BE7D63 /* SignupViewController.swift in Sources */,
 				7A94B578238DA95B008B7AC2 /* LocationService.swift in Sources */,
+				860C3185239E117700629364 /* AboutViewController.swift in Sources */,
 				7A94B574238D7312008B7AC2 /* MapPlaceView.swift in Sources */,
 				7ABBF200231693FD003DC9B5 /* Extensions.swift in Sources */,
 				8689D8482390E80900FC3E84 /* DetailPlaceHeaderViewModel.swift in Sources */,
@@ -690,6 +729,7 @@
 				7AA4FAA72394252B0076DA08 /* NewRatingViewController.swift in Sources */,
 				7A3321562394012E0012985F /* SearchPlaceCell.swift in Sources */,
 				7AC50B71238BAFA000117C8D /* MainDistanceView.swift in Sources */,
+				860C3187239E123E00629364 /* AboutPresenter.swift in Sources */,
 				8689D85A2390FD1200FC3E84 /* OutlinedButton.swift in Sources */,
 				7A5EAC812393D32D00AAEF61 /* User.swift in Sources */,
 				7A33214E2393E3B80012985F /* ProfileAuthorizationCell.swift in Sources */,

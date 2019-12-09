@@ -28,6 +28,10 @@ final class ProfileViewController: UIViewController {
         let navigation = NavigationController(rootViewController: SignupViewController())
         presentFull(navigation, animated: true, completion: nil)
     }
+    
+    func openAbout() {
+        navigationController?.pushViewController(AboutViewController(), animated: true)
+    }
 }
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {

@@ -8,11 +8,9 @@
 
 import UIKit
 
-final class ProfileSettingCell: UITableViewCell, ProfileCellProtocol {
+final class ProfileSettingCell: RightArrowCell, ProfileCellProtocol {
     static let identifier = String(describing: ProfileSettingCell.self)
-    
-    private let titleLabel = UILabel()
-    private let arrowImageView = UIImageView()
+
     private var bottomLine: UIView?
     private var topLine: UIView?
     
@@ -36,7 +34,7 @@ final class ProfileSettingCell: UITableViewCell, ProfileCellProtocol {
     }
     
     private func updateView() {
-        titleLabel.text = viewModel?.title
+        set(viewModel?.title ?? "")
         addLineToBottom()
         addLineToTop()
     }
@@ -46,35 +44,6 @@ extension ProfileSettingCell {
     private func configureViewCell() {
         backgroundColor = .white
         selectionStyle = .none
-        
-        addArrowImageView()
-        addTitleLabel()
-    }
-    
-    private func addTitleLabel() {
-        titleLabel.font = .main(ofSize: 16)
-        titleLabel.textColor = .black
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(titleLabel)
-        
-        titleLabel.snp.makeConstraints {
-            $0.left.top.bottom.equalToSuperview().inset(16)
-            $0.right.equalTo(arrowImageView.snp.left).offset(-16)
-        }
-    }
-    
-    private func addArrowImageView() {
-        arrowImageView.image = #imageLiteral(resourceName: "arrow")
-        arrowImageView.tintColor = .lightGray
-        arrowImageView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(arrowImageView)
-        
-        arrowImageView.snp.makeConstraints {
-            $0.right.equalToSuperview().inset(16)
-            $0.centerY.equalToSuperview()
-            $0.height.equalTo(13)
-            $0.width.equalTo(7)
-        }
     }
     
     private func addLineToTop() {
