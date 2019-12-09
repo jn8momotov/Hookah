@@ -36,6 +36,7 @@ final class ProfileCoordinator: ProfileCoordinatorProtocol {
     }
     
     func openFeedback() {
+        // TODO: + Else
         if FeedbackViewController.canSendMail() {
             view?.presentFull(FeedbackViewController())
         }
