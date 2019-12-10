@@ -10,6 +10,7 @@ import UIKit
 
 protocol DetailPlacePresenterProtocol {
     var viewModels: [DetailPlaceCellViewModelProtocol] { get }
+    func openYandexNavigator()
 }
 
 final class DetailPlacePresenter: DetailPlacePresenterProtocol {
@@ -47,7 +48,28 @@ final class DetailPlacePresenter: DetailPlacePresenterProtocol {
     
     private var didTapMap: DidTapHandler? {
         return { [weak self] in
-            self?.coordinator.openMap()
+            //self?.coordinator.openMap()
+            self?.openYandexNavigator()
+        }
+    }
+    
+    func openYandexNavigator() {
+        guard let location = place.location else {
+            return
+        }
+        //let urlString = "yandexnavi://build_route_on_map?lat_to=\(location.latitude)&lon_to=\(location.longitude)"
+        let urlString = "yandexmaps://maps.yandex.ru/?rtext=59.967870,30.242658~59.898495,30.299559&rtt=mt"
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            let urlAppStoreString = "https://itunes.apple.com/ru/app/yandeks.navigator/id474500851?mt=8"
+            guard let urlAppStore = URL(string: urlAppStoreString) else {
+                return
+            }
+            UIApplication.shared.open(urlAppStore, options: [:], completionHandler: nil)
         }
     }
 }
@@ -57,7 +79,7 @@ extension DetailPlacePresenter {
         addMainInfo()
         addRating()
         addAdditionals()
-        
+        addMap()
     }
     
     private func addMainInfo() {
