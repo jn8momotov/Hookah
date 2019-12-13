@@ -12,7 +12,13 @@ final class MapPlaceView: UIView {
     private let imageView = UIImageView()
     private let titleLabel = UILabel()
     private let addressLabel = UILabel()
-    private let detailButton = UIButton()
+    private let detailButton = PrimaryButton()
+    private let callButton = PrimaryButton()
+    private let routeButton = PrimaryButton()
+    
+    var didTapCall: DidTapHandler?
+    var didTapRoute: DidTapHandler?
+    var didTapDetail: DidTapHandler?
     
     init() {
         super.init(frame: .zero)
@@ -30,6 +36,21 @@ final class MapPlaceView: UIView {
             imageView.image = UIImage(data: data)
         }
     }
+    
+    @objc
+    private func didTapOnCall() {
+        didTapCall?()
+    }
+    
+    @objc
+    private func didTapOnRoute() {
+        didTapRoute?()
+    }
+    
+    @objc
+    private func didTapOnDetail() {
+        didTapDetail?()
+    }
 }
 
 extension MapPlaceView {
@@ -38,6 +59,8 @@ extension MapPlaceView {
         addImageView()
         addTitleLabel()
         addAddressLabel()
+        addCallButton()
+        addRouteButton()
         addDetailButton()
     }
     
@@ -83,21 +106,56 @@ extension MapPlaceView {
         }
     }
     
+    private func addCallButton() {
+        callButton.setImage(#imageLiteral(resourceName: "phone"), for: .normal)
+        callButton.imageView?.tintColor = .white
+        callButton.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(callButton)
+        
+        callButton.snp.makeConstraints {
+            $0.top.equalTo(addressLabel.snp.bottom).offset(8)
+            $0.right.equalToSuperview().inset(16)
+            $0.height.width.equalTo(32)
+        }
+        
+        callButton.imageView?.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(6)
+        }
+        
+        callButton.addTarget(self, action: #selector(didTapOnCall), for: .touchUpInside)
+    }
+    
+    private func addRouteButton() {
+        routeButton.setImage(#imageLiteral(resourceName: "geo_fence"), for: .normal)
+        routeButton.imageView?.tintColor = .white
+        routeButton.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(routeButton)
+        
+        routeButton.snp.makeConstraints {
+            $0.top.equalTo(addressLabel.snp.bottom).offset(8)
+            $0.right.equalTo(callButton.snp.left).offset(-8)
+            $0.height.width.equalTo(32)
+        }
+        
+        routeButton.imageView?.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(6)
+        }
+        
+        routeButton.addTarget(self, action: #selector(didTapOnRoute), for: .touchUpInside)
+    }
+    
     private func addDetailButton() {
-        detailButton.titleLabel?.font = .main(ofSize: 16, weight: .medium)
-        detailButton.setTitle("Detail", for: .normal)
-        detailButton.setTitleColor(.white, for: .normal)
-        detailButton.backgroundColor = .black
-        detailButton.layer.cornerRadius = 6
-        detailButton.clipsToBounds = true
+        detailButton.setTitle("Открыть", for: .normal)
         detailButton.translatesAutoresizingMaskIntoConstraints = false
         addSubview(detailButton)
         
         detailButton.snp.makeConstraints {
             $0.left.equalTo(imageView.snp.right).offset(16)
             $0.top.equalTo(addressLabel.snp.bottom).offset(8)
-            $0.right.equalToSuperview().inset(16)
+            $0.right.equalTo(routeButton.snp.left).offset(-8)
             $0.height.equalTo(32)
         }
+        
+        detailButton.addTarget(self, action: #selector(didTapOnDetail), for: .touchUpInside)
     }
 }

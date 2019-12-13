@@ -65,6 +65,7 @@ extension MapViewController {
         addCloseBarButtonItem()
         addMapView()
         addPlaceView()
+        addTargets()
     }
     
     private func addPlaceView() {
@@ -81,6 +82,18 @@ extension MapViewController {
         placeView.snp.makeConstraints {
             $0.left.bottom.right.equalTo(view.safeAreaLayoutGuide).inset(16)
             $0.height.equalTo(132)
+        }
+    }
+    
+    private func addTargets() {
+        placeView.didTapDetail = {
+            
+        }
+        placeView.didTapRoute = {
+            
+        }
+        placeView.didTapCall = {
+            
         }
     }
     

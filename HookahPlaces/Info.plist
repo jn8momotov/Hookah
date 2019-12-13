@@ -43,5 +43,10 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>yandexmaps</string>
+        <string>yandexnavi</string>
+    </array>
 </dict>
 </plist>

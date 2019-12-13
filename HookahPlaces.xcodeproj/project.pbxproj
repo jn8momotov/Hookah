@@ -87,6 +87,7 @@
 		8689D85A2390FD1200FC3E84 /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D8592390FD1200FC3E84 /* OutlinedButton.swift */; };
 		8689D85C2391019000FC3E84 /* DetailPlaceRatingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D85B2391019000FC3E84 /* DetailPlaceRatingViewModel.swift */; };
 		86F4F784239E299C0044BD6E /* DetailPlaceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F4F783239E299C0044BD6E /* DetailPlaceCoordinator.swift */; };
+		86F4F78A239F76700044BD6E /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F4F789239F76700044BD6E /* MapCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -173,6 +174,7 @@
 		8689D8592390FD1200FC3E84 /* OutlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
 		8689D85B2391019000FC3E84 /* DetailPlaceRatingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceRatingViewModel.swift; sourceTree = "<group>"; };
 		86F4F783239E299C0044BD6E /* DetailPlaceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceCoordinator.swift; sourceTree = "<group>"; };
+		86F4F789239F76700044BD6E /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 		9E2C37203F57401A7ACB5D62 /* Pods_HookahPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HookahPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -360,6 +362,7 @@
 				7A94B572238D72F9008B7AC2 /* Views */,
 				7A94B566238CEECE008B7AC2 /* MapViewController.swift */,
 				7A94B568238CEF4A008B7AC2 /* MapPresenter.swift */,
+				86F4F789239F76700044BD6E /* MapCoordinator.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -721,6 +724,7 @@
 				7A3321502393E8060012985F /* ProfileAuthorizationViewModel.swift in Sources */,
 				8689D84C2390E98800FC3E84 /* DetailPlaceCellProtocol.swift in Sources */,
 				7A6B48522391959600F352C7 /* Font.swift in Sources */,
+				86F4F78A239F76700044BD6E /* MapCoordinator.swift in Sources */,
 				7ABBF1FE2313605E003DC9B5 /* MainPlaceCell.swift in Sources */,
 				7A02D66D2393C30000AF82D1 /* ProfileViewController.swift in Sources */,
 				7A94B576238DA7B2008B7AC2 /* PlacePointAnnotation.swift in Sources */,
