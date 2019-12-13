@@ -11,6 +11,7 @@ import CoreLocation
 
 protocol LocationServiceProtocol {
     var accessToUserLocation: Bool { get }
+    var userCoordinate: CLLocationCoordinate2D? { get }
     var didUpdateLocation: (() -> Void)? { get set }
     func startUpdateLocation()
     func distance(to place: Place) -> Float
@@ -23,6 +24,10 @@ final class LocationService: NSObject, LocationServiceProtocol {
         didSet {
             didUpdateLocation?()
         }
+    }
+    
+    var userCoordinate: CLLocationCoordinate2D? {
+        return currentLocation?.coordinate
     }
     
     var accessToUserLocation: Bool {

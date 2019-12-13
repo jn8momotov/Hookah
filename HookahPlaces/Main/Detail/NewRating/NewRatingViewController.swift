@@ -23,11 +23,6 @@ final class NewRatingViewController: UIViewController {
     }
     
     @objc
-    private func didTapOnCloseBarButtonItem() {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @objc
     private func didTapOnAddNewRating() {
         
     }
@@ -37,7 +32,7 @@ extension NewRatingViewController {
     private func configureView() {
         title = "Новая оценка"
         view.backgroundColor = .white
-        addCloseBarButtonItem()
+        addCancelBarButtonItem()
         addHookahRating()
         addStaffRating()
         addPlaceRating()
@@ -97,16 +92,5 @@ extension NewRatingViewController {
         }
         
         addRatingButton.addTarget(self, action: #selector(didTapOnAddNewRating), for: .touchUpInside)
-    }
-    
-    private func addCloseBarButtonItem() {
-        let closeBarButtonItem = UIBarButtonItem(
-            image: #imageLiteral(resourceName: "close"),
-            style: .plain,
-            target: self,
-            action: #selector(didTapOnCloseBarButtonItem)
-        )
-        closeBarButtonItem.tintColor = .black
-        navigationItem.leftBarButtonItem = closeBarButtonItem
     }
 }

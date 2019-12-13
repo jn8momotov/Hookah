@@ -7,42 +7,50 @@
 //
 
 import UIKit
+import CoreLocation
 
-protocol MapCoordinatorProtocol {
-    func openRouteActionSheet(to location: LocationPlace)
+protocol MapCoordinator {
+    func openRouteActionSheet(from fromLocation: CLLocationCoordinate2D?, to toLocation: CLLocationCoordinate2D)
     func openDetail(_ place: Place)
     func openCall(to phone: String)
     func dismiss()
 }
 
-final class MapCoordinator: MapCoordinatorProtocol {
+final class MapCoordinatorImpl: MapCoordinator {
     weak var view: MapViewController?
     
     init(view: MapViewController) {
         self.view = view
     }
     
-    func openRouteActionSheet(to location: LocationPlace) {
+    func openRouteActionSheet(from fromLocation: CLLocationCoordinate2D?, to toLocation: CLLocationCoordinate2D) {
         let alert = UIAlertController(title: "Построить маршрут", message: nil, preferredStyle: .actionSheet)
         let yandexMapAction = UIAlertAction(title: "Яндекс.Карты", style: .default) { [weak self] _ in
-            self?.openYandexMap()
+            self?.openYandexMap(from: fromLocation!, to: toLocation)
         }
         let yandexNaviAction = UIAlertAction(title: "Яндекс.Навигатор", style: .default) { [weak self] _ in
-            self?.openYandexNavigator()
+            self?.openYandexNavigator(to: toLocation)
         }
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
-        alert.addAction(yandexMapAction)
+        if let _ = fromLocation {
+            alert.addAction(yandexMapAction)
+        }
         alert.addAction(yandexNaviAction)
         alert.addAction(cancelAction)
         view?.presentFull(alert)
     }
     
     func openDetail(_ place: Place) {
-        
+        let controller = DetailPlaceViewController()
+        controller.presenter = DetailPlacePresenter(view: controller, place: place)
+        view?.push(controller)
     }
     
     func openCall(to phone: String) {
-        
+        guard let url = URL(string: "tel://\(phone)") else {
+            return
+        }
+        UIApplication.shared.open(url)
     }
     
     func dismiss() {
@@ -50,29 +58,28 @@ final class MapCoordinator: MapCoordinatorProtocol {
     }
 }
 
-extension MapCoordinator {
-    private func openYandexMap(to location: LocationPlace) {
-        //let urlString = "yandexnavi://build_route_on_map?lat_to=\(location.latitude)&lon_to=\(location.longitude)"
-        let urlString = "yandexmaps://maps.yandex.ru/?rtext=59.967870,30.242658~59.898495,30.299559&rtt=mt"
-        guard let url = URL(string: urlString) else {
+extension MapCoordinatorImpl {
+    private func openYandexMap(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) {
+        let header = "yandexmaps://maps.yandex.ru/?"
+        let appURL = header + "rtext=\(from.latitude),\(from.longitude)~\(to.latitude),\(to.longitude)&rtt=mt"
+        let appStoreURL = "https://itunes.apple.com/ru/app/id313877526"
+        openApp(appURL: appURL, appStoreURL: appStoreURL)
+    }
+    
+    private func openYandexNavigator(to: CLLocationCoordinate2D) {
+        let appURL = "yandexnavi://build_route_on_map?lat_to=\(to.latitude)&lon_to=\(to.longitude)"
+        let appStoreURL = "https://itunes.apple.com/ru/app/id474500851"
+        openApp(appURL: appURL, appStoreURL: appStoreURL)
+    }
+    
+    private func openApp(appURL stringURL: String, appStoreURL stringAppStoreURL: String) {
+        guard let appURL = URL(string: stringURL), let appStoreURL = URL(string: stringAppStoreURL) else {
             return
         }
-        if UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        if UIApplication.shared.canOpenURL(appURL) {
+            UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
         } else {
-            let urlAppStore = "https://itunes.apple.com/ru/app/yandeks.navigator/id474500851?mt=8"
-            openURL(urlAppStore)
+            UIApplication.shared.open(appStoreURL, options: [:], completionHandler: nil)
         }
-    }
-    
-    private func openYandexNavigator() {
-        
-    }
-    
-    private func openURL(_ stringURL: String) {
-        guard let url = URL(string: stringURL) else {
-            return
-        }
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }

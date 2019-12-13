@@ -10,7 +10,6 @@ import UIKit
 
 protocol DetailPlacePresenterProtocol {
     var viewModels: [DetailPlaceCellViewModelProtocol] { get }
-    func openYandexNavigator()
 }
 
 final class DetailPlacePresenter: DetailPlacePresenterProtocol {

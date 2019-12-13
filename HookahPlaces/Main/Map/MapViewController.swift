@@ -26,11 +26,6 @@ final class MapViewController: UIViewController {
         setStartRegion()
     }
     
-    @objc
-    private func didTapOnCloseBarButtonItem() {
-        dismiss(animated: true, completion: nil)
-    }
-    
     private func setRegion(_ coordinate: CLLocationCoordinate2D) {
         let radius: CLLocationDistance = 2_000
         let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: radius, longitudinalMeters: radius)
@@ -48,13 +43,16 @@ final class MapViewController: UIViewController {
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let point = view.annotation as? PlacePointAnnotation {
-            placeView.set(presenter.places[point.identifier])
+            let place = presenter.places[point.identifier]
+            presenter.selectedPlace = place
+            placeView.set(place)
             setRegion(point.coordinate)
             placeView.isHidden = false
         }
     }
     
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        presenter.selectedPlace = nil
         placeView.isHidden = true
     }
 }
@@ -62,7 +60,7 @@ extension MapViewController: MKMapViewDelegate {
 extension MapViewController {
     private func configureView() {
         title = "Map"
-        addCloseBarButtonItem()
+        addCancelBarButtonItem()
         addMapView()
         addPlaceView()
         addTargets()
@@ -86,14 +84,14 @@ extension MapViewController {
     }
     
     private func addTargets() {
-        placeView.didTapDetail = {
-            
+        placeView.didTapDetail = { [weak self] in
+            self?.presenter.openDetail()
         }
-        placeView.didTapRoute = {
-            
+        placeView.didTapRoute = { [weak self] in
+            self?.presenter.openRoute()
         }
-        placeView.didTapCall = {
-            
+        placeView.didTapCall = { [weak self] in
+            self?.presenter.openCall()
         }
     }
     
@@ -127,16 +125,5 @@ extension MapViewController {
         annotation.title = place.name
         annotation.subtitle = placeLocation.metro
         mapView.addAnnotation(annotation)
-    }
-    
-    private func addCloseBarButtonItem() {
-        let closeBarButtonItem = UIBarButtonItem(
-            image: #imageLiteral(resourceName: "close"),
-            style: .plain,
-            target: self,
-            action: #selector(didTapOnCloseBarButtonItem)
-        )
-        closeBarButtonItem.tintColor = .black
-        navigationItem.leftBarButtonItem = closeBarButtonItem
     }
 }
