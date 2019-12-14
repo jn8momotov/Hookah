@@ -1,8 +1,8 @@
 //
-//  Extensions.swift
+//  UIViewController.swift
 //  HookahPlaces
 //
-//  Created by Евгений on 28/08/2019.
+//  Created by Евгений on 15/12/2019.
 //  Copyright © 2019 Momotov. All rights reserved.
 //
 
@@ -21,6 +21,10 @@ extension UIViewController {
     
     func push(_ viewController: UIViewController) {
         navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func setBackBarButtonItem() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     func addCancelBarButtonItem() {
