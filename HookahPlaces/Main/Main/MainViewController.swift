@@ -106,6 +106,7 @@ extension MainViewController {
         addMapBarButtonItem()
         addFilterControl()
         addTableView()
+        setBackBarButtonItem()
     }
     
     private func addMapBarButtonItem() {

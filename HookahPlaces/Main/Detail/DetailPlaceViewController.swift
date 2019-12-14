@@ -45,6 +45,7 @@ extension DetailPlaceViewController {
     private func configureView() {
         view.backgroundColor = .white
         addTableView()
+        setBackBarButtonItem()
     }
     
     private func addTableView() {

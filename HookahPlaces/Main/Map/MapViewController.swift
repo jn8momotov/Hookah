@@ -75,6 +75,7 @@ extension MapViewController {
         addMapView()
         addPlaceView()
         addTargets()
+        setBackBarButtonItem()
     }
     
     private func addPlaceView() {

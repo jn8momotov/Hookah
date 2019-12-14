@@ -66,6 +66,7 @@ extension SearchViewController {
         view.backgroundColor = .white
         addSearchView()
         addTableView()
+        setBackBarButtonItem()
     }
     
     private func addSearchView() {

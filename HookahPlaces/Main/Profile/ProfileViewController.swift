@@ -51,6 +51,7 @@ extension ProfileViewController {
         title = "Профиль"
         view.backgroundColor = .groupTableViewBackground
         addTableView()
+        setBackBarButtonItem()
     }
     
     private func addTableView() {
