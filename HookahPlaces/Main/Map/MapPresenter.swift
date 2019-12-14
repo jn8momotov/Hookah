@@ -31,8 +31,9 @@ final class MapPresenter: MapPresenterProtocol {
         return locationService.accessToUserLocation
     }
     
-    init(view: MapViewController) {
+    init(view: MapViewController, selectedPlace: Place? = nil) {
         self.view = view
+        self.selectedPlace = selectedPlace
         self.coordinator = MapCoordinatorImpl(view: view)
         places = RealmService.shared.get(Place.self)
         locationService.startUpdateLocation()

@@ -10,14 +10,13 @@ import UIKit
 import MapKit
 
 final class MapViewController: UIViewController {
-    private var presenter: MapPresenterProtocol!
+    var presenter: MapPresenterProtocol!
     
     private let mapView = MKMapView()
     private let placeView = MapPlaceView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = MapPresenter(view: self)
         configureView()
     }
     
@@ -33,27 +32,39 @@ final class MapViewController: UIViewController {
     }
     
     private func setStartRegion() {
+        if let location = presenter.selectedPlace?.location {
+            let coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+            setRegion(coordinate)
+            return
+        }
         let coordinate = presenter.accessToUserLocation
             ? mapView.userLocation.coordinate
             : CLLocationCoordinate2D(latitude: 55.751244, longitude: 37.618423)
         setRegion(coordinate)
+    }
+    
+    private func updatePlaceView() {
+        if let place = presenter.selectedPlace {
+            placeView.set(place)
+            placeView.isHidden = false
+        } else {
+            placeView.isHidden = true
+        }
     }
 }
 
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let point = view.annotation as? PlacePointAnnotation {
-            let place = presenter.places[point.identifier]
-            presenter.selectedPlace = place
-            placeView.set(place)
+            presenter.selectedPlace = presenter.places[point.identifier]
+            updatePlaceView()
             setRegion(point.coordinate)
-            placeView.isHidden = false
         }
     }
     
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
         presenter.selectedPlace = nil
-        placeView.isHidden = true
+        updatePlaceView()
     }
 }
 
@@ -80,6 +91,21 @@ extension MapViewController {
         placeView.snp.makeConstraints {
             $0.left.bottom.right.equalTo(view.safeAreaLayoutGuide).inset(16)
             $0.height.equalTo(132)
+        }
+        
+        updatePlaceView()
+        selectSelectedPlaceAnnotation()
+    }
+    
+    private func selectSelectedPlaceAnnotation() {
+        guard let place = presenter.selectedPlace, let index = presenter.places.firstIndex(of: place) else {
+            return
+        }
+        for point in mapView.annotations as? [PlacePointAnnotation] ?? [] {
+            if point.identifier == index {
+                mapView.selectAnnotation(point, animated: true)
+                return
+            }
         }
     }
     

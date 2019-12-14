@@ -28,8 +28,9 @@ final class MainViewController: UIViewController {
     
     @objc
     private func didTapOnMapBarButtonItem() {
-        let navigation = NavigationController(rootViewController: MapViewController())
-        presentFull(navigation, animated: true, completion: nil)
+        let controller = MapViewController()
+        controller.presenter = MapPresenter(view: controller)
+        presentRoot(controller)
     }
     
     @objc

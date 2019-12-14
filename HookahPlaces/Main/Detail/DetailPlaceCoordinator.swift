@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DetailPlaceCoordinatorProtocol {
-    func openMap()
+    func openMap(place: Place)
     func openNewRating()
     func openCall(to phone: String)
     func openUsersInPlace()
@@ -22,8 +22,10 @@ final class DetailPlaceCoordinator: DetailPlaceCoordinatorProtocol {
         self.view = view
     }
     
-    func openMap() {
-        view?.presentRoot(MapViewController())
+    func openMap(place: Place) {
+        let controller = MapViewController()
+        controller.presenter = MapPresenter(view: controller, selectedPlace: place)
+        view?.presentRoot(controller)
     }
     
     func openNewRating() {

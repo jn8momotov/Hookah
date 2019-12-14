@@ -47,7 +47,10 @@ final class DetailPlacePresenter: DetailPlacePresenterProtocol {
     
     private var didTapMap: DidTapHandler? {
         return { [weak self] in
-            self?.coordinator.openMap()
+            guard let place = self?.place else {
+                return
+            }
+            self?.coordinator.openMap(place: place)
         }
     }
 }
