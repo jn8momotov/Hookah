@@ -61,3 +61,4 @@ fastlane/screenshots
 fastlane/test_output
 Podfile.lock
 HookahPlaces.xcworkspace
+HookahPlaces/GoogleService-Info.plist
