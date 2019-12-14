@@ -44,6 +44,6 @@ final class ProfileCoordinator: ProfileCoordinatorProtocol {
     
     // TODO: + form adding place
     func openAddingNewPlace() {
-        
+        view?.push(AddingPlaceViewController())
     }
 }
