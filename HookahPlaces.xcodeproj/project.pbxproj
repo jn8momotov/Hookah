@@ -32,6 +32,7 @@
 		7A63F22823A594C300B9ABE7 /* InputValuePlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63F22723A594C300B9ABE7 /* InputValuePlaceView.swift */; };
 		7A63F22A23A59FDB00B9ABE7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A63F22923A59FDB00B9ABE7 /* GoogleService-Info.plist */; };
 		7A63F22C23A5A6D100B9ABE7 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63F22B23A5A6D100B9ABE7 /* UIViewController.swift */; };
+		7A63F22F23A5A7E100B9ABE7 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63F22E23A5A7E100B9ABE7 /* AlertViewController.swift */; };
 		7A6939F12393C88F006FD8D9 /* ProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6939F02393C88F006FD8D9 /* ProfileImageCell.swift */; };
 		7A6939F32393C8CD006FD8D9 /* ProfileCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6939F22393C8CD006FD8D9 /* ProfileCellProtocol.swift */; };
 		7A6939F62393C925006FD8D9 /* ProfileViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6939F52393C925006FD8D9 /* ProfileViewModelProtocol.swift */; };
@@ -121,6 +122,7 @@
 		7A63F22723A594C300B9ABE7 /* InputValuePlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValuePlaceView.swift; sourceTree = "<group>"; };
 		7A63F22923A59FDB00B9ABE7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7A63F22B23A5A6D100B9ABE7 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		7A63F22E23A5A7E100B9ABE7 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		7A6939F02393C88F006FD8D9 /* ProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCell.swift; sourceTree = "<group>"; };
 		7A6939F22393C8CD006FD8D9 /* ProfileCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellProtocol.swift; sourceTree = "<group>"; };
 		7A6939F52393C925006FD8D9 /* ProfileViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -333,6 +335,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		7A63F22D23A5A79600B9ABE7 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				7A63F22E23A5A7E100B9ABE7 /* AlertViewController.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		7A6939EF2393C861006FD8D9 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,6 +467,7 @@
 		7ABBF1FB23135F4C003DC9B5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7A63F22D23A5A79600B9ABE7 /* Alert */,
 				7AE68876239D600800BE7D63 /* Authorization */,
 				7A8CD874238F946E00B7109F /* Detail */,
 				7A94B565238CEEB9008B7AC2 /* Map */,
@@ -817,6 +828,7 @@
 				7A5EAC812393D32D00AAEF61 /* User.swift in Sources */,
 				7A33214E2393E3B80012985F /* ProfileAuthorizationCell.swift in Sources */,
 				7A6939F62393C925006FD8D9 /* ProfileViewModelProtocol.swift in Sources */,
+				7A63F22F23A5A7E100B9ABE7 /* AlertViewController.swift in Sources */,
 				7A6B485423919A2C00F352C7 /* DetailPlaceMapCell.swift in Sources */,
 				7A63F22523A593DD00B9ABE7 /* AddingPlacePresenter.swift in Sources */,
 				7A8CD876238F948600B7109F /* DetailPlaceViewController.swift in Sources */,

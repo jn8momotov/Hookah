@@ -36,13 +36,14 @@ final class ProfileCoordinator: ProfileCoordinatorProtocol {
     }
     
     func openFeedback() {
-        // TODO: + Else
         if FeedbackViewController.canSendMail() {
             view?.presentFull(FeedbackViewController())
+        } else {
+            view?.showAlert(title: "Ошибка",
+                            description: "Для обратной связи войдите в аккаунт приложения почта на вашем устройстве или отправьте сообщение самостоятельно по адресу: hookah.places.app@gmail.com")
         }
     }
     
-    // TODO: + form adding place
     func openAddingNewPlace() {
         view?.push(AddingPlaceViewController())
     }

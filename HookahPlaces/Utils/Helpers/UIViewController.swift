@@ -27,6 +27,18 @@ extension UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
+    func showAlert(title: String? = nil, description: String? = nil, completion: DidTapHandler? = nil) {
+        let alert = AlertViewController()
+        alert.providesPresentationContextTransitionStyle = true
+        alert.definesPresentationContext = true
+        alert.modalPresentationStyle = .overFullScreen
+        alert.modalTransitionStyle = .crossDissolve
+        alert.titleText = title
+        alert.descriptionText = description
+        alert.completion = completion
+        present(alert, animated: true, completion: nil)
+    }
+    
     func addCancelBarButtonItem() {
         let closeBarButtonItem = UIBarButtonItem(
             image: #imageLiteral(resourceName: "close"),
