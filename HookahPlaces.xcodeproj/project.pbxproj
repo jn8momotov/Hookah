@@ -27,6 +27,8 @@
 		7A5A9A4B238B9C7D00795EEF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5A9A4A238B9C7D00795EEF /* SearchViewController.swift */; };
 		7A5A9A4D238B9C9C00795EEF /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5A9A4C238B9C9C00795EEF /* MainPresenter.swift */; };
 		7A5EAC812393D32D00AAEF61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5EAC802393D32D00AAEF61 /* User.swift */; };
+		7A63F22323A593CF00B9ABE7 /* AddingPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63F22223A593CF00B9ABE7 /* AddingPlaceViewController.swift */; };
+		7A63F22523A593DD00B9ABE7 /* AddingPlacePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63F22423A593DD00B9ABE7 /* AddingPlacePresenter.swift */; };
 		7A6939F12393C88F006FD8D9 /* ProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6939F02393C88F006FD8D9 /* ProfileImageCell.swift */; };
 		7A6939F32393C8CD006FD8D9 /* ProfileCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6939F22393C8CD006FD8D9 /* ProfileCellProtocol.swift */; };
 		7A6939F62393C925006FD8D9 /* ProfileViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6939F52393C925006FD8D9 /* ProfileViewModelProtocol.swift */; };
@@ -112,6 +114,8 @@
 		7A5A9A4A238B9C7D00795EEF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7A5A9A4C238B9C9C00795EEF /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		7A5EAC802393D32D00AAEF61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7A63F22223A593CF00B9ABE7 /* AddingPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPlaceViewController.swift; sourceTree = "<group>"; };
+		7A63F22423A593DD00B9ABE7 /* AddingPlacePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPlacePresenter.swift; sourceTree = "<group>"; };
 		7A6939F02393C88F006FD8D9 /* ProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCell.swift; sourceTree = "<group>"; };
 		7A6939F22393C8CD006FD8D9 /* ProfileCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellProtocol.swift; sourceTree = "<group>"; };
 		7A6939F52393C925006FD8D9 /* ProfileViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModelProtocol.swift; sourceTree = "<group>"; };
@@ -293,6 +297,7 @@
 		7A5EF79F238B9B06003ABC29 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				7A63F22123A593AC00B9ABE7 /* AddingPlace */,
 				860C318E239E19A600629364 /* Feedback */,
 				860C3183239E115F00629364 /* About */,
 				7A6939F42393C900006FD8D9 /* ViewModels */,
@@ -303,6 +308,15 @@
 				860C3191239E1BDB00629364 /* ProfileCoordinator.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		7A63F22123A593AC00B9ABE7 /* AddingPlace */ = {
+			isa = PBXGroup;
+			children = (
+				7A63F22223A593CF00B9ABE7 /* AddingPlaceViewController.swift */,
+				7A63F22423A593DD00B9ABE7 /* AddingPlacePresenter.swift */,
+			);
+			path = AddingPlace;
 			sourceTree = "<group>";
 		};
 		7A6939EF2393C861006FD8D9 /* Cells */ = {
@@ -770,6 +784,7 @@
 				7A8CD878238F94C300B7109F /* DetailPlacePresenter.swift in Sources */,
 				7ABBF1F823135560003DC9B5 /* TabBarController.swift in Sources */,
 				860C3192239E1BDB00629364 /* ProfileCoordinator.swift in Sources */,
+				7A63F22323A593CF00B9ABE7 /* AddingPlaceViewController.swift in Sources */,
 				7A02D66B2393303200AF82D1 /* LocationPlace.swift in Sources */,
 				7A02D6692392C1B100AF82D1 /* DetailPlaceInfoView.swift in Sources */,
 				7A8CD87B238F967200B7109F /* DetailPlaceHeaderCell.swift in Sources */,
@@ -787,6 +802,7 @@
 				7A33214E2393E3B80012985F /* ProfileAuthorizationCell.swift in Sources */,
 				7A6939F62393C925006FD8D9 /* ProfileViewModelProtocol.swift in Sources */,
 				7A6B485423919A2C00F352C7 /* DetailPlaceMapCell.swift in Sources */,
+				7A63F22523A593DD00B9ABE7 /* AddingPlacePresenter.swift in Sources */,
 				7A8CD876238F948600B7109F /* DetailPlaceViewController.swift in Sources */,
 				7A94B57A238EADBE008B7AC2 /* TypeSortPlaces.swift in Sources */,
 				8689D8512390F26B00FC3E84 /* ProgressRatingView.swift in Sources */,
