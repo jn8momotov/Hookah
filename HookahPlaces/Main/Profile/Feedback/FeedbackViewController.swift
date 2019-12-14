@@ -27,8 +27,7 @@ final class FeedbackViewController: MFMailComposeViewController {
     
     private func configureEmail() {
         mailComposeDelegate = self
-        // TODO: Change email
-        setToRecipients(["hookah.places@gmail.com"])
+        setToRecipients(["hookah.places.app@gmail.com"])
         setSubject("Обратная связь")
     }
 }
