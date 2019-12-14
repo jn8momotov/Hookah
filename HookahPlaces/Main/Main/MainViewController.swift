@@ -100,7 +100,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension MainViewController {
     private func configureView() {
-        title = "Main"
+        title = "Главная"
         view.backgroundColor = .white
         
         addMapBarButtonItem()

@@ -37,8 +37,8 @@ extension TabBarController {
     }
     
     private func setTabBarItems() {
-        viewControllers?[0].tabBarItem = UITabBarItem(title: "Main", image: #imageLiteral(resourceName: "home"), tag: 0)
-        viewControllers?[1].tabBarItem = UITabBarItem(title: "Search", image: #imageLiteral(resourceName: "search"), tag: 1)
-        viewControllers?[2].tabBarItem = UITabBarItem(title: "Profile", image: #imageLiteral(resourceName: "user_male"), tag: 2)
+        viewControllers?[0].tabBarItem = UITabBarItem(title: "Главная", image: #imageLiteral(resourceName: "home"), tag: 0)
+        viewControllers?[1].tabBarItem = UITabBarItem(title: "Поиск", image: #imageLiteral(resourceName: "search"), tag: 1)
+        viewControllers?[2].tabBarItem = UITabBarItem(title: "Профиль", image: #imageLiteral(resourceName: "user_male"), tag: 2)
     }
 }

@@ -9,6 +9,6 @@
 import Foundation
 
 enum TypeSortPlaces: String {
-    case rating = "By rating"
-    case distance = "By distance"
+    case rating = "Лучшее"
+    case distance = "Рядом"
 }

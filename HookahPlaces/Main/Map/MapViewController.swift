@@ -70,7 +70,7 @@ extension MapViewController: MKMapViewDelegate {
 
 extension MapViewController {
     private func configureView() {
-        title = "Map"
+        title = "Карта"
         addCancelBarButtonItem()
         addMapView()
         addPlaceView()

@@ -22,7 +22,7 @@ final class MainDistanceView: UIView {
     }
     
     func set(distance: Float) {
-        distanceLabel.text = "\(distance) km"
+        distanceLabel.text = "\(distance) км"
     }
 }
 

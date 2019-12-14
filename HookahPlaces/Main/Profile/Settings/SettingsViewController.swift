@@ -20,7 +20,7 @@ final class SettingsViewController: UIViewController {
 
 extension SettingsViewController {
     private func configureView() {
-        title = "Settings"
+        title = "Настройки"
         view.backgroundColor = .groupTableViewBackground
     }
 }

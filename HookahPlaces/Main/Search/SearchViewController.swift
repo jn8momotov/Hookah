@@ -62,7 +62,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension SearchViewController {
     private func configureView() {
-        title = "Search"
+        title = "Поиск"
         view.backgroundColor = .white
         addSearchView()
         addTableView()

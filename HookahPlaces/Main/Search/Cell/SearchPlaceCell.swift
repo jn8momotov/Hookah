@@ -30,7 +30,7 @@ final class SearchPlaceCell: UITableViewCell {
             placeImageView.image = UIImage(data: dataImage)
         }
         titleLabel.text = "\(place.name) \(place.location?.metro ?? "")"
-        distanceView.set("\(place.location?.distanceTo ?? 0.0) km")
+        distanceView.set("\(place.location?.distanceTo ?? 0.0) км")
         ratingView.set("\(place.rating?.total ?? 0.0)")
     }
 }

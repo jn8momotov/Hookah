@@ -48,7 +48,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ProfileViewController {
     private func configureView() {
-        title = "Profile"
+        title = "Профиль"
         view.backgroundColor = .groupTableViewBackground
         addTableView()
     }
