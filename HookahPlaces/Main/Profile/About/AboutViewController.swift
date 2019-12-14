@@ -87,7 +87,7 @@ extension AboutViewController {
     private func addIconImageView() {
         iconImageView.layer.cornerRadius = 18
         iconImageView.clipsToBounds = true
-        //iconImageView.image = #imageLiteral(resourceName: "MTS-Cardio")
+        iconImageView.image = #imageLiteral(resourceName: "hookah-icon")
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(iconImageView)
         
