@@ -32,14 +32,14 @@ extension SearchView {
     
     private func addSearchImageView() {
         searchImageView.image = #imageLiteral(resourceName: "search")
-        searchImageView.tintColor = .lightGray
+        searchImageView.tintColor = .black
         searchImageView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(searchImageView)
         
         searchImageView.snp.makeConstraints {
             $0.left.equalToSuperview().inset(16)
             $0.centerY.equalToSuperview()
-            $0.width.height.equalTo(30)
+            $0.width.height.equalTo(22)
         }
     }
     

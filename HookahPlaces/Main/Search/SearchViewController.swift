@@ -12,7 +12,6 @@ final class SearchViewController: UIViewController {
     private var presenter: SearchPresenterProtocol!
     
     private let searchView = SearchView()
-    private let filterButton = UIButton()
     private let tableView = UITableView()
     
     override func viewDidLoad() {
@@ -65,7 +64,6 @@ extension SearchViewController {
     private func configureView() {
         title = "Search"
         view.backgroundColor = .white
-        addFilterButton()
         addSearchView()
         addTableView()
     }
@@ -75,25 +73,11 @@ extension SearchViewController {
         view.addSubview(searchView)
         
         searchView.snp.makeConstraints {
-            $0.left.top.equalToSuperview()
-            $0.right.equalTo(filterButton.snp.left)
+            $0.left.top.right.equalToSuperview()
             $0.height.equalTo(60)
         }
         
         searchView.textField.addTarget(self, action: #selector(didEditingSearchTextField), for: .editingChanged)
-    }
-    
-    private func addFilterButton() {
-        filterButton.setImage(#imageLiteral(resourceName: "filter"), for: .normal)
-        filterButton.imageView?.tintColor = .black
-        filterButton.backgroundColor = .white
-        filterButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(filterButton)
-        
-        filterButton.snp.makeConstraints {
-            $0.right.top.equalToSuperview()
-            $0.height.width.equalTo(60)
-        }
     }
     
     private func addTableView() {
