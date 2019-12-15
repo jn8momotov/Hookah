@@ -7,10 +7,10 @@ by Evgeniy Momotov, Igor Bolyaev
 #### Mobile:
 
 - [X] List places
-- [ ] Search places
-- [ ] Settings screen
+- [X] Search places
+- [X] Profile screen
 - [X] Map places
-- [ ] Detail info places
+- [X] Detail info places
 
 #### Backend:
 
