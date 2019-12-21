@@ -39,8 +39,12 @@ final class ProfileCoordinator: ProfileCoordinatorProtocol {
         if FeedbackViewController.canSendMail() {
             view?.presentFull(FeedbackViewController())
         } else {
+            let error = """
+                        Для обратной связи войдите в аккаунт приложения почта на вашем устройстве \
+                        или отправьте сообщение самостоятельно по адресу: hookah.places.app@gmail.com
+                        """
             view?.showAlert(title: "Ошибка",
-                            description: "Для обратной связи войдите в аккаунт приложения почта на вашем устройстве или отправьте сообщение самостоятельно по адресу: hookah.places.app@gmail.com")
+                            description: error)
         }
     }
     
