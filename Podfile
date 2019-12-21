@@ -5,4 +5,5 @@ target 'HookahPlaces' do
   pod 'RealmSwift', '4.0.0'
   pod 'SnapKit', '~> 5.0.0'
   pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
 end
