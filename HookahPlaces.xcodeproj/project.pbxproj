@@ -40,7 +40,7 @@
 		7A6B484123918E2700F352C7 /* DetailPlaceAdditionalDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B484023918E2700F352C7 /* DetailPlaceAdditionalDataCell.swift */; };
 		7A6B484323918F9E00F352C7 /* DetailPlaceAdditionalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B484223918F9E00F352C7 /* DetailPlaceAdditionalViewModel.swift */; };
 		7A6B48452391915700F352C7 /* PlaceAdditional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B48442391915700F352C7 /* PlaceAdditional.swift */; };
-		7A6B48522391959600F352C7 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B48512391959600F352C7 /* Font.swift */; };
+		7A6B48522391959600F352C7 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B48512391959600F352C7 /* UIFont.swift */; };
 		7A6B485423919A2C00F352C7 /* DetailPlaceMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B485323919A2C00F352C7 /* DetailPlaceMapCell.swift */; };
 		7A6B485623919A4100F352C7 /* DetailPlaceMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B485523919A4100F352C7 /* DetailPlaceMapViewModel.swift */; };
 		7A8CD876238F948600B7109F /* DetailPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8CD875238F948600B7109F /* DetailPlaceViewController.swift */; };
@@ -61,7 +61,6 @@
 		7ABBF1ED23135408003DC9B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ABBF1EC23135408003DC9B5 /* Assets.xcassets */; };
 		7ABBF1F023135408003DC9B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ABBF1EE23135408003DC9B5 /* LaunchScreen.storyboard */; };
 		7ABBF1F823135560003DC9B5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBF1F723135560003DC9B5 /* TabBarController.swift */; };
-		7ABBF1FA23135652003DC9B5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBF1F923135652003DC9B5 /* Colors.swift */; };
 		7ABBF1FE2313605E003DC9B5 /* MainPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBF1FD2313605E003DC9B5 /* MainPlaceCell.swift */; };
 		7ABBF2022317EDE9003DC9B5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBF2012317EDE9003DC9B5 /* NavigationController.swift */; };
 		7AC50B6A238BA55600117C8D /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC50B69238BA55600117C8D /* SearchPresenter.swift */; };
@@ -130,7 +129,7 @@
 		7A6B484023918E2700F352C7 /* DetailPlaceAdditionalDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceAdditionalDataCell.swift; sourceTree = "<group>"; };
 		7A6B484223918F9E00F352C7 /* DetailPlaceAdditionalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceAdditionalViewModel.swift; sourceTree = "<group>"; };
 		7A6B48442391915700F352C7 /* PlaceAdditional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAdditional.swift; sourceTree = "<group>"; };
-		7A6B48512391959600F352C7 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		7A6B48512391959600F352C7 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		7A6B485323919A2C00F352C7 /* DetailPlaceMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceMapCell.swift; sourceTree = "<group>"; };
 		7A6B485523919A4100F352C7 /* DetailPlaceMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceMapViewModel.swift; sourceTree = "<group>"; };
 		7A8CD875238F948600B7109F /* DetailPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceViewController.swift; sourceTree = "<group>"; };
@@ -153,7 +152,6 @@
 		7ABBF1EF23135408003DC9B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7ABBF1F123135408003DC9B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ABBF1F723135560003DC9B5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		7ABBF1F923135652003DC9B5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7ABBF1FD2313605E003DC9B5 /* MainPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPlaceCell.swift; sourceTree = "<group>"; };
 		7ABBF2012317EDE9003DC9B5 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		7AC50B69238BA55600117C8D /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
@@ -222,6 +220,7 @@
 			children = (
 				7A02D66423926C5F00AF82D1 /* UIColor.swift */,
 				7A63F22B23A5A6D100B9ABE7 /* UIViewController.swift */,
+				7A6B48512391959600F352C7 /* UIFont.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -484,8 +483,6 @@
 			isa = PBXGroup;
 			children = (
 				7A02D66323926C4C00AF82D1 /* Helpers */,
-				7A6B48512391959600F352C7 /* Font.swift */,
-				7ABBF1F923135652003DC9B5 /* Colors.swift */,
 				7ABBF1E523135407003DC9B5 /* AppDelegate.swift */,
 				7ABBF1EC23135408003DC9B5 /* Assets.xcassets */,
 				7ABBF1EE23135408003DC9B5 /* LaunchScreen.storyboard */,
@@ -763,7 +760,7 @@
 				8689D84E2390EE7500FC3E84 /* DetailPlaceRatingCell.swift in Sources */,
 				7A3321502393E8060012985F /* ProfileAuthorizationViewModel.swift in Sources */,
 				8689D84C2390E98800FC3E84 /* DetailPlaceCellProtocol.swift in Sources */,
-				7A6B48522391959600F352C7 /* Font.swift in Sources */,
+				7A6B48522391959600F352C7 /* UIFont.swift in Sources */,
 				86F4F78A239F76700044BD6E /* MapCoordinator.swift in Sources */,
 				7ABBF1FE2313605E003DC9B5 /* MainPlaceCell.swift in Sources */,
 				7A02D66D2393C30000AF82D1 /* ProfileViewController.swift in Sources */,
@@ -819,7 +816,6 @@
 				7ABBF1E623135407003DC9B5 /* AppDelegate.swift in Sources */,
 				7A02D66523926C5F00AF82D1 /* UIColor.swift in Sources */,
 				8689D84A2390E82E00FC3E84 /* DetailPlaceCellViewModelProtocol.swift in Sources */,
-				7ABBF1FA23135652003DC9B5 /* Colors.swift in Sources */,
 				7AA4FAA72394252B0076DA08 /* NewRatingViewController.swift in Sources */,
 				7A3321562394012E0012985F /* SearchPlaceCell.swift in Sources */,
 				7AC50B71238BAFA000117C8D /* MainDistanceView.swift in Sources */,
