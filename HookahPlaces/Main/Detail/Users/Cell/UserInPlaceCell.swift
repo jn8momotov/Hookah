@@ -24,8 +24,8 @@ final class UserInPlaceCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set(_ user: User) {
-        nameLabel.text = user.name
+    func set(_ profile: Profile) {
+        nameLabel.text = profile.name
     }
 }
 

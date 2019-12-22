@@ -9,17 +9,17 @@
 import Foundation
 
 protocol UsersPresenterProtocol {
-    var users: [User] { get }
+    var users: [Profile] { get }
 }
 
 final class UsersPresenter: UsersPresenterProtocol {
     weak var view: UsersViewController?
     
-    var users: [User] = []
+    var users: [Profile] = []
     
     init(view: UsersViewController) {
         self.view = view
-        let user = User()
+        let user = Profile()
         user.name = "Evgeniy Momotov"
         users.append(user)
     }

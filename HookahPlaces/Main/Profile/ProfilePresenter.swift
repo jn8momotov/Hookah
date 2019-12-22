@@ -16,7 +16,7 @@ final class ProfilePresenter: ProfilePresenterProtocol {
     weak var view: ProfileViewController?
     private let coordinator: ProfileCoordinator
     
-    private var user: User?
+    private var user: Profile?
     var viewModels: [ProfileViewModelProtocol] = []
     
     init(view: ProfileViewController) {

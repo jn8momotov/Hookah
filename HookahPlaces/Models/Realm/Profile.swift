@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  Profile.swift
 //  HookahPlaces
 //
 //  Created by Евгений on 01/12/2019.
@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-final class User: Object {
+final class Profile: Object {
     @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var photo: Data?
     @objc dynamic var name: String = ""

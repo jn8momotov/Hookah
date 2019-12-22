@@ -19,6 +19,12 @@ protocol AuthorizationService {
     func signOut(onError: ErrorHandler?, onSuccess: SuccessHandler?)
 }
 
+extension AuthorizationService {
+    static var currentUser: User? {
+        return Auth.auth().currentUser
+    }
+}
+
 final class AuthorizationServiceImpl: AuthorizationService {
     func signIn(email: String, password: String, onError: ErrorHandler?, onSuccess: SuccessHandler?) {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
