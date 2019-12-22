@@ -15,6 +15,7 @@
 		7A02D66F2393C36000AF82D1 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D66E2393C36000AF82D1 /* ProfilePresenter.swift */; };
 		7A28631023AD9BBB00263D72 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28630F23AD9BBB00263D72 /* AuthorizationService.swift */; };
 		7A28631223ADA1B000263D72 /* SignupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28631123ADA1B000263D72 /* SignupCoordinator.swift */; };
+		7A28631423AFAD6600263D72 /* SigninCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28631323AFAD6600263D72 /* SigninCoordinator.swift */; };
 		7A3321442393D6300012985F /* ProfileInfoUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3321432393D6300012985F /* ProfileInfoUserCell.swift */; };
 		7A3321462393D81C0012985F /* ProfileInfoUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3321452393D81C0012985F /* ProfileInfoUserViewModel.swift */; };
 		7A33214A2393DB220012985F /* ProfileSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3321492393DB220012985F /* ProfileSettingCell.swift */; };
@@ -106,6 +107,7 @@
 		7A02D66E2393C36000AF82D1 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		7A28630F23AD9BBB00263D72 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 		7A28631123ADA1B000263D72 /* SignupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCoordinator.swift; sourceTree = "<group>"; };
+		7A28631323AFAD6600263D72 /* SigninCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninCoordinator.swift; sourceTree = "<group>"; };
 		7A3321432393D6300012985F /* ProfileInfoUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoUserCell.swift; sourceTree = "<group>"; };
 		7A3321452393D81C0012985F /* ProfileInfoUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoUserViewModel.swift; sourceTree = "<group>"; };
 		7A3321492393DB220012985F /* ProfileSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingCell.swift; sourceTree = "<group>"; };
@@ -518,6 +520,7 @@
 			children = (
 				7AE68879239D603400BE7D63 /* SigninViewController.swift */,
 				7AE6887B239D604100BE7D63 /* SigninPresenter.swift */,
+				7A28631323AFAD6600263D72 /* SigninCoordinator.swift */,
 			);
 			path = Signin;
 			sourceTree = "<group>";
@@ -812,6 +815,7 @@
 				7A4842A5238C29690002648E /* Place.swift in Sources */,
 				7A63F22C23A5A6D100B9ABE7 /* UIViewController.swift in Sources */,
 				7AA4FAAE2394264E0076DA08 /* StarButton.swift in Sources */,
+				7A28631423AFAD6600263D72 /* SigninCoordinator.swift in Sources */,
 				7A8CD878238F94C300B7109F /* DetailPlacePresenter.swift in Sources */,
 				7ABBF1F823135560003DC9B5 /* TabBarController.swift in Sources */,
 				860C3192239E1BDB00629364 /* ProfileCoordinator.swift in Sources */,

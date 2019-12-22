@@ -1,23 +1,23 @@
 //
-//  SignupCoordinator.swift
+//  SigninCoordinator.swift
 //  HookahPlaces
 //
-//  Created by Евгений on 21/12/2019.
+//  Created by Евгений on 22/12/2019.
 //  Copyright © 2019 Momotov. All rights reserved.
 //
 
 import Foundation
 
-protocol SignupCoordinator {
+protocol SigninCoordinator {
     func dismiss()
     func showSuccess()
     func showError(_ error: String)
 }
 
-final class SignupCoordinatorImpl: SignupCoordinator {
-    weak var view: SignupViewController?
+final class SigninCoordinatorImpl: SigninCoordinator {
+    weak var view: SigninViewController?
     
-    init(view: SignupViewController) {
+    init(view: SigninViewController) {
         self.view = view
     }
     
@@ -26,7 +26,7 @@ final class SignupCoordinatorImpl: SignupCoordinator {
     }
     
     func showSuccess() {
-        view?.showAlert(title: "Успешно", description: "Вы успешно зарегестрировались!", completion: { [weak self] in
+        view?.showAlert(title: "Успешно", description: "Вы успешно авторизовались!", completion: { [weak self] in
             self?.dismiss()
         })
     }
