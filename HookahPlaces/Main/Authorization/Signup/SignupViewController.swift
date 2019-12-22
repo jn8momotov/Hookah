@@ -25,6 +25,22 @@ final class SignupViewController: UIViewController {
         presenter = SignupPresenter(view: self)
         configureView()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    // TODO: Add saved all input fields
+    @objc
+    private func didTapSignUp() {
+        guard
+            let email = emailTextField.text,
+            let password = passwordTextField.text,
+            !email.isEmpty, !password.isEmpty else {
+            return
+        }
+        presenter.signUp(email: email, password: password)
+    }
 }
 
 extension SignupViewController {
@@ -142,5 +158,7 @@ extension SignupViewController {
             $0.left.bottom.right.equalTo(view.safeAreaLayoutGuide).inset(16)
             $0.height.equalTo(44)
         }
+        
+        signupButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
     }
 }

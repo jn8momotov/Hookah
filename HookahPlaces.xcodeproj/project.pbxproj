@@ -13,6 +13,8 @@
 		7A02D66B2393303200AF82D1 /* LocationPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D66A2393303200AF82D1 /* LocationPlace.swift */; };
 		7A02D66D2393C30000AF82D1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D66C2393C30000AF82D1 /* ProfileViewController.swift */; };
 		7A02D66F2393C36000AF82D1 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D66E2393C36000AF82D1 /* ProfilePresenter.swift */; };
+		7A28631023AD9BBB00263D72 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28630F23AD9BBB00263D72 /* AuthorizationService.swift */; };
+		7A28631223ADA1B000263D72 /* SignupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28631123ADA1B000263D72 /* SignupCoordinator.swift */; };
 		7A3321442393D6300012985F /* ProfileInfoUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3321432393D6300012985F /* ProfileInfoUserCell.swift */; };
 		7A3321462393D81C0012985F /* ProfileInfoUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3321452393D81C0012985F /* ProfileInfoUserViewModel.swift */; };
 		7A33214A2393DB220012985F /* ProfileSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3321492393DB220012985F /* ProfileSettingCell.swift */; };
@@ -102,6 +104,8 @@
 		7A02D66A2393303200AF82D1 /* LocationPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPlace.swift; sourceTree = "<group>"; };
 		7A02D66C2393C30000AF82D1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7A02D66E2393C36000AF82D1 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		7A28630F23AD9BBB00263D72 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
+		7A28631123ADA1B000263D72 /* SignupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCoordinator.swift; sourceTree = "<group>"; };
 		7A3321432393D6300012985F /* ProfileInfoUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoUserCell.swift; sourceTree = "<group>"; };
 		7A3321452393D81C0012985F /* ProfileInfoUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoUserViewModel.swift; sourceTree = "<group>"; };
 		7A3321492393DB220012985F /* ProfileSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingCell.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 			children = (
 				7A4842A7238C2A890002648E /* RealmService.swift */,
 				7A94B577238DA95B008B7AC2 /* LocationService.swift */,
+				7A28630F23AD9BBB00263D72 /* AuthorizationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -522,6 +527,7 @@
 			children = (
 				7AE68880239D7FE100BE7D63 /* SignupViewController.swift */,
 				7AE68882239D801100BE7D63 /* SignupPresenter.swift */,
+				7A28631123ADA1B000263D72 /* SignupCoordinator.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -771,6 +777,7 @@
 				7A6939F12393C88F006FD8D9 /* ProfileImageCell.swift in Sources */,
 				7AA4FAA9239425380076DA08 /* NewRatingPresenter.swift in Sources */,
 				7A6B484323918F9E00F352C7 /* DetailPlaceAdditionalViewModel.swift in Sources */,
+				7A28631223ADA1B000263D72 /* SignupCoordinator.swift in Sources */,
 				7AE6887C239D604100BE7D63 /* SigninPresenter.swift in Sources */,
 				7A33214C2393DCF10012985F /* ProfileSettingViewModel.swift in Sources */,
 				7A6B48452391915700F352C7 /* PlaceAdditional.swift in Sources */,
@@ -821,6 +828,7 @@
 				7AC50B71238BAFA000117C8D /* MainDistanceView.swift in Sources */,
 				860C3187239E123E00629364 /* AboutPresenter.swift in Sources */,
 				8689D85A2390FD1200FC3E84 /* OutlinedButton.swift in Sources */,
+				7A28631023AD9BBB00263D72 /* AuthorizationService.swift in Sources */,
 				7A5EAC812393D32D00AAEF61 /* User.swift in Sources */,
 				7A33214E2393E3B80012985F /* ProfileAuthorizationCell.swift in Sources */,
 				7A6939F62393C925006FD8D9 /* ProfileViewModelProtocol.swift in Sources */,
