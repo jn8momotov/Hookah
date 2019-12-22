@@ -14,6 +14,7 @@ typealias SuccessHandler = () -> Void
 typealias AuthHandler = (result: AuthDataResult?, error: Error?, onError: ErrorHandler?, onSuccess: SuccessHandler?)
 
 protocol AuthorizationService {
+    static var currentUser: User? { get }
     func signIn(email: String, password: String, onError: ErrorHandler?, onSuccess: SuccessHandler?)
     func signUp(email: String, password: String, onError: ErrorHandler?, onSuccess: SuccessHandler?)
     func signOut(onError: ErrorHandler?, onSuccess: SuccessHandler?)
