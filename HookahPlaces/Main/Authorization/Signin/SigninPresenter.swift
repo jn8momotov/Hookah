@@ -23,7 +23,8 @@ final class SigninPresenter: SigninPresenterProtocol {
     }
     
     func signIn(email: String, password: String) {
-        authService.signIn(email: email, password: password, onError: { [weak self] error in
+        let model = SignInModel(email: email, password: password)
+        authService.signIn(model, onError: { [weak self] error in
             self?.coordinator.showError(error)
         }, onSuccess: { [weak self] in
             self?.coordinator.showSuccess()

@@ -36,10 +36,16 @@ final class SignupViewController: UIViewController {
         guard
             let email = emailTextField.text,
             let password = passwordTextField.text,
-            !email.isEmpty, !password.isEmpty else {
+            let name = nameTextField.text,
+            let phone = phoneTextField.text else {
             return
         }
-        presenter.signUp(email: email, password: password)
+        let model = SignUpModel(isAccept: userAgreementSwitch.isOn,
+                                photo: nil,
+                                name: name,
+                                phone: phone,
+                                signInModel: SignInModel(email: email, password: password))
+        presenter.signUp(model)
     }
 }
 

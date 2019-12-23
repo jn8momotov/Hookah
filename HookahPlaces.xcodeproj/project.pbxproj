@@ -46,6 +46,8 @@
 		7A6B485423919A2C00F352C7 /* DetailPlaceMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B485323919A2C00F352C7 /* DetailPlaceMapCell.swift */; };
 		7A6B485623919A4100F352C7 /* DetailPlaceMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6B485523919A4100F352C7 /* DetailPlaceMapViewModel.swift */; };
 		7A77553B23B013DE007F4721 /* AppConfiguring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A77553A23B013DE007F4721 /* AppConfiguring.swift */; };
+		7A77553D23B01C5C007F4721 /* AuthorizationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A77553C23B01C5C007F4721 /* AuthorizationModel.swift */; };
+		7A77553F23B11383007F4721 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A77553E23B11383007F4721 /* String.swift */; };
 		7A8CD876238F948600B7109F /* DetailPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8CD875238F948600B7109F /* DetailPlaceViewController.swift */; };
 		7A8CD878238F94C300B7109F /* DetailPlacePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8CD877238F94C300B7109F /* DetailPlacePresenter.swift */; };
 		7A8CD87B238F967200B7109F /* DetailPlaceHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8CD87A238F967200B7109F /* DetailPlaceHeaderCell.swift */; };
@@ -138,6 +140,8 @@
 		7A6B485323919A2C00F352C7 /* DetailPlaceMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceMapCell.swift; sourceTree = "<group>"; };
 		7A6B485523919A4100F352C7 /* DetailPlaceMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceMapViewModel.swift; sourceTree = "<group>"; };
 		7A77553A23B013DE007F4721 /* AppConfiguring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguring.swift; sourceTree = "<group>"; };
+		7A77553C23B01C5C007F4721 /* AuthorizationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationModel.swift; sourceTree = "<group>"; };
+		7A77553E23B11383007F4721 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		7A8CD875238F948600B7109F /* DetailPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceViewController.swift; sourceTree = "<group>"; };
 		7A8CD877238F94C300B7109F /* DetailPlacePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlacePresenter.swift; sourceTree = "<group>"; };
 		7A8CD87A238F967200B7109F /* DetailPlaceHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceHeaderCell.swift; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 			children = (
 				7A63F22B23A5A6D100B9ABE7 /* UIViewController.swift */,
 				7A6B48512391959600F352C7 /* UIFont.swift */,
+				7A77553E23B11383007F4721 /* String.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 				8689D8542390FAA600FC3E84 /* Realm */,
 				7A94B575238DA7B2008B7AC2 /* PlacePointAnnotation.swift */,
 				7A6B48442391915700F352C7 /* PlaceAdditional.swift */,
+				7A77553C23B01C5C007F4721 /* AuthorizationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -763,6 +769,7 @@
 			files = (
 				7A4842A2238C25C60002648E /* MainRatingView.swift in Sources */,
 				7A3321532393EDB90012985F /* SearchView.swift in Sources */,
+				7A77553F23B11383007F4721 /* String.swift in Sources */,
 				7ABBF2022317EDE9003DC9B5 /* NavigationController.swift in Sources */,
 				7A33214A2393DB220012985F /* ProfileSettingCell.swift in Sources */,
 				860C318D239E14AB00629364 /* AboutCell.swift in Sources */,
@@ -842,6 +849,7 @@
 				7A8CD876238F948600B7109F /* DetailPlaceViewController.swift in Sources */,
 				7A94B57A238EADBE008B7AC2 /* TypeSortPlaces.swift in Sources */,
 				8689D8512390F26B00FC3E84 /* ProgressRatingView.swift in Sources */,
+				7A77553D23B01C5C007F4721 /* AuthorizationModel.swift in Sources */,
 				7AC50B6E238BA63000117C8D /* SettingsPresenter.swift in Sources */,
 				7A4842A8238C2A890002648E /* RealmService.swift in Sources */,
 				7A94B567238CEECE008B7AC2 /* MapViewController.swift in Sources */,
