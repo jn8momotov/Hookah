@@ -12,6 +12,7 @@ protocol SigninCoordinator {
     func dismiss()
     func showSuccess()
     func showError(_ error: String)
+    func showSignUp()
 }
 
 final class SigninCoordinatorImpl: SigninCoordinator {
@@ -33,5 +34,9 @@ final class SigninCoordinatorImpl: SigninCoordinator {
     
     func showError(_ error: String) {
         view?.showAlert(title: "Ошибка", description: error)
+    }
+    
+    func showSignUp() {
+        view?.presentRoot(SignupViewController())
     }
 }

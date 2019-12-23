@@ -25,7 +25,9 @@ final class SigninViewController: UIViewController {
     // TODO: Logic sign in
     @objc
     private func didTapSignInButton() {
-        guard let email = emailTextField.text, let password = passwordTextField.text else {
+        guard
+            let email = emailTextField.text,
+            let password = passwordTextField.text else {
             return
         }
         presenter.signIn(email: email, password: password)
@@ -34,8 +36,7 @@ final class SigninViewController: UIViewController {
     // TODO: Open sign up
     @objc
     private func didTapSignUpButton() {
-        let navigation = NavigationController(rootViewController: SignupViewController())
-        presentFull(navigation, animated: true, completion: nil)
+        presenter.showSignUp()
     }
 }
 

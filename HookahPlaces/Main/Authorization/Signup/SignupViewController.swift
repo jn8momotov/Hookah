@@ -30,7 +30,7 @@ final class SignupViewController: UIViewController {
         view.endEditing(true)
     }
     
-    // TODO: Add saved all input fields
+    // TODO: Saved photo
     @objc
     private func didTapSignUp() {
         guard

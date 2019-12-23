@@ -10,6 +10,7 @@ import Foundation
 
 protocol SigninPresenterProtocol {
     func signIn(email: String, password: String)
+    func showSignUp()
 }
 
 final class SigninPresenter: SigninPresenterProtocol {
@@ -29,5 +30,9 @@ final class SigninPresenter: SigninPresenterProtocol {
         }, onSuccess: { [weak self] in
             self?.coordinator.showSuccess()
         })
+    }
+    
+    func showSignUp() {
+        coordinator.showSignUp()
     }
 }
