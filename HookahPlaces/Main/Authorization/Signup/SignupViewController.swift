@@ -33,6 +33,7 @@ final class SignupViewController: UIViewController {
     // TODO: Saved photo
     @objc
     private func didTapSignUp() {
+        view.endEditing(true)
         guard
             let email = emailTextField.text,
             let password = passwordTextField.text,

@@ -25,6 +25,7 @@ final class SigninViewController: UIViewController {
     // TODO: Logic sign in
     @objc
     private func didTapSignInButton() {
+        view.endEditing(true)
         guard
             let email = emailTextField.text,
             let password = passwordTextField.text else {
@@ -36,6 +37,7 @@ final class SigninViewController: UIViewController {
     // TODO: Open sign up
     @objc
     private func didTapSignUpButton() {
+        view.endEditing(true)
         presenter.showSignUp()
     }
 }
