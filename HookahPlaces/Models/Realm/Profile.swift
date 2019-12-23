@@ -14,6 +14,7 @@ final class Profile: Object {
     @objc dynamic var photo: Data?
     @objc dynamic var name: String = ""
     @objc dynamic var email: String = ""
+    @objc dynamic var phone: String = ""
     
     override static func primaryKey() -> String? {
         return "id"

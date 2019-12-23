@@ -48,6 +48,7 @@
 		7A77553B23B013DE007F4721 /* AppConfiguring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A77553A23B013DE007F4721 /* AppConfiguring.swift */; };
 		7A77553D23B01C5C007F4721 /* AuthorizationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A77553C23B01C5C007F4721 /* AuthorizationModel.swift */; };
 		7A77553F23B11383007F4721 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A77553E23B11383007F4721 /* String.swift */; };
+		7A77554123B11AFB007F4721 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A77554023B11AFB007F4721 /* FirestoreService.swift */; };
 		7A8CD876238F948600B7109F /* DetailPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8CD875238F948600B7109F /* DetailPlaceViewController.swift */; };
 		7A8CD878238F94C300B7109F /* DetailPlacePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8CD877238F94C300B7109F /* DetailPlacePresenter.swift */; };
 		7A8CD87B238F967200B7109F /* DetailPlaceHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8CD87A238F967200B7109F /* DetailPlaceHeaderCell.swift */; };
@@ -142,6 +143,7 @@
 		7A77553A23B013DE007F4721 /* AppConfiguring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguring.swift; sourceTree = "<group>"; };
 		7A77553C23B01C5C007F4721 /* AuthorizationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationModel.swift; sourceTree = "<group>"; };
 		7A77553E23B11383007F4721 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		7A77554023B11AFB007F4721 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		7A8CD875238F948600B7109F /* DetailPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceViewController.swift; sourceTree = "<group>"; };
 		7A8CD877238F94C300B7109F /* DetailPlacePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlacePresenter.swift; sourceTree = "<group>"; };
 		7A8CD87A238F967200B7109F /* DetailPlaceHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceHeaderCell.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				7A4842A7238C2A890002648E /* RealmService.swift */,
 				7A94B577238DA95B008B7AC2 /* LocationService.swift */,
 				7A28630F23AD9BBB00263D72 /* AuthorizationService.swift */,
+				7A77554023B11AFB007F4721 /* FirestoreService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -801,6 +804,7 @@
 				86F4F784239E299C0044BD6E /* DetailPlaceCoordinator.swift in Sources */,
 				7AE68881239D7FE100BE7D63 /* SignupViewController.swift in Sources */,
 				860C3195239E238100629364 /* UsersViewController.swift in Sources */,
+				7A77554123B11AFB007F4721 /* FirestoreService.swift in Sources */,
 				7A94B578238DA95B008B7AC2 /* LocationService.swift in Sources */,
 				860C3185239E117700629364 /* AboutViewController.swift in Sources */,
 				7A94B574238D7312008B7AC2 /* MapPlaceView.swift in Sources */,

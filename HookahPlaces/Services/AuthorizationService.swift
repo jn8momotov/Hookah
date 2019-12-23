@@ -28,10 +28,16 @@ extension AuthorizationService {
 }
 
 final class AuthorizationServiceImpl: AuthorizationService {
+    private let firestoreService: FirestoreService = FirestoreServiceImpl()
+    
     func signIn(_ model: SignInModel, onError: ErrorHandler?, onSuccess: SuccessHandler?) {
         Auth.auth().signIn(withEmail: model.email, password: model.password) { [weak self] result, error in
-            let handler = (result: result, error: error, onError: onError, onSuccess: onSuccess)
-            self?.completion(handler)
+            guard let user = result?.user, error == nil else {
+                let textError = error?.localizedDescription ?? "Не удалось авторизоваться!"
+                onError?(textError)
+                return
+            }
+            self?.pullUserData(user: user, onError: onError, onSuccess: onSuccess)
         }
     }
     
@@ -39,11 +45,11 @@ final class AuthorizationServiceImpl: AuthorizationService {
         let signIn = model.signInModel
         Auth.auth().createUser(withEmail: signIn.email, password: signIn.password) { [weak self] result, error in
             guard let user = result?.user, error == nil else {
-                let textError = error?.localizedDescription ?? "Не удалось зарегистрироваться"
+                let textError = error?.localizedDescription ?? "Не удалось зарегистрироваться!"
                 onError?(textError)
                 return
             }
-            self?.sendUserData(model: model, uid: user.uid, onError: onError, onSuccess: onSuccess)
+            self?.pushUserData(user: user, name: model.name, phone: model.phone, onError: onError, onSuccess: onSuccess)
         }
     }
     
@@ -58,33 +64,37 @@ final class AuthorizationServiceImpl: AuthorizationService {
 }
 
 extension AuthorizationServiceImpl {
-    private func completion(_ completion: AuthHandler) {
-        print("Authorization...........................")
-        print("User: \(String(describing: completion.result?.user))")
-        print("Error: \(String(describing: completion.error))")
-        print("........................................")
-        if let error = completion.error {
-            completion.onError?(error.localizedDescription)
-            return
+    private func pullUserData(user: User, onError: ErrorHandler?, onSuccess: SuccessHandler?) {
+        firestoreService.pull(uid: user.uid, onError: onError) { [weak self] name, phone in
+            DispatchQueue.main.async {
+                self?.saveUserData(user: user, name: name, phone: phone)
+                onSuccess?()
+            }
         }
-        guard let _ = completion.result else {
-            completion.onError?("Unknown error")
-            return
-        }
-        completion.onSuccess?()
     }
     
-    private func sendUserData(model: SignUpModel, uid: String, onError: ErrorHandler?, onSuccess: SuccessHandler?) {
-        let data = [
-            "name": model.name,
-            "phone": model.phone
-        ]
-        Firestore.firestore().collection("users").document(uid).setData(data) { error in
-            if let error = error {
-                onError?(error.localizedDescription)
-                return
+    private func pushUserData(user: User, name: String, phone: String, onError: ErrorHandler?, onSuccess: SuccessHandler?) {
+        firestoreService.push(uid: user.uid, name: name, phone: phone, onError: onError) { [weak self] in
+            DispatchQueue.main.async {
+                self?.saveUserData(user: user, name: name, phone: phone)
+                onSuccess?()
             }
-            onSuccess?()
+        }
+    }
+    
+    private func saveUserData(user: User, name: String, phone: String) {
+        if let profile = RealmService.shared.get(Profile.self).first {
+            RealmService.shared.edit {
+                profile.name = name
+                profile.phone = phone
+                profile.email = user.email ?? ""
+            }
+        } else {
+            let profile = Profile()
+            profile.name = name
+            profile.phone = phone
+            profile.email = user.email ?? ""
+            RealmService.shared.save(profile)
         }
     }
 }
