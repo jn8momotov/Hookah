@@ -20,10 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         let test = ContentfullDataProvider()
-        test.fetch(Place.self) { result in
+        test.fetchAll(Place.self) { result in
             switch result {
-            case .success( let place):
-                print(place)
+            case .success(let places):
+                print(places)
             case .failure(let error):
                 print(error)
             }

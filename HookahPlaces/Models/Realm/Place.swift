@@ -61,13 +61,12 @@ final class Place: Object {
 //          self?.image = image as? Asset
 //        }
     }
-    
     required init() {
         super.init()
     }
 }
 
-extension Place: Codable {
+extension Place: Decodable {
     enum CodingKeys: String, CodingKey {
         case name
         case updatedAt

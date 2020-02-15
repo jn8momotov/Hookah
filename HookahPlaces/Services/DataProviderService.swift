@@ -13,5 +13,6 @@ enum NetworkError: Error {
 
 //(DataResponse<LoginResult>) -> Void
 protocol DataProviderService {
-    func fetch(_ resourceType: Codable.Type, completion: @escaping (Result<Codable, NetworkError>) -> Void)
+    func fetch(_ resourceType: Decodable.Type, completion: @escaping (Result<Decodable, NetworkError>) -> Void)
+    func fetchAll(_ resourceType: Decodable.Type, completion: @escaping (Result<[Decodable], NetworkError>) -> Void)
 }
