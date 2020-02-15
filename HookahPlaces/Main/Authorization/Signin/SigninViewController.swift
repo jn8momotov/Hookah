@@ -46,7 +46,7 @@ extension SigninViewController {
     private func configureView() {
         title = "Вход"
         view.backgroundColor = .white
-        
+        setBackBarButtonItem()
         addEmailTextField()
         addPasswordTextField()
         addSigninButton()

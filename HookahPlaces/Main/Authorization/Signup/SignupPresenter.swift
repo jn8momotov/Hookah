@@ -29,7 +29,8 @@ final class SignupPresenter: SignupPresenterProtocol {
         authService.signUp(correctModel, onError: { [weak self] error in
             self?.coordinator.showError(error)
         }, onSuccess: { [weak self] in
-            self?.coordinator.showSuccess()
+            NotificationCenter.default.post(name: .signIn, object: nil)
+            self?.coordinator.dismiss()
         })
     }
 }

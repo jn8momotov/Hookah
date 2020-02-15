@@ -30,6 +30,6 @@ final class SigninCoordinatorImpl: SigninCoordinator {
     }
     
     func showSignUp() {
-        view?.presentRoot(SignupViewController())
+        view?.push(SignupViewController())
     }
 }

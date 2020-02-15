@@ -54,7 +54,6 @@ extension SignupViewController {
     private func configureView() {
         title = "Регистрация"
         view.backgroundColor = .white
-        addCancelBarButtonItem()
         addUserImageView()
         addNameTextField()
         addEmailTextField()
@@ -62,6 +61,9 @@ extension SignupViewController {
         addPasswordTextField()
         addUserAgreementView()
         addSignUpButton()
+        if navigationController?.viewControllers.count ?? 1 < 2 {
+            addCancelBarButtonItem()
+        }
     }
     
     private func addUserImageView() {

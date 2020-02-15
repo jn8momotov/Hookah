@@ -25,15 +25,8 @@ final class ProfileViewController: UIViewController {
     }
     
     @objc
-    private func didTapLogout() {
-        let alert = UIAlertController(title: nil, message: "Выйти?", preferredStyle: .actionSheet)
-        let logoutAction = UIAlertAction(title: "Выйти", style: .destructive) { [weak self] _ in
-            self?.presenter.logOut()
-        }
-        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
-        alert.addAction(logoutAction)
-        alert.addAction(cancelAction)
-        presentFull(alert)
+    private func didTapSettings() {
+        presenter.didTapSettings()
     }
 }
 
@@ -92,10 +85,10 @@ extension ProfileViewController {
             navigationItem.rightBarButtonItem = nil
             return
         }
-        let barButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "exit"),
+        let barButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "services"),
                                             style: .done,
                                             target: self,
-                                            action: #selector(didTapLogout))
+                                            action: #selector(didTapSettings))
         barButtonItem.tintColor = .black
         navigationItem.rightBarButtonItem = barButtonItem
     }

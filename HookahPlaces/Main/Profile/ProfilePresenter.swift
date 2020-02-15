@@ -11,13 +11,12 @@ import Foundation
 protocol ProfilePresenterProtocol {
     var isSignIn: Bool { get }
     var viewModels: [ProfileViewModelProtocol] { get }
-    func logOut()
+    var didTapSettings: DidTapHandler { get }
 }
 
 final class ProfilePresenter: ProfilePresenterProtocol {
     private weak var view: ProfileViewController?
     private let coordinator: ProfileCoordinator
-    private let authorizationService: AuthorizationService = AuthorizationServiceImpl()
     
     private var user: Profile?
     var viewModels: [ProfileViewModelProtocol] = []
@@ -34,12 +33,10 @@ final class ProfilePresenter: ProfilePresenterProtocol {
         addLogOutObserver()
     }
     
-    func logOut() {
-        authorizationService.signOut(onError: { [weak self] error in
-            self?.view?.showAlert(title: "Ошибка!", description: error, completion: nil)
-        }, onSuccess: {
-            NotificationCenter.default.post(name: .logOut, object: nil)
-        })
+    var didTapSettings: DidTapHandler {
+        return { [weak self] in
+            self?.coordinator.openSettings()
+        }
     }
     
     private var didTapSignIn: DidTapHandler {

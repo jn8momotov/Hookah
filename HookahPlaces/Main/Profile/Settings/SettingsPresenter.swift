@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SettingsPresenterProtocol {
-    
+    func logOut()
 }
 
 final class SettingsPresenter: SettingsPresenterProtocol {
@@ -17,5 +17,15 @@ final class SettingsPresenter: SettingsPresenterProtocol {
     
     init(view: SettingsViewController) {
         self.view = view
+    }
+    
+    func logOut() {
+        AuthorizationServiceImpl().signOut(onError: { [weak self] error in
+            self?.view?.showAlert(title: "Ошибка!", description: error, completion: nil)
+        }, onSuccess: { [weak self] in
+            RealmService.shared.deleteAll(Profile.self)
+            NotificationCenter.default.post(name: .logOut, object: nil)
+            self?.view?.navigationController?.popViewController(animated: true)
+        })
     }
 }

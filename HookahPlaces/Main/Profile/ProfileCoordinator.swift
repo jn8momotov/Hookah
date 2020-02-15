@@ -14,6 +14,7 @@ protocol ProfileCoordinatorProtocol {
     func openAbout()
     func openFeedback()
     func openAddingNewPlace()
+    func openSettings()
 }
 
 final class ProfileCoordinator: ProfileCoordinatorProtocol {
@@ -50,5 +51,9 @@ final class ProfileCoordinator: ProfileCoordinatorProtocol {
     
     func openAddingNewPlace() {
         view?.push(AddingPlaceViewController())
+    }
+    
+    func openSettings() {
+        view?.push(SettingsViewController())
     }
 }
