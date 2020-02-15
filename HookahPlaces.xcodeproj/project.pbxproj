@@ -72,6 +72,8 @@
 		8689D8582390FC9300FC3E84 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D8572390FC9300FC3E84 /* PrimaryButton.swift */; };
 		8689D85A2390FD1200FC3E84 /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D8592390FD1200FC3E84 /* OutlinedButton.swift */; };
 		8689D85C2391019000FC3E84 /* DetailPlaceRatingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8689D85B2391019000FC3E84 /* DetailPlaceRatingViewModel.swift */; };
+		BD92D0C7239D6E9E000413FA /* DataProviderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD92D0C6239D6E9E000413FA /* DataProviderService.swift */; };
+		BD92D0C9239D6EE6000413FA /* ContentfullDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD92D0C8239D6EE6000413FA /* ContentfullDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,6 +146,8 @@
 		8689D8592390FD1200FC3E84 /* OutlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
 		8689D85B2391019000FC3E84 /* DetailPlaceRatingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPlaceRatingViewModel.swift; sourceTree = "<group>"; };
 		9E2C37203F57401A7ACB5D62 /* Pods_HookahPlaces.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HookahPlaces.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD92D0C6239D6E9E000413FA /* DataProviderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderService.swift; sourceTree = "<group>"; };
+		BD92D0C8239D6EE6000413FA /* ContentfullDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentfullDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +227,8 @@
 			children = (
 				7A4842A7238C2A890002648E /* RealmService.swift */,
 				7A94B577238DA95B008B7AC2 /* LocationService.swift */,
+				BD92D0C6239D6E9E000413FA /* DataProviderService.swift */,
+				BD92D0C8239D6EE6000413FA /* ContentfullDataProvider.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -598,6 +604,7 @@
 				7ABBF1FE2313605E003DC9B5 /* MainPlaceCell.swift in Sources */,
 				7A02D66D2393C30000AF82D1 /* ProfileViewController.swift in Sources */,
 				7A94B576238DA7B2008B7AC2 /* PlacePointAnnotation.swift in Sources */,
+				BD92D0C9239D6EE6000413FA /* ContentfullDataProvider.swift in Sources */,
 				8689D85C2391019000FC3E84 /* DetailPlaceRatingViewModel.swift in Sources */,
 				7AC50B6C238BA5DC00117C8D /* SettingsViewController.swift in Sources */,
 				7A6939F12393C88F006FD8D9 /* ProfileImageCell.swift in Sources */,
@@ -620,6 +627,7 @@
 				7A6B484123918E2700F352C7 /* DetailPlaceAdditionalDataCell.swift in Sources */,
 				7A3321462393D81C0012985F /* ProfileInfoUserViewModel.swift in Sources */,
 				8689D8532390FA2100FC3E84 /* RatingPlace.swift in Sources */,
+				BD92D0C7239D6E9E000413FA /* DataProviderService.swift in Sources */,
 				7A02D66F2393C36000AF82D1 /* ProfilePresenter.swift in Sources */,
 				7ABBF1E823135407003DC9B5 /* MainViewController.swift in Sources */,
 				7A3321442393D6300012985F /* ProfileInfoUserCell.swift in Sources */,

@@ -21,3 +21,7 @@ final class LocationPlace: Object {
         return "id"
     }
 }
+
+extension LocationPlace: Codable {
+    
+}

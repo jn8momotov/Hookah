@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import CoreLocation
 
 final class Place: Object {
     @objc dynamic var id = UUID().uuidString
@@ -27,7 +28,51 @@ final class Place: Object {
     @objc dynamic var location: LocationPlace?
     @objc dynamic var rating: RatingPlace?
     
+    @objc dynamic var updatedAt: Date?
+    @objc dynamic var createdAt: Date?
+    
+    var localeCode: String?
+    var locationCoord: CLLocationCoordinate2D?
+    
     override static func primaryKey() -> String? {
         return "id"
+    }
+    
+    public required init(from decoder: Decoder) throws {
+        let sys         = try decoder.sys()
+
+        id              = sys.id
+        localeCode      = sys.locale
+        updatedAt       = sys.updatedAt
+        createdAt       = sys.createdAt
+
+        let fields      = try decoder.contentfulFieldsContainer(keyedBy: Place.FieldKeys.self)
+        name = try (fields.decodeIfPresent(String.self, forKey: .name) ?? "")
+        //locationCoord = try (fields.decodeIfPresent(CLLocationCoordinate2D.self, forKey: .locationCoord))
+        //CLLocationCoordinate2D
+//        self.color      = try fields.decodeIfPresent(String.self, forKey: .color)
+//        self.likes      = try fields.decodeIfPresent(Array<String>.self, forKey: .likes)
+//        self.lives      = try fields.decodeIfPresent(Int.self, forKey: .lives)
+//
+//        try fields.resolveLink(forKey: .bestFriend, decoder: decoder) { [weak self] linkedCat in
+//          self?.bestFriend = linkedCat as? Cat
+//        }
+//        try fields.resolveLink(forKey: .image, decoder: decoder) { [weak self] image in
+//          self?.image = image as? Asset
+//        }
+    }
+    
+    required init() {
+        super.init()
+    }
+}
+
+extension Place: Codable {
+    enum CodingKeys: String, CodingKey {
+        case name
+        case updatedAt
+        case createdAt
+        case localeCode
+        case locationCoord = "location"
     }
 }

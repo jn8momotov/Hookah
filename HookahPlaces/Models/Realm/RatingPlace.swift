@@ -20,3 +20,7 @@ final class RatingPlace: Object {
         return "id"
     }
 }
+
+extension RatingPlace: Codable {
+    
+}
