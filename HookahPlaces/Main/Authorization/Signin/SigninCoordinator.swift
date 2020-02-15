@@ -10,7 +10,6 @@ import Foundation
 
 protocol SigninCoordinator {
     func dismiss()
-    func showSuccess()
     func showError(_ error: String)
     func showSignUp()
 }
@@ -24,12 +23,6 @@ final class SigninCoordinatorImpl: SigninCoordinator {
     
     func dismiss() {
         view?.dismiss(animated: true, completion: nil)
-    }
-    
-    func showSuccess() {
-        view?.showAlert(title: "Успешно", description: "Вы успешно авторизовались!", completion: { [weak self] in
-            self?.dismiss()
-        })
     }
     
     func showError(_ error: String) {

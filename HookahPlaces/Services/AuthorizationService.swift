@@ -14,7 +14,7 @@ typealias ErrorHandler = (String) -> Void
 typealias SuccessHandler = () -> Void
 typealias AuthHandler = (result: AuthDataResult?, error: Error?, onError: ErrorHandler?, onSuccess: SuccessHandler?)
 
-protocol AuthorizationService {
+protocol AuthorizationService: class {
     static var currentUser: User? { get }
     func signIn(_ model: SignInModel, onError: ErrorHandler?, onSuccess: SuccessHandler?)
     func signUp(_ model: SignUpModel, onError: ErrorHandler?, onSuccess: SuccessHandler?)

@@ -50,7 +50,7 @@ extension AlertViewController {
         view.addSubview(containerView)
         
         containerView.snp.makeConstraints {
-            $0.left.right.bottom.equalToSuperview().inset(8)
+            $0.left.right.bottom.equalTo(view.safeAreaLayoutGuide).inset(16)
         }
     }
     

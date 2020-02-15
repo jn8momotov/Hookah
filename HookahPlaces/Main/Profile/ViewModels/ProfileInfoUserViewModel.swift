@@ -15,9 +15,9 @@ final class ProfileInfoUserViewModel: ProfileViewModelProtocol {
     let email: String
     let didTapCell: DidTapHandler?
     
-    init(name: String, email: String, didTapCell: DidTapHandler? = nil) {
-        self.name = name
-        self.email = email
+    init(name: String?, email: String?, didTapCell: DidTapHandler? = nil) {
+        self.name = name ?? ""
+        self.email = email ?? ""
         self.didTapCell = didTapCell
     }
 }

@@ -15,6 +15,7 @@
 		7A28631023AD9BBB00263D72 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28630F23AD9BBB00263D72 /* AuthorizationService.swift */; };
 		7A28631223ADA1B000263D72 /* SignupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28631123ADA1B000263D72 /* SignupCoordinator.swift */; };
 		7A28631423AFAD6600263D72 /* SigninCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28631323AFAD6600263D72 /* SigninCoordinator.swift */; };
+		7A32037523F8545300FB90EA /* NSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32037423F8545300FB90EA /* NSNotification.swift */; };
 		7A3321442393D6300012985F /* ProfileInfoUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3321432393D6300012985F /* ProfileInfoUserCell.swift */; };
 		7A3321462393D81C0012985F /* ProfileInfoUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3321452393D81C0012985F /* ProfileInfoUserViewModel.swift */; };
 		7A33214A2393DB220012985F /* ProfileSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3321492393DB220012985F /* ProfileSettingCell.swift */; };
@@ -110,6 +111,7 @@
 		7A28630F23AD9BBB00263D72 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 		7A28631123ADA1B000263D72 /* SignupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCoordinator.swift; sourceTree = "<group>"; };
 		7A28631323AFAD6600263D72 /* SigninCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninCoordinator.swift; sourceTree = "<group>"; };
+		7A32037423F8545300FB90EA /* NSNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotification.swift; sourceTree = "<group>"; };
 		7A3321432393D6300012985F /* ProfileInfoUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoUserCell.swift; sourceTree = "<group>"; };
 		7A3321452393D81C0012985F /* ProfileInfoUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoUserViewModel.swift; sourceTree = "<group>"; };
 		7A3321492393DB220012985F /* ProfileSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingCell.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				7A63F22B23A5A6D100B9ABE7 /* UIViewController.swift */,
 				7A6B48512391959600F352C7 /* UIFont.swift */,
 				7A77553E23B11383007F4721 /* String.swift */,
+				7A32037423F8545300FB90EA /* NSNotification.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -793,6 +796,7 @@
 				7A77553B23B013DE007F4721 /* AppConfiguring.swift in Sources */,
 				7A28631223ADA1B000263D72 /* SignupCoordinator.swift in Sources */,
 				7AE6887C239D604100BE7D63 /* SigninPresenter.swift in Sources */,
+				7A32037523F8545300FB90EA /* NSNotification.swift in Sources */,
 				7A33214C2393DCF10012985F /* ProfileSettingViewModel.swift in Sources */,
 				7A6B48452391915700F352C7 /* PlaceAdditional.swift in Sources */,
 				7AC50B6A238BA55600117C8D /* SearchPresenter.swift in Sources */,

@@ -18,6 +18,23 @@ final class ProfileViewController: UIViewController {
         presenter = ProfilePresenter(view: self)
         configureView()
     }
+    
+    func reloadView() {
+        setLogOutBarButtonItem()
+        tableView.reloadData()
+    }
+    
+    @objc
+    private func didTapLogout() {
+        let alert = UIAlertController(title: nil, message: "Выйти?", preferredStyle: .actionSheet)
+        let logoutAction = UIAlertAction(title: "Выйти", style: .destructive) { [weak self] _ in
+            self?.presenter.logOut()
+        }
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        alert.addAction(logoutAction)
+        alert.addAction(cancelAction)
+        presentFull(alert)
+    }
 }
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
@@ -52,6 +69,7 @@ extension ProfileViewController {
         view.backgroundColor = .groupTableViewBackground
         addTableView()
         setBackBarButtonItem()
+        setLogOutBarButtonItem()
     }
     
     private func addTableView() {
@@ -67,6 +85,19 @@ extension ProfileViewController {
         }
         
         registerCells()
+    }
+    
+    private func setLogOutBarButtonItem() {
+        guard presenter.isSignIn else {
+            navigationItem.rightBarButtonItem = nil
+            return
+        }
+        let barButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "exit"),
+                                            style: .done,
+                                            target: self,
+                                            action: #selector(didTapLogout))
+        barButtonItem.tintColor = .black
+        navigationItem.rightBarButtonItem = barButtonItem
     }
     
     private func registerCells() {

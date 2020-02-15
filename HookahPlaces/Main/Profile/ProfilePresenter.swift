@@ -9,20 +9,37 @@
 import Foundation
 
 protocol ProfilePresenterProtocol {
+    var isSignIn: Bool { get }
     var viewModels: [ProfileViewModelProtocol] { get }
+    func logOut()
 }
 
 final class ProfilePresenter: ProfilePresenterProtocol {
-    weak var view: ProfileViewController?
+    private weak var view: ProfileViewController?
     private let coordinator: ProfileCoordinator
+    private let authorizationService: AuthorizationService = AuthorizationServiceImpl()
     
     private var user: Profile?
     var viewModels: [ProfileViewModelProtocol] = []
+    
+    var isSignIn: Bool {
+        return AuthorizationServiceImpl.currentUser != nil
+    }
     
     init(view: ProfileViewController) {
         self.view = view
         coordinator = ProfileCoordinator(view: view)
         configureViewModel()
+        addSignInObserver()
+        addLogOutObserver()
+    }
+    
+    func logOut() {
+        authorizationService.signOut(onError: { [weak self] error in
+            self?.view?.showAlert(title: "Ошибка!", description: error, completion: nil)
+        }, onSuccess: {
+            NotificationCenter.default.post(name: .logOut, object: nil)
+        })
     }
     
     private var didTapSignIn: DidTapHandler {
@@ -57,13 +74,16 @@ final class ProfilePresenter: ProfilePresenterProtocol {
 }
 
 extension ProfilePresenter {
-    // TODO: Set view model if user (isLogin)
-    // TODO: Set user info from realm
     private func configureViewModel() {
-        viewModels.append(ProfileImageViewModel(dataImage: user?.photo))
-//        viewModels.append(ProfileInfoUserViewModel(name: "Евгений Момотов", email: "jn8momotov@gmail.com"))
-        viewModels.append(ProfileAuthorizationViewModel(didTapSignIn: didTapSignIn,
-                                                        didTapSignUp: didTapSignUp))
+        user = getProfile()
+        viewModels.removeAll()
+        let dataImage = isSignIn ? user?.photo : nil
+        viewModels.append(ProfileImageViewModel(dataImage: dataImage))
+        if isSignIn {
+            viewModels.append(ProfileInfoUserViewModel(name: user?.name, email: user?.email))
+        } else {
+            viewModels.append(ProfileAuthorizationViewModel(didTapSignIn: didTapSignIn, didTapSignUp: didTapSignUp))
+        }
         viewModels.append(ProfileSettingViewModel(title: "Добавить заведение",
                                                   topLine: true,
                                                   bottomLine: true,
@@ -74,5 +94,27 @@ extension ProfilePresenter {
         viewModels.append(ProfileSettingViewModel(title: "О приложении",
                                                   bottomLine: true,
                                                   didTapCell: didTapAbout))
+    }
+    
+    private func addSignInObserver() {
+        NotificationCenter.default.addObserver(forName: .signIn, object: nil, queue: nil) { [weak self] _ in
+            self?.user = self?.getProfile()
+            self?.updateData()
+        }
+    }
+    
+    private func addLogOutObserver() {
+        NotificationCenter.default.addObserver(forName: .logOut, object: nil, queue: nil) { [weak self] _ in
+            self?.updateData()
+        }
+    }
+    
+    private func updateData() {
+        configureViewModel()
+        view?.reloadView()
+    }
+    
+    private func getProfile() -> Profile? {
+        return RealmService.shared.get(Profile.self).first
     }
 }
