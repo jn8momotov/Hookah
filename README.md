@@ -15,6 +15,7 @@ by Evgeniy Momotov, Igor Bolyaev
 #### Backend:
 
 - [ ] Get list places
+- [ ] Add new place
 
 #### Managment:
 
