@@ -27,7 +27,7 @@ extension UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
-    func showAlert(title: String? = nil, description: String? = nil, completion: DidTapHandler? = nil) {
+    func showAlert(title: String? = nil, description: String? = nil, completion: VoidHandler? = nil) {
         let alert = AlertViewController()
         alert.providesPresentationContextTransitionStyle = true
         alert.definesPresentationContext = true

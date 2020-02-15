@@ -12,6 +12,8 @@
 		7A02D66B2393303200AF82D1 /* LocationPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D66A2393303200AF82D1 /* LocationPlace.swift */; };
 		7A02D66D2393C30000AF82D1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D66C2393C30000AF82D1 /* ProfileViewController.swift */; };
 		7A02D66F2393C36000AF82D1 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D66E2393C36000AF82D1 /* ProfilePresenter.swift */; };
+		7A19425C23F8A44C0060114D /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A19425B23F8A44C0060114D /* StorageService.swift */; };
+		7A19425E23F8A5DE0060114D /* Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A19425D23F8A5DE0060114D /* Handlers.swift */; };
 		7A28631023AD9BBB00263D72 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28630F23AD9BBB00263D72 /* AuthorizationService.swift */; };
 		7A28631223ADA1B000263D72 /* SignupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28631123ADA1B000263D72 /* SignupCoordinator.swift */; };
 		7A28631423AFAD6600263D72 /* SigninCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28631323AFAD6600263D72 /* SigninCoordinator.swift */; };
@@ -108,6 +110,8 @@
 		7A02D66A2393303200AF82D1 /* LocationPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPlace.swift; sourceTree = "<group>"; };
 		7A02D66C2393C30000AF82D1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7A02D66E2393C36000AF82D1 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		7A19425B23F8A44C0060114D /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		7A19425D23F8A5DE0060114D /* Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handlers.swift; sourceTree = "<group>"; };
 		7A28630F23AD9BBB00263D72 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 		7A28631123ADA1B000263D72 /* SignupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCoordinator.swift; sourceTree = "<group>"; };
 		7A28631323AFAD6600263D72 /* SigninCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninCoordinator.swift; sourceTree = "<group>"; };
@@ -272,6 +276,7 @@
 				7A94B575238DA7B2008B7AC2 /* PlacePointAnnotation.swift */,
 				7A6B48442391915700F352C7 /* PlaceAdditional.swift */,
 				7A77553C23B01C5C007F4721 /* AuthorizationModel.swift */,
+				7A19425D23F8A5DE0060114D /* Handlers.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				7A94B577238DA95B008B7AC2 /* LocationService.swift */,
 				7A28630F23AD9BBB00263D72 /* AuthorizationService.swift */,
 				7A77554023B11AFB007F4721 /* FirestoreService.swift */,
+				7A19425B23F8A44C0060114D /* StorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -837,6 +843,7 @@
 				860C3192239E1BDB00629364 /* ProfileCoordinator.swift in Sources */,
 				7A63F22323A593CF00B9ABE7 /* AddingPlaceViewController.swift in Sources */,
 				7A02D66B2393303200AF82D1 /* LocationPlace.swift in Sources */,
+				7A19425E23F8A5DE0060114D /* Handlers.swift in Sources */,
 				7A02D6692392C1B100AF82D1 /* DetailPlaceInfoView.swift in Sources */,
 				7A8CD87B238F967200B7109F /* DetailPlaceHeaderCell.swift in Sources */,
 				7A94B569238CEF4A008B7AC2 /* MapPresenter.swift in Sources */,
@@ -856,6 +863,7 @@
 				7A63F22523A593DD00B9ABE7 /* AddingPlacePresenter.swift in Sources */,
 				7A8CD876238F948600B7109F /* DetailPlaceViewController.swift in Sources */,
 				7A94B57A238EADBE008B7AC2 /* TypeSortPlaces.swift in Sources */,
+				7A19425C23F8A44C0060114D /* StorageService.swift in Sources */,
 				8689D8512390F26B00FC3E84 /* ProgressRatingView.swift in Sources */,
 				7A77553D23B01C5C007F4721 /* AuthorizationModel.swift in Sources */,
 				7AC50B6E238BA63000117C8D /* SettingsPresenter.swift in Sources */,

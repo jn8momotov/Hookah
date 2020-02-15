@@ -11,7 +11,7 @@ import Foundation
 protocol ProfilePresenterProtocol {
     var isSignIn: Bool { get }
     var viewModels: [ProfileViewModelProtocol] { get }
-    var didTapSettings: DidTapHandler { get }
+    var didTapSettings: VoidHandler { get }
 }
 
 final class ProfilePresenter: ProfilePresenterProtocol {
@@ -33,37 +33,37 @@ final class ProfilePresenter: ProfilePresenterProtocol {
         addLogOutObserver()
     }
     
-    var didTapSettings: DidTapHandler {
+    var didTapSettings: VoidHandler {
         return { [weak self] in
             self?.coordinator.openSettings()
         }
     }
     
-    private var didTapSignIn: DidTapHandler {
+    private var didTapSignIn: VoidHandler {
         return { [weak self] in
             self?.coordinator.openSignIn()
         }
     }
     
-    private var didTapSignUp: DidTapHandler {
+    private var didTapSignUp: VoidHandler {
         return { [weak self] in
             self?.coordinator.openSignUp()
         }
     }
     
-    private var didTapAbout: DidTapHandler {
+    private var didTapAbout: VoidHandler {
         return { [weak self] in
             self?.coordinator.openAbout()
         }
     }
     
-    private var didTapFeedback: DidTapHandler {
+    private var didTapFeedback: VoidHandler {
         return { [weak self] in
             self?.coordinator.openFeedback()
         }
     }
     
-    private var didTapAddNewPlace: DidTapHandler {
+    private var didTapAddNewPlace: VoidHandler {
         return { [weak self] in
             self?.coordinator.openAddingNewPlace()
         }

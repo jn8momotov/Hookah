@@ -16,7 +16,7 @@ final class AlertViewController: UIViewController {
 
     var titleText: String?
     var descriptionText: String?
-    var completion: DidTapHandler?
+    var completion: VoidHandler?
 
     override func viewDidLoad() {
         super.viewDidLoad()

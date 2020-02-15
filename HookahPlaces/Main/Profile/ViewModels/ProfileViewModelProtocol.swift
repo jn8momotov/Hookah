@@ -10,5 +10,5 @@ import Foundation
 
 protocol ProfileViewModelProtocol {
     var identifier: String { get }
-    var didTapCell: DidTapHandler? { get }
+    var didTapCell: VoidHandler? { get }
 }

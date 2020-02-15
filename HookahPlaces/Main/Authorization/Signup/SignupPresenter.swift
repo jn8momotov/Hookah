@@ -10,6 +10,8 @@ import Foundation
 
 protocol SignupPresenterProtocol {
     func signUp(_ model: SignUpModel)
+    func close()
+    func didTapUserImage(onDelete: VoidHandler?)
 }
 
 final class SignupPresenter: SignupPresenterProtocol {
@@ -32,6 +34,14 @@ final class SignupPresenter: SignupPresenterProtocol {
             NotificationCenter.default.post(name: .signIn, object: nil)
             self?.coordinator.dismiss()
         })
+    }
+    
+    func didTapUserImage(onDelete: VoidHandler?) {
+        coordinator.showCameraAlert(onDelete: onDelete)
+    }
+    
+    func close() {
+        coordinator.dismiss()
     }
 }
 

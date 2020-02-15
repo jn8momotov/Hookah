@@ -34,7 +34,6 @@ final class SigninViewController: UIViewController {
         presenter.signIn(email: email, password: password)
     }
     
-    // TODO: Open sign up
     @objc
     private func didTapSignUpButton() {
         view.endEditing(true)

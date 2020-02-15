@@ -12,9 +12,9 @@ final class ProfileImageViewModel: ProfileViewModelProtocol {
     let identifier = ProfileImageCell.identifier
     
     let dataImage: Data?
-    let didTapCell: DidTapHandler?
+    let didTapCell: VoidHandler?
     
-    init(dataImage: Data?, didTapCell: DidTapHandler? = nil) {
+    init(dataImage: Data?, didTapCell: VoidHandler? = nil) {
         self.dataImage = dataImage
         self.didTapCell = didTapCell
     }

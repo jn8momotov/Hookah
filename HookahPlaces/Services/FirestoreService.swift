@@ -10,12 +10,12 @@ import Foundation
 import Firebase
 
 protocol FirestoreService {
-    func push(uid: String, name: String, phone: String, onError: ErrorHandler?, onSuccess: SuccessHandler?)
+    func push(uid: String, name: String, phone: String, onError: ErrorHandler?, onSuccess: VoidHandler?)
     func pull(uid: String, onError: ErrorHandler?, onSuccess: ((_ name: String, _ phone: String) -> Void)?)
 }
 
 final class FirestoreServiceImpl: FirestoreService {
-    func push(uid: String, name: String, phone: String, onError: ErrorHandler?, onSuccess: SuccessHandler?) {
+    func push(uid: String, name: String, phone: String, onError: ErrorHandler?, onSuccess: VoidHandler?) {
         let data = [
             "name": name,
             "phone": phone

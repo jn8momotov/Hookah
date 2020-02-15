@@ -25,7 +25,7 @@ final class AboutPresenter: AboutPresenterProtocol {
 extension AboutPresenter {
     struct ViewModel {
         let title: String
-        let didSelect: DidTapHandler?
+        let didSelect: VoidHandler?
     }
     
     private func configureViewModel() {

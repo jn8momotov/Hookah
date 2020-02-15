@@ -30,7 +30,6 @@ final class SignupViewController: UIViewController {
         view.endEditing(true)
     }
     
-    // TODO: Saved photo
     @objc
     private func didTapSignUp() {
         view.endEditing(true)
@@ -41,12 +40,45 @@ final class SignupViewController: UIViewController {
             let phone = phoneTextField.text else {
             return
         }
+        let newPhoto = (userImageView.image != #imageLiteral(resourceName: "user_male"))
         let model = SignUpModel(isAccept: userAgreementSwitch.isOn,
-                                photo: nil,
+                                photo: newPhoto ? userImageView.image?.jpegData(compressionQuality: 0) : nil,
                                 name: name,
                                 phone: phone,
                                 signInModel: SignInModel(email: email, password: password))
         presenter.signUp(model)
+    }
+    
+    @objc
+    private func didTapUserImage() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.view.tintColor = .black
+        
+        var onDelete: VoidHandler?
+        
+        if userImageView.image != #imageLiteral(resourceName: "user_male") {
+            onDelete = { [weak self] in
+                self?.userImageView.image = #imageLiteral(resourceName: "user_male")
+            }
+        }
+        
+        presenter.didTapUserImage(onDelete: onDelete)
+    }
+}
+
+extension SignupViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        presenter.close()
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        guard let selectedImage = info[.originalImage] as? UIImage else {
+            return
+        }
+        let dataImage = selectedImage.jpegData(compressionQuality: 1)
+        userImageView.image = (dataImage != nil) ? UIImage(data: dataImage!) : #imageLiteral(resourceName: "user_male")
+        presenter.close()
     }
 }
 
@@ -69,6 +101,7 @@ extension SignupViewController {
     private func addUserImageView() {
         let size: CGFloat = 80
         userImageView.image = #imageLiteral(resourceName: "user_male")
+        userImageView.isUserInteractionEnabled = true
         userImageView.tintColor = .black
         userImageView.layer.cornerRadius = size / 2
         userImageView.layer.borderWidth = 3
@@ -81,6 +114,9 @@ extension SignupViewController {
             $0.centerX.equalToSuperview()
             $0.height.width.equalTo(size)
         }
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapUserImage))
+        userImageView.addGestureRecognizer(gesture)
     }
     
     private func addNameTextField() {

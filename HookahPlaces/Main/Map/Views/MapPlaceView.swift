@@ -16,9 +16,9 @@ final class MapPlaceView: UIView {
     private let callButton = PrimaryButton()
     private let routeButton = PrimaryButton()
     
-    var didTapCall: DidTapHandler?
-    var didTapRoute: DidTapHandler?
-    var didTapDetail: DidTapHandler?
+    var didTapCall: VoidHandler?
+    var didTapRoute: VoidHandler?
+    var didTapDetail: VoidHandler?
     
     init() {
         super.init(frame: .zero)

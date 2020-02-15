@@ -8,17 +8,15 @@
 
 import Foundation
 
-typealias DidTapHandler = () -> Void
-
 final class DetailPlaceHeaderViewModel: DetailPlaceCellViewModelProtocol {
     let identifier = DetailPlaceHeaderCell.identifier
     
     var numberUsers: Int
     let place: Place
-    let didTapCall: DidTapHandler?
-    let didTapNumberUsers: DidTapHandler?
+    let didTapCall: VoidHandler?
+    let didTapNumberUsers: VoidHandler?
     
-    init(numberUsers: Int, place: Place, didTapCall: DidTapHandler?, didTapNumberUsers: DidTapHandler?) {
+    init(numberUsers: Int, place: Place, didTapCall: VoidHandler?, didTapNumberUsers: VoidHandler?) {
         self.numberUsers = numberUsers
         self.place = place
         self.didTapCall = didTapCall

@@ -27,25 +27,25 @@ final class DetailPlacePresenter: DetailPlacePresenterProtocol {
         configureViewModel()
     }
     
-    private var didTapCall: DidTapHandler? {
+    private var didTapCall: VoidHandler? {
         return { [weak self] in
             self?.coordinator.openCall(to: self?.place.phone ?? "")
         }
     }
     
-    private var didTapNumberUsers: DidTapHandler? {
+    private var didTapNumberUsers: VoidHandler? {
         return { [weak self] in
             self?.coordinator.openUsersInPlace()
         }
     }
     
-    private var didTapAddNewRating: DidTapHandler? {
+    private var didTapAddNewRating: VoidHandler? {
         return { [weak self] in
             self?.coordinator.openNewRating()
         }
     }
     
-    private var didTapMap: DidTapHandler? {
+    private var didTapMap: VoidHandler? {
         return { [weak self] in
             guard let place = self?.place else {
                 return

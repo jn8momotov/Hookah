@@ -14,9 +14,9 @@ final class ProfileSettingViewModel: ProfileViewModelProtocol {
     let title: String
     let topLine: Bool
     let bottomLine: Bool
-    let didTapCell: DidTapHandler?
+    let didTapCell: VoidHandler?
     
-    init(title: String, topLine: Bool = false, bottomLine: Bool = false, didTapCell: DidTapHandler?) {
+    init(title: String, topLine: Bool = false, bottomLine: Bool = false, didTapCell: VoidHandler?) {
         self.title = title
         self.didTapCell = didTapCell
         self.topLine = topLine
