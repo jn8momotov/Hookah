@@ -15,7 +15,7 @@ extension Place: EntryDecodable, FieldKeysQueryable {
         return "place"
     }
     enum FieldKeys: String, CodingKey {
-      case name
+      case name, locationCoord
     }
 }
 
@@ -28,6 +28,21 @@ final class ContentfullDataProvider: DataProviderService {
     func fetchAll(_ resourceType: Decodable.Type, completion: @escaping (Swift.Result<[Decodable], NetworkError>) -> Void) {
         let query = QueryOn<Place>()
 
+        client.fetchArray(of: Place.self, matching: query) { (result: Result<HomogeneousArrayResponse<Place>>) in
+          switch result {
+          case .success(let entriesArrayResponse):
+            let items = entriesArrayResponse.items
+            completion(.success(items))
+          case .error(let error):
+            completion(.failure(.backendProblem))
+          }
+        }
+    }
+    
+    
+    func fetch(_ resourceType: Decodable.Type, near location: DataProviderService.Location, completion: @escaping (Swift.Result<[Decodable], NetworkError>) -> Void) {
+        let mappedLocation = Contentful.Location(latitude: location.latitude, longitude: location.longitude)
+        let query = QueryOn<Place>().where(field: .locationCoord, .isNear(mappedLocation))
         client.fetchArray(of: Place.self, matching: query) { (result: Result<HomogeneousArrayResponse<Place>>) in
           switch result {
           case .success(let entriesArrayResponse):

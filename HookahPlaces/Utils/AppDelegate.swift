@@ -12,22 +12,38 @@ import Contentful
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    
+    let testLocationManager = LocationService()
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()
-        
-        let test = ContentfullDataProvider()
-        test.fetchAll(Place.self) { result in
-            switch result {
-            case .success(let places):
-                print(places)
-            case .failure(let error):
-                print(error)
+        testLocationManager.startUpdateLocation()
+        testLocationManager.didUpdateLocation = {
+            let currentLocation = self.testLocationManager.currentLocation!
+            let loc = (currentLocation.coordinate.latitude, currentLocation.coordinate.longitude)
+            let test = ContentfullDataProvider()
+            test.fetch(Place.self, near: loc) { result in
+                switch result {
+                case .success(let places):
+                    print(places)
+                case .failure(let error):
+                    print(error)
+                }
             }
         }
+        
+        
+//        test.fetchAll(Place.self) { result in
+//            switch result {
+//            case .success(let places):
+//                print(places)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
         
         return true
     }

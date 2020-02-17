@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 import CoreLocation
+import Contentful
 
 final class Place: Object {
     @objc dynamic var id = UUID().uuidString
@@ -48,7 +49,10 @@ final class Place: Object {
 
         let fields      = try decoder.contentfulFieldsContainer(keyedBy: Place.FieldKeys.self)
         name = try (fields.decodeIfPresent(String.self, forKey: .name) ?? "")
-        //locationCoord = try (fields.decodeIfPresent(CLLocationCoordinate2D.self, forKey: .locationCoord))
+        if let location = try (fields.decodeIfPresent(Location.self, forKey: .locationCoord)) {
+            locationCoord = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+        }
+        
         //CLLocationCoordinate2D
 //        self.color      = try fields.decodeIfPresent(String.self, forKey: .color)
 //        self.likes      = try fields.decodeIfPresent(Array<String>.self, forKey: .likes)

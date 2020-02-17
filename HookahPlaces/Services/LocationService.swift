@@ -19,7 +19,7 @@ protocol LocationServiceProtocol {
 final class LocationService: NSObject, LocationServiceProtocol {
     private let locationManager = CLLocationManager()
     
-    private var currentLocation: CLLocation? {
+    var currentLocation: CLLocation? {
         didSet {
             didUpdateLocation?()
         }
