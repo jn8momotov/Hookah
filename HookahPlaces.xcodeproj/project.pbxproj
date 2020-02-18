@@ -14,6 +14,7 @@
 		7A02D66F2393C36000AF82D1 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A02D66E2393C36000AF82D1 /* ProfilePresenter.swift */; };
 		7A19425C23F8A44C0060114D /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A19425B23F8A44C0060114D /* StorageService.swift */; };
 		7A19425E23F8A5DE0060114D /* Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A19425D23F8A5DE0060114D /* Handlers.swift */; };
+		7A19426223FC90100060114D /* PlacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A19426123FC90100060114D /* PlacesService.swift */; };
 		7A28631023AD9BBB00263D72 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28630F23AD9BBB00263D72 /* AuthorizationService.swift */; };
 		7A28631223ADA1B000263D72 /* SignupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28631123ADA1B000263D72 /* SignupCoordinator.swift */; };
 		7A28631423AFAD6600263D72 /* SigninCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28631323AFAD6600263D72 /* SigninCoordinator.swift */; };
@@ -112,6 +113,7 @@
 		7A02D66E2393C36000AF82D1 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		7A19425B23F8A44C0060114D /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		7A19425D23F8A5DE0060114D /* Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handlers.swift; sourceTree = "<group>"; };
+		7A19426123FC90100060114D /* PlacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesService.swift; sourceTree = "<group>"; };
 		7A28630F23AD9BBB00263D72 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 		7A28631123ADA1B000263D72 /* SignupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCoordinator.swift; sourceTree = "<group>"; };
 		7A28631323AFAD6600263D72 /* SigninCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninCoordinator.swift; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				7A28630F23AD9BBB00263D72 /* AuthorizationService.swift */,
 				7A77554023B11AFB007F4721 /* FirestoreService.swift */,
 				7A19425B23F8A44C0060114D /* StorageService.swift */,
+				7A19426123FC90100060114D /* PlacesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -828,6 +831,7 @@
 				7A3321462393D81C0012985F /* ProfileInfoUserViewModel.swift in Sources */,
 				7AE68883239D801100BE7D63 /* SignupPresenter.swift in Sources */,
 				8689D8532390FA2100FC3E84 /* RatingPlace.swift in Sources */,
+				7A19426223FC90100060114D /* PlacesService.swift in Sources */,
 				7A02D66F2393C36000AF82D1 /* ProfilePresenter.swift in Sources */,
 				860C319A239E255200629364 /* UserInPlaceCell.swift in Sources */,
 				7ABBF1E823135407003DC9B5 /* MainViewController.swift in Sources */,

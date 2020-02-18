@@ -17,8 +17,9 @@ final class MainPresenter: MainPresenterProtocol {
     weak var view: MainViewController?
     
     private var locationService: LocationServiceProtocol = LocationService()
+    private let placesService: PlacesService = PlacesServiceImpl()
     
-    var places: [Place] = []
+    var places: [Place] = RealmService.shared.get(Place.self)
     var typeSorted: TypeSortPlaces = .distance {
         didSet {
             updateSortedPlaces()
@@ -27,7 +28,13 @@ final class MainPresenter: MainPresenterProtocol {
     
     init(view: MainViewController) {
         self.view = view
-        places = RealmService.shared.get(Place.self)
+        // TODO: Fix update distance after loading places
+        placesService.loadAll { [weak self] in
+            DispatchQueue.main.async {
+                self?.places = RealmService.shared.get(Place.self)
+                self?.view?.reloadTableView()
+            }
+        }
         locationService.didUpdateLocation = { [weak self] in
             self?.updateDistanceToPlaces()
         }

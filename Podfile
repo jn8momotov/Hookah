@@ -8,6 +8,7 @@ target 'HookahPlaces' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
+  pod 'Firebase/Database'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
 end

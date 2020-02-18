@@ -32,8 +32,7 @@ final class MainPlaceCell: UITableViewCell {
     }
     
     func set(_ place: Place) {
-        // TODO: Set place image
-        placeImageView.image = #imageLiteral(resourceName: "0")
+        placeImageView.image = (place.image != nil) ? UIImage(data: place.image!) : nil
         namePlaceLabel.text = "\(place.name) \(place.location?.metro ?? "")"
         addressPlaceLabel.text = "\(place.location?.address ?? "")"
         ratingView.set(rating: place.rating?.total ?? 0.0)
@@ -67,6 +66,7 @@ extension MainPlaceCell {
     }
     
     private func addPlaceImageView() {
+        placeImageView.backgroundColor = .groupTableViewBackground
         placeImageView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(placeImageView)
         

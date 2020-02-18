@@ -17,7 +17,6 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //savePlaces()
         presenter = MainPresenter(view: self)
         configureView()
     }
@@ -36,35 +35,6 @@ final class MainViewController: UIViewController {
     @objc
     private func didFilterControlValueChanged() {
         presenter.typeSorted = (filterControl.selectedSegmentIndex == 0) ? .distance : .rating
-    }
-    
-    // TODO: Delete methods (Mock places)
-    private func savePlaces() {
-        addPlace(name: "Москальян", metro: "Беляево", address: "ул. Миклухо-Маклая, 18к2", latitude: 55.644902, longitude: 37.519422, rating: 2.1)
-        addPlace(name: "Москальян", metro: "Китай-город", address: "Б. Спасоглинищевский пер. 3с5", latitude: 55.756437, longitude: 37.635188, rating: 2.4)
-        addPlace(name: "Москальян", metro: "Марьино", address: "ул. Люблинская, 165к1", latitude: 55.650063, longitude: 37.745924, rating: 3.4)
-        addPlace(name: "Москальян", metro: "Свиблово", address: "ул. Енисейская, 5к2", latitude: 55.859903, longitude: 37.65911, rating: 5.0)
-    }
-    
-    // TODO: Delete methods (Mock places)
-    private func addPlace(name: String, metro: String, address: String, latitude: Double, longitude: Double, rating: Float) {
-        let ratingPlace = RatingPlace()
-        ratingPlace.total = rating
-        ratingPlace.hookah = 3.2
-        ratingPlace.staff = 1.1
-        ratingPlace.place = 4.5
-        RealmService.shared.save(ratingPlace)
-        let locationPlace = LocationPlace()
-        locationPlace.metro = metro
-        locationPlace.latitude = latitude
-        locationPlace.longitude = longitude
-        locationPlace.address = address
-        RealmService.shared.save(locationPlace)
-        let place = Place()
-        place.name = name
-        place.rating = ratingPlace
-        place.location = locationPlace
-        RealmService.shared.save(place)
     }
     
     private func cell(at indexPath: IndexPath, viewModel: Place) -> UITableViewCell {
