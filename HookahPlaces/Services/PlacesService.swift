@@ -35,7 +35,7 @@ final class PlacesServiceImpl: PlacesService {
 
 extension PlacesServiceImpl {
     private func loadImage(for place: Place, completion: VoidHandler?) {
-        let id = place.firebaseID
+        let id = place.id
         storageRef.child("places/\(id).jpg").getData(maxSize: 1 * 1024 * 1024) { data, error in
             guard let data = data else {
                 completion?()
