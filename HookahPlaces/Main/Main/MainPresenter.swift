@@ -28,21 +28,24 @@ final class MainPresenter: MainPresenterProtocol {
     
     init(view: MainViewController) {
         self.view = view
-        // TODO: Fix update distance after loading places
-        placesService.loadAll { [weak self] in
-            DispatchQueue.main.async {
-                self?.places = RealmService.shared.get(Place.self)
-                self?.view?.reloadTableView()
-            }
-        }
         locationService.didUpdateLocation = { [weak self] in
             self?.updateDistanceToPlaces()
         }
-        locationService.startUpdateLocation()
+        loadPlaces()
     }
 }
 
 extension MainPresenter {
+    private func loadPlaces() {
+        placesService.loadAll { [weak self] in
+            DispatchQueue.main.async {
+                self?.locationService.startUpdateLocation()
+                self?.places = RealmService.shared.get(Place.self)
+                self?.view?.reloadTableView()
+            }
+        }
+    }
+    
     private func updateDistanceToPlaces() {
         for place in places {
             RealmService.shared.edit { [weak self] in
