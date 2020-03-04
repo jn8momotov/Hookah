@@ -676,6 +676,7 @@
 				7ABBF1DF23135407003DC9B5 /* Frameworks */,
 				7ABBF1E023135407003DC9B5 /* Resources */,
 				78ED672B066EEDA88B775003 /* [CP] Embed Pods Frameworks */,
+				7AB87E392410627300E57D8B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -749,6 +750,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HookahPlaces/Pods-HookahPlaces-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		7AB87E392410627300E57D8B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		B892C1FF7A30FDDB50DE707E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

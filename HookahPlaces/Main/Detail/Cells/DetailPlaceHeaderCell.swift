@@ -48,8 +48,8 @@ final class DetailPlaceHeaderCell: UITableViewCell, DetailPlaceCellProtocol {
         }
         distanceView.set("\(viewModel.place.distanceTo) км")
         // TODO: Set title from user
-        checkinPlaceButton.setTitle("Вы в заведении", for: .normal)
-        numberUsersView.set("\(viewModel.numberUsers)")
+        checkinPlaceButton.setTitle("Отметиться здесь", for: .normal)
+        numberUsersView.set("--")
         addressLabel.text = "м. \(viewModel.place.metro), \(viewModel.place.address)"
         phoneLabel.text = "Телефон: \(viewModel.place.phone)"
     }
