@@ -43,8 +43,9 @@ final class DetailPlaceHeaderCell: UITableViewCell, DetailPlaceCellProtocol {
         guard let viewModel = viewModel else {
             return
         }
-        // TODO: Set image from view model
-        placeImageView.image = #imageLiteral(resourceName: "0")
+        if let dataImage = viewModel.place.image {
+            placeImageView.image = UIImage(data: dataImage)
+        }
         distanceView.set("\(viewModel.place.distanceTo) км")
         // TODO: Set title from user
         checkinPlaceButton.setTitle("Вы в заведении", for: .normal)
