@@ -22,6 +22,7 @@ extension AppDelegate: UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = TabBarController()
         window?.makeKeyAndVisible()
+        print("CURRENT VERSION DB: \(UserDefaults.standard.versionDB)")
         return true
     }
 }

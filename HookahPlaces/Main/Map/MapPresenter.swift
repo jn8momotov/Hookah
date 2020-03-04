@@ -40,11 +40,11 @@ final class MapPresenter: MapPresenterProtocol {
     }
     
     func openRoute() {
-        guard let placeLocation = selectedPlace?.location else {
+        guard let selectedPlace = selectedPlace else {
             return
         }
         let from = locationService.userCoordinate
-        let to = CLLocationCoordinate2D(latitude: placeLocation.latitude, longitude: placeLocation.longitude)
+        let to = CLLocationCoordinate2D(latitude: selectedPlace.latitude, longitude: selectedPlace.longitude)
         coordinator.openRouteActionSheet(from: from, to: to)
     }
     

@@ -29,9 +29,9 @@ final class SearchPlaceCell: UITableViewCell {
         if let dataImage = place.image {
             placeImageView.image = UIImage(data: dataImage)
         }
-        titleLabel.text = "\(place.name) \(place.location?.metro ?? "")"
-        distanceView.set("\(place.location?.distanceTo ?? 0.0) км")
-        ratingView.set("\(place.rating?.total ?? 0.0)")
+        titleLabel.text = "\(place.name) \(place.metro)"
+        distanceView.set("\(place.distanceTo) км")
+        ratingView.set("\(place.total)")
     }
 }
 

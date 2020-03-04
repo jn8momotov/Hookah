@@ -37,7 +37,7 @@ final class MainPresenter: MainPresenterProtocol {
 
 extension MainPresenter {
     private func loadPlaces() {
-        placesService.loadAll { [weak self] in
+        placesService.load { [weak self] in
             DispatchQueue.main.async {
                 self?.locationService.startUpdateLocation()
                 self?.places = RealmService.shared.get(Place.self)
@@ -49,7 +49,7 @@ extension MainPresenter {
     private func updateDistanceToPlaces() {
         for place in places {
             RealmService.shared.edit { [weak self] in
-                place.location?.distanceTo = self?.locationService.distance(to: place) ?? 0.0
+                place.distanceTo = self?.locationService.distance(to: place) ?? 0.0
             }
         }
         updateSortedPlaces()
@@ -57,8 +57,8 @@ extension MainPresenter {
     
     private func updateSortedPlaces() {
         typeSorted == .distance
-            ? places.sort(by: { ($0.location?.distanceTo ?? 0.0) < ($1.location?.distanceTo ?? 0.0) })
-            : places.sort(by: { ($0.rating?.total ?? 0.0) > ($1.rating?.total ?? 0.0) })
+            ? places.sort(by: { $0.distanceTo < $1.distanceTo })
+            : places.sort(by: { $0.total > $1.total })
         DispatchQueue.main.async { [weak self] in
             self?.view?.reloadTableView()
         }

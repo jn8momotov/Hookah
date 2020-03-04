@@ -16,6 +16,17 @@ final class Place: Object {
     @objc dynamic var name = ""
     @objc dynamic var phone = ""
     
+    @objc dynamic var total: Float = 0.0
+    @objc dynamic var hookah: Float = 0.0
+    @objc dynamic var place: Float = 0.0
+    @objc dynamic var staff: Float = 0.0
+    
+    @objc dynamic var metro = ""
+    @objc dynamic var address = ""
+    @objc dynamic var distanceTo: Float = 0.0
+    @objc dynamic var latitude: Double = 0.0
+    @objc dynamic var longitude: Double = 0.0
+    
     @objc dynamic var bankCard = false
     @objc dynamic var gameConsole = false
     @objc dynamic var restarting = false
@@ -25,51 +36,46 @@ final class Place: Object {
     @objc dynamic var theirDrink = false
     @objc dynamic var wifi = false
     
-    @objc dynamic var location: LocationPlace?
-    @objc dynamic var rating: RatingPlace?
-    
     override static func primaryKey() -> String? {
         return "id"
     }
 }
 
 extension Place {
-    func set(snapshot: DataSnapshot) {
-        guard let snapshotValue = snapshot.value as? [String: AnyObject] else {
-            return
-        }
+    func set(dictionary: [String: Any]) {
+        id = dictionary["id"] as? Int ?? -1
+        name = dictionary["name"] as? String ?? ""
+        phone = dictionary["phone"] as? String ?? ""
+        image = RealmService.shared.get(Place.self, predicate: NSPredicate(format: "id == \(id)")).first?.image
         
-        id = snapshotValue["id"] as? Int ?? 0
-        name = snapshotValue["name"] as? String ?? ""
-        phone = snapshotValue["phone"] as? String ?? ""
+        address = dictionary["address"] as? String ?? ""
+        latitude = dictionary["latitude"] as? Double ?? 0.0
+        longitude = dictionary["longitude"] as? Double ?? 0.0
+        metro = dictionary["metroStation"] as? String ?? ""
         
-        let total = snapshotValue["rating"] as? Float ?? 0.0
-        let hookah = snapshotValue["ratingHookah"] as? Float ?? 0.0
-        let place = snapshotValue["ratingPlace"] as? Float ?? 0.0
-        let staff = snapshotValue["ratingStaff"] as? Float ?? 0.0
+        setRating(dictionary: dictionary)
         
-        let ratingPlace = RatingPlace()
-        ratingPlace.total = Float(round(10 * total) / 10)
-        ratingPlace.hookah = Float(round(10 * hookah) / 10)
-        ratingPlace.place = Float(round(10 * place) / 10)
-        ratingPlace.staff = Float(round(10 * staff) / 10)
-        rating = ratingPlace
+        bankCard = dictionary["bankCard"] as? Bool ?? false
+        gameConsole = dictionary["gameConsole"] as? Bool ?? false
+        restarting = dictionary["restarting"] as? Bool ?? false
+        tableGames = dictionary["tableGames"] as? Bool ?? false
+        theirAlko = dictionary["theirAlko"] as? Bool ?? false
+        theirFood = dictionary["theirFoot"] as? Bool ?? false
+        theirDrink = dictionary["theirDrink"] as? Bool ?? false
+        wifi = dictionary["wifi"] as? Bool ?? false
+    }
+    
+    func setRating(dictionary: [String: Any]) {
+        let total = dictionary["rating"] as? Double ?? 0.0
+        let hookah = dictionary["ratingHookah"] as? Double ?? 0.0
+        let place = dictionary["ratingPlace"] as? Double ?? 0.0
+        let staff = dictionary["ratingStaff"] as? Double ?? 0.0
         
-        let locationPlace = LocationPlace()
-        locationPlace.address = snapshotValue["address"] as? String ?? ""
-        locationPlace.latitude = snapshotValue["latitude"] as? Double ?? 0.0
-        locationPlace.longitude = snapshotValue["longitude"] as? Double ?? 0.0
-        locationPlace.metro = snapshotValue["metroStation"] as? String ?? ""
-        locationPlace.distanceTo = 0.0
-        location = locationPlace
+        print("TOTAL \(metro): \(dictionary["rating"])")
         
-        bankCard = snapshotValue["bankCard"] as? Bool ?? false
-        gameConsole = snapshotValue["gameConsole"] as? Bool ?? false
-        restarting = snapshotValue["restarting"] as? Bool ?? false
-        tableGames = snapshotValue["tableGames"] as? Bool ?? false
-        theirAlko = snapshotValue["theirAlko"] as? Bool ?? false
-        theirFood = snapshotValue["theirFoot"] as? Bool ?? false
-        theirDrink = snapshotValue["theirDrink"] as? Bool ?? false
-        wifi = snapshotValue["wifi"] as? Bool ?? false
+        self.total = Float(round(10 * total) / 10)
+        self.hookah = Float(round(10 * hookah) / 10)
+        self.place = Float(round(10 * place) / 10)
+        self.staff = Float(round(10 * staff) / 10)
     }
 }

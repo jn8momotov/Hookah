@@ -36,7 +36,7 @@ final class SearchPresenter: SearchPresenterProtocol {
         }
         places = allPlaces.filter({
             $0.name.hasPrefix(prefix)
-            || ($0.location?.metro ?? "").hasPrefix(prefix)
+            || ($0.metro).hasPrefix(prefix)
         })
     }
 }

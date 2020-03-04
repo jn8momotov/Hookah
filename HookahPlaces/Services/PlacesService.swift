@@ -11,29 +11,80 @@ import FirebaseDatabase
 import FirebaseStorage
 
 protocol PlacesService {
-    func loadAll(completion: VoidHandler?)
+    func load(completion: VoidHandler?)
 }
 
 final class PlacesServiceImpl: PlacesService {
-    private let databaseRef = Database.database().reference(withPath: "places")
+    private let databaseRef = Database.database().reference()
     private let storageRef = Storage.storage().reference()
     
-    func loadAll(completion: VoidHandler?) {
-        databaseRef.observe(.value) { [weak self] snapshot in
-            for item in snapshot.children {
-                guard let snapshotPlace = item as? DataSnapshot else {
-                    continue
-                }
-                let place = Place()
-                place.set(snapshot: snapshotPlace)
-                RealmService.shared.save(place)
-                self?.loadImage(for: place, completion: completion)
+    func load(completion: VoidHandler?) {
+        loadVersionDatabase { [weak self] versionDB in
+            guard let versionDB = versionDB else {
+                print("Not version DB!")
+                completion?()
+                return
             }
+            print("NEW VERSION DB: \(versionDB)")
+            self?.updatePlaces(versionDB: versionDB, completion: {
+                UserDefaults.standard.versionDB = versionDB
+                completion?()
+            })
         }
     }
 }
 
 extension PlacesServiceImpl {
+    private func loadVersionDatabase(completion: @escaping (String?) -> Void) {
+        databaseRef.child("version").observeSingleEvent(of: .value) { snapshot in
+            completion(snapshot.value as? String)
+        }
+    }
+    
+    private func updatePlaces(versionDB: String, completion: VoidHandler?) {
+        let currentDB = UserDefaults.standard.versionDB ?? ""
+        let currentPaths = currentDB.split(separator: ".").compactMap({ Int($0) })
+        let paths = versionDB.split(separator: ".").compactMap({ Int($0) })
+        guard paths.count == 3, currentPaths.count == 3 else {
+            print("Not count DB version 3 symbols")
+            loadAll(completion: completion)
+            return
+        }
+        if paths[0] != currentPaths[0] {
+            print("loading with images")
+            loadAll(completion: completion)
+            return
+        }
+        if paths[1] != currentPaths[1] || paths[2] != currentPaths[2] {
+            print("loading without images")
+            loadAll(loadingImages: false, completion: completion)
+            return
+        }
+        print("Version db is actual")
+    }
+    
+    private func loadAll(loadingImages: Bool = true, completion: VoidHandler?) {
+        loadPlaceDataSnapshot { [weak self] dictionary in
+            let place = Place()
+            place.set(dictionary: dictionary)
+            RealmService.shared.save(place)
+            loadingImages ? self?.loadImage(for: place, completion: completion) : completion?()
+        }
+    }
+    
+    private func loadPlaceDataSnapshot(completion: @escaping ([String: Any]) -> Void) {
+        databaseRef.child("places").observeSingleEvent(of: .value) { snapshot in
+            guard let values = snapshot.children.allObjects as? [DataSnapshot] else {
+                return
+            }
+            values.forEach({
+                if let value = $0.value as? [String: Any] {
+                    completion(value)
+                }
+            })
+        }
+    }
+    
     private func loadImage(for place: Place, completion: VoidHandler?) {
         let id = place.id
         storageRef.child("places/\(id).jpg").getData(maxSize: 1 * 1024 * 1024) { data, error in

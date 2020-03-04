@@ -32,8 +32,8 @@ final class MapViewController: UIViewController {
     }
     
     private func setStartRegion() {
-        if let location = presenter.selectedPlace?.location {
-            let coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+        if let selectedPlace = presenter.selectedPlace {
+            let coordinate = CLLocationCoordinate2D(latitude: selectedPlace.latitude, longitude: selectedPlace.longitude)
             setRegion(coordinate)
             return
         }
@@ -143,14 +143,11 @@ extension MapViewController {
     }
     
     private func addAnnotation(_ place: Place, id: Int) {
-        guard let placeLocation = place.location else {
-            return
-        }
-        let location = CLLocationCoordinate2D(latitude: placeLocation.latitude, longitude: placeLocation.longitude)
+        let location = CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude)
         let annotation = PlacePointAnnotation(identifier: id)
         annotation.coordinate = location
         annotation.title = place.name
-        annotation.subtitle = placeLocation.metro
+        annotation.subtitle = place.metro
         mapView.addAnnotation(annotation)
     }
 }

@@ -33,10 +33,10 @@ final class MainPlaceCell: UITableViewCell {
     
     func set(_ place: Place) {
         placeImageView.image = (place.image != nil) ? UIImage(data: place.image!) : nil
-        namePlaceLabel.text = "\(place.name) \(place.location?.metro ?? "")"
-        addressPlaceLabel.text = "\(place.location?.address ?? "")"
-        ratingView.set(rating: place.rating?.total ?? 0.0)
-        distanceView.set(distance: place.location?.distanceTo ?? 0.0)
+        namePlaceLabel.text = "\(place.name) \(place.metro)"
+        addressPlaceLabel.text = place.address
+        ratingView.set(rating: place.total)
+        distanceView.set(distance: place.distanceTo)
     }
 }
 

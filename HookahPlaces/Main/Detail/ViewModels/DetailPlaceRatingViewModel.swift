@@ -9,6 +9,7 @@
 import Foundation
 
 typealias RatingViewModel = (title: String, rating: Float)
+typealias RatingPlace = (total: Float, hookah: Float, staff: Float, place: Float)
 
 final class DetailPlaceRatingViewModel: DetailPlaceCellViewModelProtocol {
     let identifier = String(describing: DetailPlaceRatingCell.self)

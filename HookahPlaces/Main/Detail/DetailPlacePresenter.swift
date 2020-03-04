@@ -73,7 +73,8 @@ extension DetailPlacePresenter {
     
     private func addRating() {
         // TODO: Set reality number ratings
-        viewModels.append(DetailPlaceRatingViewModel(ratingModel: place.rating ?? RatingPlace(),
+        let ratingModel = RatingPlace(total: place.total, hookah: place.hookah, staff: place.staff, place: place.place)
+        viewModels.append(DetailPlaceRatingViewModel(ratingModel: ratingModel,
                                                      numberRatings: 5,
                                                      didTapNewRating: didTapAddNewRating))
     }
@@ -90,8 +91,8 @@ extension DetailPlacePresenter {
     }
     
     private func addMap() {
-        viewModels.append(DetailPlaceMapViewModel(latitude: place.location?.latitude ?? 0.0,
-                                                  longitude: place.location?.longitude ?? 0.0,
+        viewModels.append(DetailPlaceMapViewModel(latitude: place.latitude,
+                                                  longitude: place.longitude,
                                                   name: place.name,
                                                   didTapMap: didTapMap))
     }

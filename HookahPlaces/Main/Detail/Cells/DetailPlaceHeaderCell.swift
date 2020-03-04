@@ -45,11 +45,11 @@ final class DetailPlaceHeaderCell: UITableViewCell, DetailPlaceCellProtocol {
         }
         // TODO: Set image from view model
         placeImageView.image = #imageLiteral(resourceName: "0")
-        distanceView.set("\(viewModel.place.location?.distanceTo ?? 0.0) км")
+        distanceView.set("\(viewModel.place.distanceTo) км")
         // TODO: Set title from user
         checkinPlaceButton.setTitle("Вы в заведении", for: .normal)
         numberUsersView.set("\(viewModel.numberUsers)")
-        addressLabel.text = "м. \(viewModel.place.location?.metro ?? ""), \(viewModel.place.location?.address ?? "")"
+        addressLabel.text = "м. \(viewModel.place.metro), \(viewModel.place.address)"
         phoneLabel.text = "Телефон: \(viewModel.place.phone)"
     }
     

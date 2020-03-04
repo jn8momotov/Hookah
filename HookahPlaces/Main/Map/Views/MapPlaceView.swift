@@ -30,8 +30,8 @@ final class MapPlaceView: UIView {
     }
     
     func set(_ place: Place) {
-        titleLabel.text = "\(place.name) \(place.location?.metro ?? "")"
-        addressLabel.text = place.location?.address
+        titleLabel.text = "\(place.name) \(place.metro)"
+        addressLabel.text = place.address
         if let data = place.image {
             imageView.image = UIImage(data: data)
         }
