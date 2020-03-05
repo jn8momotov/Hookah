@@ -28,7 +28,7 @@ final class StorageServiceImpl: StorageService {
             onError?("Не удалось получить ваш профиль!")
             return
         }
-        let uploadTask = reference.putData(dataImage, metadata: nil) { metadata, error in
+        reference.putData(dataImage, metadata: nil) { metadata, error in
             if let error = error {
                 onError?(error.localizedDescription)
                 return
@@ -39,7 +39,6 @@ final class StorageServiceImpl: StorageService {
             }
             onSuccess?()
         }
-        uploadTask.resume()
     }
     
     func download(onSuccess: ((Data) -> Void)?, onError: ErrorHandler?) {
@@ -47,7 +46,7 @@ final class StorageServiceImpl: StorageService {
             onError?("Не удалось получить ваш профиль!")
             return
         }
-        let downloadTask = reference.getData(maxSize: 1 * 1024 * 1024) { data, error in
+        reference.getData(maxSize: 1 * 1024 * 1024) { data, error in
             if let error = error {
                 onError?(error.localizedDescription)
                 return
@@ -58,7 +57,6 @@ final class StorageServiceImpl: StorageService {
             }
             onSuccess?(data)
         }
-        downloadTask.resume()
     }
     
     func delete(onSuccess: VoidHandler?, onError: ErrorHandler?) {

@@ -12,6 +12,11 @@ import FirebaseStorage
 
 protocol PlacesService {
     func load(completion: VoidHandler?)
+    func sendRating(_ rating: RatingPlace,
+                    for placeId: Int,
+                    from userId: String,
+                    onSuccess: VoidHandler?,
+                    onError: ErrorHandler?)
 }
 
 final class PlacesServiceImpl: PlacesService {
@@ -21,15 +26,32 @@ final class PlacesServiceImpl: PlacesService {
     func load(completion: VoidHandler?) {
         loadVersionDatabase { [weak self] versionDB in
             guard let versionDB = versionDB else {
-                print("Not version DB!")
                 completion?()
                 return
             }
-            print("NEW VERSION DB: \(versionDB)")
             self?.updatePlaces(versionDB: versionDB, completion: {
                 UserDefaults.standard.versionDB = versionDB
                 completion?()
             })
+        }
+    }
+    
+    func sendRating(_ rating: RatingPlace,
+                    for placeId: Int,
+                    from userId: String,
+                    onSuccess: VoidHandler?,
+                    onError: ErrorHandler?) {
+        let value = [
+            "ratingHookah": rating.hookah,
+            "ratingPlace": rating.place,
+            "ratingStaff": rating.staff
+        ]
+        databaseRef.child("places").child("\(placeId)").child("assessments").child(userId).setValue(value) { error, _ in
+            if let error = error {
+                onError?(error.localizedDescription)
+                return
+            }
+            onSuccess?()
         }
     }
 }
@@ -46,21 +68,17 @@ extension PlacesServiceImpl {
         let currentPaths = currentDB.split(separator: ".").compactMap({ Int($0) })
         let paths = versionDB.split(separator: ".").compactMap({ Int($0) })
         guard paths.count == 3, currentPaths.count == 3 else {
-            print("Not count DB version 3 symbols")
             loadAll(completion: completion)
             return
         }
         if paths[0] != currentPaths[0] {
-            print("loading with images")
             loadAll(completion: completion)
             return
         }
         if paths[1] != currentPaths[1] || paths[2] != currentPaths[2] {
-            print("loading without images")
             loadAll(loadingImages: false, completion: completion)
             return
         }
-        print("Version db is actual")
     }
     
     private func loadAll(loadingImages: Bool = true, completion: VoidHandler?) {

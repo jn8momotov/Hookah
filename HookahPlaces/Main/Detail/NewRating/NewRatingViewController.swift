@@ -9,7 +9,7 @@
 import UIKit
 
 final class NewRatingViewController: UIViewController {
-    private var presenter: NewRatingPresenterProtocol!
+    var presenter: NewRatingPresenterProtocol!
     
     private let hookahRatingView = NewRatingView(title: "Кальян")
     private let staffRatingView = NewRatingView(title: "Персонал")
@@ -18,13 +18,18 @@ final class NewRatingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = NewRatingPresenter(view: self)
         configureView()
     }
     
     @objc
     private func didTapOnAddNewRating() {
-        
+        presenter.sendRating(onSuccess: { [weak self] in
+            self?.showAlert(title: "Успешно!", description: "Благодарим за поставленную оценку!", completion: {
+                self?.dismiss(animated: true, completion: nil)
+            })
+        }, onError: { [weak self] error in
+            self?.showAlert(title: "Ошибка!", description: error)
+        })
     }
 }
 

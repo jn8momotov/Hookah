@@ -41,7 +41,9 @@ final class DetailPlacePresenter: DetailPlacePresenterProtocol {
     
     private var didTapAddNewRating: VoidHandler? {
         return { [weak self] in
-            self?.coordinator.openNewRating()
+            if let id = self?.place.id {
+                self?.coordinator.openNewRating(for: id)
+            }
         }
     }
     

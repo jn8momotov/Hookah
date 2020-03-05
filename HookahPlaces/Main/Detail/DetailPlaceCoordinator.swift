@@ -10,7 +10,7 @@ import UIKit
 
 protocol DetailPlaceCoordinatorProtocol {
     func openMap(place: Place)
-    func openNewRating()
+    func openNewRating(for placeId: Int)
     func openCall(to phone: String)
     func openUsersInPlace()
 }
@@ -28,8 +28,10 @@ final class DetailPlaceCoordinator: DetailPlaceCoordinatorProtocol {
         view?.presentRoot(controller)
     }
     
-    func openNewRating() {
-        view?.presentRoot(NewRatingViewController())
+    func openNewRating(for placeId: Int) {
+        let viewController = NewRatingViewController()
+        viewController.presenter = NewRatingPresenter(view: viewController, placeId: placeId)
+        view?.presentRoot(viewController)
     }
     
     func openCall(to phone: String) {
