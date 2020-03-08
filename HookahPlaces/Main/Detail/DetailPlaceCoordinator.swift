@@ -13,6 +13,7 @@ protocol DetailPlaceCoordinatorProtocol {
     func openNewRating(for placeId: Int)
     func openCall(to phone: String)
     func openUsersInPlace()
+    func openUnauthAlert()
 }
 
 final class DetailPlaceCoordinator: DetailPlaceCoordinatorProtocol {
@@ -43,5 +44,10 @@ final class DetailPlaceCoordinator: DetailPlaceCoordinatorProtocol {
     
     func openUsersInPlace() {
         view?.navigationController?.pushViewController(UsersViewController(), animated: true)
+    }
+    
+    func openUnauthAlert() {
+        view?.showAlert(title: "Вы не авторизованы!",
+                        description: "Чтобы поставить оценку заведению необходимо авторизоваться!")
     }
 }

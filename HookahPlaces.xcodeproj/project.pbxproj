@@ -15,8 +15,6 @@
 		7A19425E23F8A5DE0060114D /* Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A19425D23F8A5DE0060114D /* Handlers.swift */; };
 		7A19426223FC90100060114D /* PlacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A19426123FC90100060114D /* PlacesService.swift */; };
 		7A28631023AD9BBB00263D72 /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28630F23AD9BBB00263D72 /* AuthorizationService.swift */; };
-		7A28631223ADA1B000263D72 /* SignupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28631123ADA1B000263D72 /* SignupCoordinator.swift */; };
-		7A28631423AFAD6600263D72 /* SigninCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28631323AFAD6600263D72 /* SigninCoordinator.swift */; };
 		7A32037523F8545300FB90EA /* NSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32037423F8545300FB90EA /* NSNotification.swift */; };
 		7A3321442393D6300012985F /* ProfileInfoUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3321432393D6300012985F /* ProfileInfoUserCell.swift */; };
 		7A3321462393D81C0012985F /* ProfileInfoUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3321452393D81C0012985F /* ProfileInfoUserViewModel.swift */; };
@@ -66,6 +64,8 @@
 		7AA4FAA9239425380076DA08 /* NewRatingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA4FAA8239425380076DA08 /* NewRatingPresenter.swift */; };
 		7AA4FAAC239425ED0076DA08 /* NewRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA4FAAB239425ED0076DA08 /* NewRatingView.swift */; };
 		7AA4FAAE2394264E0076DA08 /* StarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA4FAAD2394264E0076DA08 /* StarButton.swift */; };
+		7ABBB6A4241585DF00F05B05 /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBB6A3241585DF00F05B05 /* AuthorizationViewController.swift */; };
+		7ABBB6A6241588A000F05B05 /* AuthorizationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBB6A5241588A000F05B05 /* AuthorizationPresenter.swift */; };
 		7ABBF1E623135407003DC9B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBF1E523135407003DC9B5 /* AppDelegate.swift */; };
 		7ABBF1E823135407003DC9B5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABBF1E723135407003DC9B5 /* MainViewController.swift */; };
 		7ABBF1ED23135408003DC9B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ABBF1EC23135408003DC9B5 /* Assets.xcassets */; };
@@ -77,11 +77,7 @@
 		7AC50B6C238BA5DC00117C8D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC50B6B238BA5DC00117C8D /* SettingsViewController.swift */; };
 		7AC50B6E238BA63000117C8D /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC50B6D238BA63000117C8D /* SettingsPresenter.swift */; };
 		7AC50B71238BAFA000117C8D /* MainDistanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC50B70238BAFA000117C8D /* MainDistanceView.swift */; };
-		7AE6887A239D603400BE7D63 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE68879239D603400BE7D63 /* SigninViewController.swift */; };
-		7AE6887C239D604100BE7D63 /* SigninPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6887B239D604100BE7D63 /* SigninPresenter.swift */; };
 		7AE6887F239D61A600BE7D63 /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE6887E239D61A600BE7D63 /* AuthTextField.swift */; };
-		7AE68881239D7FE100BE7D63 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE68880239D7FE100BE7D63 /* SignupViewController.swift */; };
-		7AE68883239D801100BE7D63 /* SignupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE68882239D801100BE7D63 /* SignupPresenter.swift */; };
 		860C3185239E117700629364 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860C3184239E117700629364 /* AboutViewController.swift */; };
 		860C3187239E123E00629364 /* AboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860C3186239E123E00629364 /* AboutPresenter.swift */; };
 		860C318A239E134900629364 /* RightArrowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860C3189239E134900629364 /* RightArrowCell.swift */; };
@@ -113,8 +109,6 @@
 		7A19425D23F8A5DE0060114D /* Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handlers.swift; sourceTree = "<group>"; };
 		7A19426123FC90100060114D /* PlacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesService.swift; sourceTree = "<group>"; };
 		7A28630F23AD9BBB00263D72 /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
-		7A28631123ADA1B000263D72 /* SignupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupCoordinator.swift; sourceTree = "<group>"; };
-		7A28631323AFAD6600263D72 /* SigninCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninCoordinator.swift; sourceTree = "<group>"; };
 		7A32037423F8545300FB90EA /* NSNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotification.swift; sourceTree = "<group>"; };
 		7A3321432393D6300012985F /* ProfileInfoUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoUserCell.swift; sourceTree = "<group>"; };
 		7A3321452393D81C0012985F /* ProfileInfoUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoUserViewModel.swift; sourceTree = "<group>"; };
@@ -124,6 +118,7 @@
 		7A33214F2393E8060012985F /* ProfileAuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAuthorizationViewModel.swift; sourceTree = "<group>"; };
 		7A3321522393EDB90012985F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		7A3321552394012E0012985F /* SearchPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceCell.swift; sourceTree = "<group>"; };
+		7A40EC5A24119EEF002C07DE /* HookahPlaces.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HookahPlaces.entitlements; sourceTree = "<group>"; };
 		7A4842A1238C25C60002648E /* MainRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRatingView.swift; sourceTree = "<group>"; };
 		7A4842A4238C29690002648E /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		7A4842A7238C2A890002648E /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
@@ -164,6 +159,8 @@
 		7AA4FAA8239425380076DA08 /* NewRatingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRatingPresenter.swift; sourceTree = "<group>"; };
 		7AA4FAAB239425ED0076DA08 /* NewRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRatingView.swift; sourceTree = "<group>"; };
 		7AA4FAAD2394264E0076DA08 /* StarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarButton.swift; sourceTree = "<group>"; };
+		7ABBB6A3241585DF00F05B05 /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		7ABBB6A5241588A000F05B05 /* AuthorizationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenter.swift; sourceTree = "<group>"; };
 		7ABBF1E223135407003DC9B5 /* HookahPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HookahPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ABBF1E523135407003DC9B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7ABBF1E723135407003DC9B5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -177,11 +174,7 @@
 		7AC50B6B238BA5DC00117C8D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7AC50B6D238BA63000117C8D /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		7AC50B70238BAFA000117C8D /* MainDistanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDistanceView.swift; sourceTree = "<group>"; };
-		7AE68879239D603400BE7D63 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
-		7AE6887B239D604100BE7D63 /* SigninPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninPresenter.swift; sourceTree = "<group>"; };
 		7AE6887E239D61A600BE7D63 /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
-		7AE68880239D7FE100BE7D63 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
-		7AE68882239D801100BE7D63 /* SignupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPresenter.swift; sourceTree = "<group>"; };
 		860C3184239E117700629364 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		860C3186239E123E00629364 /* AboutPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPresenter.swift; sourceTree = "<group>"; };
 		860C3189239E134900629364 /* RightArrowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightArrowCell.swift; sourceTree = "<group>"; };
@@ -478,6 +471,7 @@
 		7ABBF1E423135407003DC9B5 /* HookahPlaces */ = {
 			isa = PBXGroup;
 			children = (
+				7A40EC5A24119EEF002C07DE /* HookahPlaces.entitlements */,
 				8689D8552390FC7A00FC3E84 /* Views */,
 				7A4842A6238C2A4B0002648E /* Services */,
 				7A4842A3238C294E0002648E /* Models */,
@@ -529,30 +523,10 @@
 		7AE68876239D600800BE7D63 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				7AE68878239D601A00BE7D63 /* Signup */,
-				7AE68877239D601300BE7D63 /* Signin */,
+				7ABBB6A3241585DF00F05B05 /* AuthorizationViewController.swift */,
+				7ABBB6A5241588A000F05B05 /* AuthorizationPresenter.swift */,
 			);
 			path = Authorization;
-			sourceTree = "<group>";
-		};
-		7AE68877239D601300BE7D63 /* Signin */ = {
-			isa = PBXGroup;
-			children = (
-				7AE68879239D603400BE7D63 /* SigninViewController.swift */,
-				7AE6887B239D604100BE7D63 /* SigninPresenter.swift */,
-				7A28631323AFAD6600263D72 /* SigninCoordinator.swift */,
-			);
-			path = Signin;
-			sourceTree = "<group>";
-		};
-		7AE68878239D601A00BE7D63 /* Signup */ = {
-			isa = PBXGroup;
-			children = (
-				7AE68880239D7FE100BE7D63 /* SignupViewController.swift */,
-				7AE68882239D801100BE7D63 /* SignupPresenter.swift */,
-				7A28631123ADA1B000263D72 /* SignupCoordinator.swift */,
-			);
-			path = Signup;
 			sourceTree = "<group>";
 		};
 		7AE6887D239D619500BE7D63 /* TextFields */ = {
@@ -815,11 +789,10 @@
 				7AC50B6C238BA5DC00117C8D /* SettingsViewController.swift in Sources */,
 				7A63F22823A594C300B9ABE7 /* InputValuePlaceView.swift in Sources */,
 				7A6939F12393C88F006FD8D9 /* ProfileImageCell.swift in Sources */,
+				7ABBB6A4241585DF00F05B05 /* AuthorizationViewController.swift in Sources */,
 				7AA4FAA9239425380076DA08 /* NewRatingPresenter.swift in Sources */,
 				7A6B484323918F9E00F352C7 /* DetailPlaceAdditionalViewModel.swift in Sources */,
 				7A77553B23B013DE007F4721 /* AppConfiguring.swift in Sources */,
-				7A28631223ADA1B000263D72 /* SignupCoordinator.swift in Sources */,
-				7AE6887C239D604100BE7D63 /* SigninPresenter.swift in Sources */,
 				7A32037523F8545300FB90EA /* NSNotification.swift in Sources */,
 				7A33214C2393DCF10012985F /* ProfileSettingViewModel.swift in Sources */,
 				7A6B48452391915700F352C7 /* PlaceAdditional.swift in Sources */,
@@ -830,12 +803,12 @@
 				7A5A9A4B238B9C7D00795EEF /* SearchViewController.swift in Sources */,
 				7AA4FAAC239425ED0076DA08 /* NewRatingView.swift in Sources */,
 				86F4F784239E299C0044BD6E /* DetailPlaceCoordinator.swift in Sources */,
-				7AE68881239D7FE100BE7D63 /* SignupViewController.swift in Sources */,
 				860C3195239E238100629364 /* UsersViewController.swift in Sources */,
 				7A77554123B11AFB007F4721 /* FirestoreService.swift in Sources */,
 				7A94B578238DA95B008B7AC2 /* LocationService.swift in Sources */,
 				860C3185239E117700629364 /* AboutViewController.swift in Sources */,
 				7A94B574238D7312008B7AC2 /* MapPlaceView.swift in Sources */,
+				7ABBB6A6241588A000F05B05 /* AuthorizationPresenter.swift in Sources */,
 				8689D8482390E80900FC3E84 /* DetailPlaceHeaderViewModel.swift in Sources */,
 				7A5A9A4D238B9C9C00795EEF /* MainPresenter.swift in Sources */,
 				7A6B485623919A4100F352C7 /* DetailPlaceMapViewModel.swift in Sources */,
@@ -844,18 +817,15 @@
 				8689D8582390FC9300FC3E84 /* PrimaryButton.swift in Sources */,
 				7A6B484123918E2700F352C7 /* DetailPlaceAdditionalDataCell.swift in Sources */,
 				7A3321462393D81C0012985F /* ProfileInfoUserViewModel.swift in Sources */,
-				7AE68883239D801100BE7D63 /* SignupPresenter.swift in Sources */,
 				7A19426223FC90100060114D /* PlacesService.swift in Sources */,
 				7A02D66F2393C36000AF82D1 /* ProfilePresenter.swift in Sources */,
 				860C319A239E255200629364 /* UserInPlaceCell.swift in Sources */,
 				7ABBF1E823135407003DC9B5 /* MainViewController.swift in Sources */,
-				7AE6887A239D603400BE7D63 /* SigninViewController.swift in Sources */,
 				860C3190239E19BD00629364 /* FeedbackViewController.swift in Sources */,
 				7A3321442393D6300012985F /* ProfileInfoUserCell.swift in Sources */,
 				7A4842A5238C29690002648E /* Place.swift in Sources */,
 				7A63F22C23A5A6D100B9ABE7 /* UIViewController.swift in Sources */,
 				7AA4FAAE2394264E0076DA08 /* StarButton.swift in Sources */,
-				7A28631423AFAD6600263D72 /* SigninCoordinator.swift in Sources */,
 				7A7A0B722402773C0008FB4D /* UserDefaults.swift in Sources */,
 				7A8CD878238F94C300B7109F /* DetailPlacePresenter.swift in Sources */,
 				7ABBF1F823135560003DC9B5 /* TabBarController.swift in Sources */,
@@ -1025,6 +995,8 @@
 			baseConfigurationReference = 488D707BFB37BE3B288948A2 /* Pods-HookahPlaces.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HookahPlaces/HookahPlaces.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C859L9UR93;
 				INFOPLIST_FILE = HookahPlaces/Info.plist;
@@ -1035,6 +1007,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.momotov.hookah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1045,6 +1018,8 @@
 			baseConfigurationReference = 591A602B1300C13596E8EAAA /* Pods-HookahPlaces.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HookahPlaces/HookahPlaces.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C859L9UR93;
 				INFOPLIST_FILE = HookahPlaces/Info.plist;
@@ -1055,6 +1030,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.momotov.hookah;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

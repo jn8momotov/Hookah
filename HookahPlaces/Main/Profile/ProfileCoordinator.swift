@@ -10,7 +10,6 @@ import UIKit
 
 protocol ProfileCoordinatorProtocol {
     func openSignIn()
-    func openSignUp()
     func openAbout()
     func openFeedback()
     func openAddingNewPlace()
@@ -25,11 +24,7 @@ final class ProfileCoordinator: ProfileCoordinatorProtocol {
     }
     
     func openSignIn() {
-        view?.presentRoot(SigninViewController())
-    }
-    
-    func openSignUp() {
-        view?.presentRoot(SignupViewController())
+        view?.presentRoot(AuthorizationViewController())
     }
     
     func openAbout() {

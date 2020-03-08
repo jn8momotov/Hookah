@@ -45,12 +45,6 @@ final class ProfilePresenter: ProfilePresenterProtocol {
         }
     }
     
-    private var didTapSignUp: VoidHandler {
-        return { [weak self] in
-            self?.coordinator.openSignUp()
-        }
-    }
-    
     private var didTapAbout: VoidHandler {
         return { [weak self] in
             self?.coordinator.openAbout()
@@ -79,7 +73,7 @@ extension ProfilePresenter {
         if isSignIn {
             viewModels.append(ProfileInfoUserViewModel(name: user?.name, email: user?.email))
         } else {
-            viewModels.append(ProfileAuthorizationViewModel(didTapSignIn: didTapSignIn, didTapSignUp: didTapSignUp))
+            viewModels.append(ProfileAuthorizationViewModel(didTapSignIn: didTapSignIn))
         }
         viewModels.append(ProfileSettingViewModel(title: "Добавить заведение",
                                                   topLine: true,

@@ -41,6 +41,10 @@ final class DetailPlacePresenter: DetailPlacePresenterProtocol {
     
     private var didTapAddNewRating: VoidHandler? {
         return { [weak self] in
+            guard AuthorizationServiceImpl.currentUser != nil else {
+                self?.coordinator.openUnauthAlert()
+                return
+            }
             if let id = self?.place.id {
                 self?.coordinator.openNewRating(for: id)
             }

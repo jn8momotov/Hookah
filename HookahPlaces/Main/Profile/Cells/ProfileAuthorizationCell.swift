@@ -12,7 +12,6 @@ final class ProfileAuthorizationCell: UITableViewCell, ProfileCellProtocol {
     static let identifier = String(describing: ProfileAuthorizationCell.self)
     
     private let signinButton = PrimaryButton()
-    private let signupButton = UIButton()
     
     private var viewModel: ProfileAuthorizationViewModel?
     
@@ -33,11 +32,6 @@ final class ProfileAuthorizationCell: UITableViewCell, ProfileCellProtocol {
     private func didTapOnSignInButton() {
         viewModel?.didTapSignIn?()
     }
-    
-    @objc
-    private func didTapOnSignUpButton() {
-        viewModel?.didTapSignUp?()
-    }
 }
 
 extension ProfileAuthorizationCell {
@@ -46,7 +40,6 @@ extension ProfileAuthorizationCell {
         selectionStyle = .none
         
         addSigninButton()
-        addSignupButton()
     }
     
     private func addSigninButton() {
@@ -55,27 +48,10 @@ extension ProfileAuthorizationCell {
         addSubview(signinButton)
         
         signinButton.snp.makeConstraints {
-            $0.left.right.top.equalToSuperview().inset(16)
+            $0.left.right.top.bottom.equalToSuperview().inset(16)
             $0.height.equalTo(44)
         }
         
         signinButton.addTarget(self, action: #selector(didTapOnSignInButton), for: .touchUpInside)
-    }
-    
-    private func addSignupButton() {
-        signupButton.setTitle("Зарегистрироваться", for: .normal)
-        signupButton.setTitleColor(.black, for: .normal)
-        signupButton.titleLabel?.font = .main(ofSize: 15)
-        signupButton.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(signupButton)
-        
-        signupButton.snp.makeConstraints {
-            $0.top.equalTo(signinButton.snp.bottom).offset(2)
-            $0.left.right.equalToSuperview().inset(16)
-            $0.height.equalTo(44)
-            $0.bottom.equalToSuperview().inset(16)
-        }
-        
-        signupButton.addTarget(self, action: #selector(didTapOnSignUpButton), for: .touchUpInside)
     }
 }

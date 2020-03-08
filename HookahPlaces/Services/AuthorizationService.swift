@@ -14,8 +14,8 @@ typealias AuthHandler = (result: AuthDataResult?, error: Error?, onError: ErrorH
 
 protocol AuthorizationService: class {
     static var currentUser: User? { get }
-    func signIn(_ model: SignInModel, onError: ErrorHandler?, onSuccess: VoidHandler?)
-    func signUp(_ model: SignUpModel, onError: ErrorHandler?, onSuccess: VoidHandler?)
+    func verifyPhoneNumber(_ phoneNumber: String, onError: ErrorHandler?, onSuccess: ((String) -> Void)?)
+    func signIn(_ verificationModel: VerificationModel, onError: ErrorHandler?, onSuccess: VoidHandler?)
     func signOut(onError: ErrorHandler?, onSuccess: VoidHandler?)
 }
 
@@ -25,35 +25,38 @@ extension AuthorizationService {
     }
 }
 
+typealias VerificationModel = (id: String, code: String)
+
 final class AuthorizationServiceImpl: AuthorizationService {
     private let firestoreService: FirestoreService = FirestoreServiceImpl()
     private let storageService: StorageService = StorageServiceImpl()
     
-    func signIn(_ model: SignInModel, onError: ErrorHandler?, onSuccess: VoidHandler?) {
-        Auth.auth().signIn(withEmail: model.email, password: model.password) { [weak self] result, error in
-            guard let user = result?.user, error == nil else {
-                let textError = error?.localizedDescription ?? "Не удалось авторизоваться!"
-                onError?(textError)
+    func verifyPhoneNumber(_ phoneNumber: String, onError: ErrorHandler?, onSuccess: ((String) -> Void)?) {
+        Auth.auth().languageCode = "ru";
+        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { verificationID, error in
+            if let error = error {
+                onError?(error.localizedDescription)
                 return
             }
-            self?.pullUserData(user: user, onError: onError, onSuccess: onSuccess)
+            if let verificationID = verificationID {
+                onSuccess?(verificationID)
+                return
+            }
         }
     }
     
-    func signUp(_ model: SignUpModel, onError: ErrorHandler?, onSuccess: VoidHandler?) {
-        let signIn = model.signInModel
-        Auth.auth().createUser(withEmail: signIn.email, password: signIn.password) { [weak self] result, error in
-            guard let user = result?.user, error == nil else {
-                let textError = error?.localizedDescription ?? "Не удалось зарегистрироваться!"
-                onError?(textError)
+    func signIn(_ verificationModel: VerificationModel, onError: ErrorHandler?, onSuccess: VoidHandler?) {
+        let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationModel.id,
+                                                                 verificationCode: verificationModel.code)
+        Auth.auth().signIn(with: credential) { result, error in
+            if let error = error {
+                onError?(error.localizedDescription)
                 return
             }
-            self?.pushUserData(user: user,
-                               name: model.name,
-                               phone: model.phone,
-                               dataImage: model.photo,
-                               onError: onError,
-                               onSuccess: onSuccess)
+            if let _ = result?.user {
+                onSuccess?()
+                return
+            }
         }
     }
     

@@ -12,12 +12,10 @@ final class ProfileAuthorizationViewModel: ProfileViewModelProtocol {
     let identifier = ProfileAuthorizationCell.identifier
     
     let didTapSignIn: VoidHandler?
-    let didTapSignUp: VoidHandler?
     let didTapCell: VoidHandler?
     
-    init(didTapSignIn: VoidHandler?, didTapSignUp: VoidHandler?) {
+    init(didTapSignIn: VoidHandler?) {
         self.didTapSignIn = didTapSignIn
-        self.didTapSignUp = didTapSignUp
         self.didTapCell = nil
     }
 }
