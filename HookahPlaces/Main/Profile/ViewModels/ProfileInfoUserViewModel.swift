@@ -12,12 +12,12 @@ final class ProfileInfoUserViewModel: ProfileViewModelProtocol {
     let identifier = ProfileInfoUserCell.identifier
     
     let name: String
-    let email: String
+    let phoneNumber: String
     let didTapCell: VoidHandler?
     
-    init(name: String?, email: String?, didTapCell: VoidHandler? = nil) {
+    init(name: String?, phoneNumber: String?, didTapCell: VoidHandler? = nil) {
         self.name = name ?? ""
-        self.email = email ?? ""
+        self.phoneNumber = phoneNumber ?? ""
         self.didTapCell = didTapCell
     }
 }

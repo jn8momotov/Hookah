@@ -16,6 +16,7 @@ protocol AuthorizationPresenter {
 final class AuthorizationPresenterImpl: AuthorizationPresenter {
     private weak var view: AuthorizationViewController?
     private let authService: AuthorizationService = AuthorizationServiceImpl()
+    private let storageService: StorageService = StorageServiceImpl()
     
     private var verificationID: String = ""
     private var phoneNumberIsVerify: Bool = false
@@ -52,9 +53,32 @@ extension AuthorizationPresenterImpl {
         let verificationModel = VerificationModel(id: verificationID, code: codeSMS)
         authService.signIn(verificationModel, onError: { [weak self] error in
             self?.view?.showAlert(title: "Ошибка!", description: error)
-        }, onSuccess: { [weak self] in
-            self?.view?.dismiss(animated: true, completion: nil)
+        }, onSuccess: { [weak self] user in
+            if let _ = user.displayName {
+                self?.storageService.download(onSuccess: { [weak self] dataImage in
+                    self?.savePhotoProfile(dataImage)
+                    self?.view?.dismiss(animated: true, completion: nil)
+                }, onError: { error in
+                    self?.view?.dismiss(animated: true, completion: nil)
+                })
+            } else {
+                self?.view?.push(EditProfileViewController())
+            }
         })
+    }
+    
+    private func savePhotoProfile(_ dataImage: Data) {
+        DispatchQueue.main.async {
+            if let profile = RealmService.shared.get(Profile.self).first {
+                RealmService.shared.edit {
+                    profile.photo = dataImage
+                }
+            } else {
+                let profile = Profile()
+                profile.photo = dataImage
+                RealmService.shared.save(profile)
+            }
+        }
     }
     
     private func isCorrect(_ value: String, for template: String) -> Bool {

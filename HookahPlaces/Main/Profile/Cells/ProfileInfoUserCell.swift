@@ -12,7 +12,7 @@ final class ProfileInfoUserCell: UITableViewCell, ProfileCellProtocol {
     static let identifier = String(describing: ProfileInfoUserCell.self)
     
     private let nameLabel = UILabel()
-    private let emailLabel = UILabel()
+    private let phoneNumberLabel = UILabel()
     
     private var viewModel: ProfileInfoUserViewModel? {
         didSet {
@@ -35,7 +35,7 @@ final class ProfileInfoUserCell: UITableViewCell, ProfileCellProtocol {
     
     private func updateView() {
         nameLabel.text = viewModel?.name
-        emailLabel.text = viewModel?.email
+        phoneNumberLabel.text = viewModel?.phoneNumber
     }
 }
 
@@ -62,13 +62,13 @@ extension ProfileInfoUserCell {
     }
     
     private func addEmailLabel() {
-        emailLabel.font = .main(ofSize: 14)
-        emailLabel.textColor = .lightGray
-        emailLabel.textAlignment = .center
-        emailLabel.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(emailLabel)
+        phoneNumberLabel.font = .main(ofSize: 14)
+        phoneNumberLabel.textColor = .lightGray
+        phoneNumberLabel.textAlignment = .center
+        phoneNumberLabel.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(phoneNumberLabel)
         
-        emailLabel.snp.makeConstraints {
+        phoneNumberLabel.snp.makeConstraints {
             $0.top.equalTo(nameLabel.snp.bottom).offset(4)
             $0.centerX.equalToSuperview()
             $0.bottom.equalToSuperview().inset(16)

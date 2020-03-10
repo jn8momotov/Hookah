@@ -18,7 +18,6 @@ final class ProfilePresenter: ProfilePresenterProtocol {
     private weak var view: ProfileViewController?
     private let coordinator: ProfileCoordinator
     
-    private var user: Profile?
     var viewModels: [ProfileViewModelProtocol] = []
     
     var isSignIn: Bool {
@@ -66,13 +65,13 @@ final class ProfilePresenter: ProfilePresenterProtocol {
 
 extension ProfilePresenter {
     private func configureViewModel() {
-        user = getProfile()
+        let user = AuthorizationServiceImpl.currentUser
         viewModels.removeAll()
-        let dataImage = isSignIn ? user?.photo : nil
-        viewModels.append(ProfileImageViewModel(dataImage: dataImage))
         if isSignIn {
-            viewModels.append(ProfileInfoUserViewModel(name: user?.name, email: user?.email))
+            viewModels.append(ProfileImageViewModel(dataImage: getProfile()?.photo))
+            viewModels.append(ProfileInfoUserViewModel(name: user?.displayName, phoneNumber: user?.phoneNumber))
         } else {
+            viewModels.append(ProfileImageViewModel(dataImage: nil))
             viewModels.append(ProfileAuthorizationViewModel(didTapSignIn: didTapSignIn))
         }
         viewModels.append(ProfileSettingViewModel(title: "Добавить заведение",
@@ -89,7 +88,6 @@ extension ProfilePresenter {
     
     private func addSignInObserver() {
         NotificationCenter.default.addObserver(forName: .signIn, object: nil, queue: nil) { [weak self] _ in
-            self?.user = self?.getProfile()
             self?.updateData()
         }
     }

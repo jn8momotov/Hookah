@@ -29,6 +29,8 @@
 		7A4842A8238C2A890002648E /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4842A7238C2A890002648E /* RealmService.swift */; };
 		7A5A9A4B238B9C7D00795EEF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5A9A4A238B9C7D00795EEF /* SearchViewController.swift */; };
 		7A5A9A4D238B9C9C00795EEF /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5A9A4C238B9C9C00795EEF /* MainPresenter.swift */; };
+		7A5E98522416BF09000513DE /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5E98512416BF09000513DE /* EditProfileViewController.swift */; };
+		7A5E98542416C280000513DE /* EditProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5E98532416C280000513DE /* EditProfilePresenter.swift */; };
 		7A5EAC812393D32D00AAEF61 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5EAC802393D32D00AAEF61 /* Profile.swift */; };
 		7A63F22323A593CF00B9ABE7 /* AddingPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63F22223A593CF00B9ABE7 /* AddingPlaceViewController.swift */; };
 		7A63F22523A593DD00B9ABE7 /* AddingPlacePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63F22423A593DD00B9ABE7 /* AddingPlacePresenter.swift */; };
@@ -124,6 +126,9 @@
 		7A4842A7238C2A890002648E /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		7A5A9A4A238B9C7D00795EEF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7A5A9A4C238B9C9C00795EEF /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		7A5E98512416BF09000513DE /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		7A5E98532416C280000513DE /* EditProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenter.swift; sourceTree = "<group>"; };
+		7A5E98552416D0BC000513DE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		7A5EAC802393D32D00AAEF61 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		7A63F22223A593CF00B9ABE7 /* AddingPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPlaceViewController.swift; sourceTree = "<group>"; };
 		7A63F22423A593DD00B9ABE7 /* AddingPlacePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPlacePresenter.swift; sourceTree = "<group>"; };
@@ -294,6 +299,15 @@
 				7ABBF1FD2313605E003DC9B5 /* MainPlaceCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		7A5E98502416BE9D000513DE /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				7A5E98512416BF09000513DE /* EditProfileViewController.swift */,
+				7A5E98532416C280000513DE /* EditProfilePresenter.swift */,
+			);
+			path = EditProfile;
 			sourceTree = "<group>";
 		};
 		7A5EF79D238B9AF1003ABC29 /* Main */ = {
@@ -523,6 +537,7 @@
 		7AE68876239D600800BE7D63 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
+				7A5E98502416BE9D000513DE /* EditProfile */,
 				7ABBB6A3241585DF00F05B05 /* AuthorizationViewController.swift */,
 				7ABBB6A5241588A000F05B05 /* AuthorizationPresenter.swift */,
 			);
@@ -683,6 +698,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 7ABBF1D923135407003DC9B5;
 			productRefGroup = 7ABBF1E323135407003DC9B5 /* Products */;
@@ -799,7 +815,9 @@
 				7AC50B6A238BA55600117C8D /* SearchPresenter.swift in Sources */,
 				860C318A239E134900629364 /* RightArrowCell.swift in Sources */,
 				7A6939F82393CEE0006FD8D9 /* ProfileImageViewModel.swift in Sources */,
+				7A5E98542416C280000513DE /* EditProfilePresenter.swift in Sources */,
 				7AE6887F239D61A600BE7D63 /* AuthTextField.swift in Sources */,
+				7A5E98522416BF09000513DE /* EditProfileViewController.swift in Sources */,
 				7A5A9A4B238B9C7D00795EEF /* SearchViewController.swift in Sources */,
 				7AA4FAAC239425ED0076DA08 /* NewRatingView.swift in Sources */,
 				86F4F784239E299C0044BD6E /* DetailPlaceCoordinator.swift in Sources */,
@@ -867,6 +885,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7ABBF1EF23135408003DC9B5 /* Base */,
+				7A5E98552416D0BC000513DE /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -878,6 +897,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -939,6 +959,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

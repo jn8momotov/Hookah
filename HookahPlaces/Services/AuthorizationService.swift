@@ -10,13 +10,12 @@ import Foundation
 import Firebase
 import FirebaseAuth
 
-typealias AuthHandler = (result: AuthDataResult?, error: Error?, onError: ErrorHandler?, onSuccess: VoidHandler?)
-
 protocol AuthorizationService: class {
     static var currentUser: User? { get }
     func verifyPhoneNumber(_ phoneNumber: String, onError: ErrorHandler?, onSuccess: ((String) -> Void)?)
-    func signIn(_ verificationModel: VerificationModel, onError: ErrorHandler?, onSuccess: VoidHandler?)
+    func signIn(_ verificationModel: VerificationModel, onError: ErrorHandler?, onSuccess: ((User) -> Void)?)
     func signOut(onError: ErrorHandler?, onSuccess: VoidHandler?)
+    func changeDisplayName(_ name: String, onSuccess: VoidHandler?, onError: ErrorHandler?)
 }
 
 extension AuthorizationService {
@@ -32,7 +31,7 @@ final class AuthorizationServiceImpl: AuthorizationService {
     private let storageService: StorageService = StorageServiceImpl()
     
     func verifyPhoneNumber(_ phoneNumber: String, onError: ErrorHandler?, onSuccess: ((String) -> Void)?) {
-        Auth.auth().languageCode = "ru";
+        Auth.auth().languageCode = "ru"
         PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { verificationID, error in
             if let error = error {
                 onError?(error.localizedDescription)
@@ -45,7 +44,7 @@ final class AuthorizationServiceImpl: AuthorizationService {
         }
     }
     
-    func signIn(_ verificationModel: VerificationModel, onError: ErrorHandler?, onSuccess: VoidHandler?) {
+    func signIn(_ verificationModel: VerificationModel, onError: ErrorHandler?, onSuccess: ((User) -> Void)?) {
         let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationModel.id,
                                                                  verificationCode: verificationModel.code)
         Auth.auth().signIn(with: credential) { result, error in
@@ -53,8 +52,8 @@ final class AuthorizationServiceImpl: AuthorizationService {
                 onError?(error.localizedDescription)
                 return
             }
-            if let _ = result?.user {
-                onSuccess?()
+            if let user = result?.user {
+                onSuccess?(user)
                 return
             }
         }
@@ -66,6 +65,18 @@ final class AuthorizationServiceImpl: AuthorizationService {
             onSuccess?()
         } catch let error {
             onError?(error.localizedDescription)
+        }
+    }
+    
+    func changeDisplayName(_ name: String, onSuccess: VoidHandler?, onError: ErrorHandler?) {
+        let changeRequest = AuthorizationServiceImpl.currentUser?.createProfileChangeRequest()
+        changeRequest?.displayName = name
+        changeRequest?.commitChanges { error in
+            if let error = error {
+                onError?(error.localizedDescription)
+                return
+            }
+            onSuccess?()
         }
     }
 }
